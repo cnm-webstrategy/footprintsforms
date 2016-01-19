@@ -14,9 +14,31 @@ form {
 
 	padding: 40px 15px;
 
+	.default-hidden {
+		display: none;
+	}
+
 	.panel-body {
-		display:flex;
-		flex-direction: column;
+
+		.flex-item.request-type,
+		.flex-container {
+			display:flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		
+
+		.flex-item {
+			flex: 1 1 auto;
+
+			.input-group {
+				width: 300px;
+
+				.form-control {
+					width: 100%;
+				}
+			}
+		}
 
 		#subject_row {
 
@@ -44,6 +66,10 @@ form {
 			.form-group {
 				width: 30%;
 			}
+		}
+
+		.flex-item.request-type {
+			flex-direction: row;
 		}
 	}
 }

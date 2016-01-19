@@ -1,119 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Student Complaint Form</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>OPIE Web Form</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
-    <link rel="stylesheet" href="css/style.css">
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
+	<link rel="stylesheet" href="css/style.css">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-
-
-      <form id="opie-form" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
-      
-        <!-- Contact Info panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
-          <div class="panel-body"> <!-- this is the outer flexbox for this panel -->
-          	<div id="subject-row"> <!-- first flexbox item -->
-	            <div class="input-group">
-	              <label for="subject">Subject:</label>
-	              <input type="text" class="form-control" id="subject" name="subject" placeholder="required" required>
-	            </div>
-            </div>
-            <div id="contact_row"> <!-- second flexbox item, also a flexbox container -->
-	            <div class="form-group">
-	              <label for="lastname">Last Name</label>
-	              <input type="text" class="form-control" id="lastname" name="lastname" placeholder="required" required>
-	            </div>
-	            <div class="form-group">
-	              <label for="firstname">First Name</label>
-	              <input type="text" class="form-control" id="firstname" name="firstname"placeholder="required" required>
-	            </div>
-	            <div class="form-group">
-	              <label for="email">Email</label>
-	              <input type="email" class="form-control" id="email" name="email" placeholder="required" required>
-	            </div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
 			</div>
-          </div>
-        </div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
 
-        <!-- Request Information panel -->
-        <div class="panel panel-default">
-        	<div class="panel panel-default">
-        		  <div class="panel-heading">
-        				<h3 class="panel-title">Request Information</h3>
-        		  </div>
-        		  <div class="panel-body">
-        		  		<div>
-	        		  		<label for="date-needed">Date Needed</label>
+	<div class="container">
+
+
+		<form id="opie-form" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+
+			<!-- Contact Info panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
+				<div class="panel-body"> <!-- this is the outer flexbox for this panel -->
+					<div id="subject-row"> <!-- first flexbox item -->
+						<div class="input-group">
+							<label for="subject">Subject:</label>
+							<input type="text" class="form-control" id="subject" name="subject" placeholder="required" required>
+						</div>
+					</div>
+					<div id="contact_row"> <!-- second flexbox item, also a flexbox container -->
+						<div class="form-group">
+							<label for="lastname">Last Name</label>
+							<input type="text" class="form-control" id="lastname" name="lastname" placeholder="required" required>
+						</div>
+						<div class="form-group">
+							<label for="firstname">First Name</label>
+							<input type="text" class="form-control" id="firstname" name="firstname"placeholder="required" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" class="form-control" id="email" name="email" placeholder="required" required>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Request Information panel -->
+			<div class="panel panel-default">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Request Information</h3>
+					</div>
+					<div class="panel-body flex-container">
+						<div class="flex-item">
+							<label for="date-needed">Date Needed</label>
 							<div class="input-group date">
 								
-								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="required"  data-provide="datepicker" required>
+								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
 								<div class="input-group-addon">
-							        <span class="glyphicon glyphicon-th"></span>
-							    </div>
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
 							</div>
 						</div>
-						<div>
+						<div class="flex-item">
 							<label for="recurring">One time or recurring?</label>
 							<div class="input-group">
-								<select name="" id="input" class="form-control" required="required">
-									<option value="no-answer">No answer</option>
+								<select name="recurring" id="recurring" class="form-control">
+									<option value="no-answer">No choice</option>
 									<option value="one-time">One time</option>
 									<option value="recurring">Recurring</option>
 								</select>
 								
 							</div>
 						</div>
-        		  </div>
-        	</div>
-        </div>
-        
-        <input type="hidden" name="hidden-date" id="hidden-date">  
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+						<div class="flex-item request-type">
+							<div>
+								<label for="request-type">Type of Request</label>
+								<div class="input-group">
+									<select name="request-type" id="request-type" class="form-control">
+										<OPTION VALUE ="No Choice" >No Choice</OPTION>
+										<OPTION VALUE ="Accreditation Reporting" >Accreditation Reporting</OPTION>
+										<OPTION VALUE ="Institutional Research" >Institutional Research</OPTION>
+										<OPTION VALUE ="Learning Assessment" >Learning Assessment</OPTION>
+										<OPTION VALUE ="Performance Improvement" >Performance Improvement</OPTION>
+										<OPTION VALUE ="Unknown" >Unknown</OPTION>
+									</select>
+									
+								</div>
+							</div>
+							<div class="default-hidden" id="pi-category-container">
+								<label for="pi-category">PI Category</label>
+								<div class="input-group">
+									<select name="pi-category" id="pi-category" class="form-control">
+										<OPTION VALUE ="No Choice" >No Choice</OPTION>
+										<OPTION VALUE ="Department Profile" >Department Profile</OPTION>
+										<OPTION VALUE ="PI Report" >PI Report</OPTION>
+										<OPTION VALUE ="Resources" >Resources</OPTION>
+										<OPTION VALUE ="Survey" >Survey</OPTION>
+										<OPTION VALUE ="Training" >Training</OPTION>
+									</select>
+									
+								</div>
+							</div>
+							<div class="default-hidden" id="request-type-unknown">
+								<label for="unknown-description">If Unknown Please Describe</label>
+								<div class="input-group">
+									<input type="text" class="form-control" id="unknown-description" name="unknown-description">
+								</div>
+							</div>
+						</div>
+						<div class="flex-item">
+							<label for="proposed-audience">Proposed Audience</label>
+							<div class="input-group">
+								<select name="proposed-audience" id="proposed-audience" class="form-control">
+									<OPTION VALUE ="No Choice" >No Choice</OPTION>
+									<OPTION VALUE ="Accreditation Reporting" >Accreditation Reporting</OPTION>
+									<OPTION VALUE ="Institutional Research" >Institutional Research</OPTION>
+									<OPTION VALUE ="Learning Assessment" >Learning Assessment</OPTION>
+									<OPTION VALUE ="Performance Improvement" >Performance Improvement</OPTION>
+									<OPTION VALUE ="Unknown" >Unknown</OPTION>
+								</select>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<input type="hidden" name="hidden-date" id="hidden-date">  
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 
 
-    </div><!-- /.container -->
+	</div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -122,11 +172,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-	<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
 
     <script src="js/scripts.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+</body>
 </html>

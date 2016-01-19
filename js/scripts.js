@@ -30,6 +30,25 @@ $(document).ready(function() {
 	    );
 	});
 
+	//show certain form elements based on user selection
+	$('#request-type').on('change', function(event) {
+
+		// handle "Performance Improvement" selection
+		if (event.target.selectedIndex === 4) {
+			$('#pi-category-container').removeClass('default-hidden');
+		} else {
+			$('#pi-category-container').addClass('default-hidden');
+		};
+
+		// handle "Unknown" selection
+		if (event.target.selectedIndex === 5) {
+			$('#request-type-unknown').removeClass('default-hidden');
+		} else {
+			$('#request-type-unknown').addClass('default-hidden');
+		};
+
+	});
+
 });
 
 	
