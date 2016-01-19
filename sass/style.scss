@@ -106,9 +106,10 @@ form {
 				border-top-left-radius: 4px;
 			}
 
-			.form-group {
+			.input-group {
 				//flex: 1;
-				width: 100%;
+				max-width: 280px;
+
 			}
 		}
 	}
