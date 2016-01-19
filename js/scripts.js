@@ -49,6 +49,9 @@ $(document).ready(function() {
 
 	});
 
+	// make subject line 100% width
+	$('#subject').parents('.input-group').width('100%');
+
 });
 
 	

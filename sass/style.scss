@@ -1,3 +1,6 @@
+$dark-blue: #003a70;
+$yellow: #f6be00;
+
 body {
   padding-top: 50px;
   font-family: 'Oswald', sans-serif;
@@ -10,12 +13,54 @@ body {
 
 }
 
+.panel-default {
+	border-color: $dark-blue;
+	> .panel-heading {
+		color: #f6be00;
+		background-color: $dark-blue;
+		border-color: $dark-blue;
+
+		.panel-title {
+			font-size: 24px;
+			letter-spacing: .05em;
+		}
+
+	}
+}
 form {
 
 	padding: 40px 15px;
 
+	.cnm-logo {
+		margin-bottom: 20px;
+	}
+
+	.input-group {
+		padding-bottom: 10px;
+
+	}
+
+	label {
+		font-size: 18px;
+	}
+
 	.default-hidden {
 		display: none;
+	}
+
+	.form-control {
+		border-color: $dark-blue;		
+	}
+
+	.btn {
+		font-size: 24px;
+		letter-spacing: .05em;
+	}
+
+	.btn-primary {
+		background-color: $dark-blue;
+		border-color: $dark-blue;
+		color: $yellow;
 	}
 
 	.panel-body {
@@ -36,18 +81,30 @@ form {
 
 				.form-control {
 					width: 100%;
+					
+				}
+
+				.input-group-addon {
+					border-color: $dark-blue;
+					background-color: $dark-blue;
+					color: $yellow;
 				}
 			}
 		}
 
 		#subject_row {
-
+			.input-group .form-control:last-child {
+				border-top-left-radius: 4px;
+			}
 		}
 
 		#contact_row {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			.input-group .form-control:last-child {
+				border-top-left-radius: 4px;
+			}
 
 			.form-group {
 				//flex: 1;
