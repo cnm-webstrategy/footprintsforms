@@ -30,6 +30,15 @@ $(document).ready(function() {
 	    );
 	});
 
+	$('#recurring').on('change', function(event) {
+		// if "recurring" is selected
+		if (event.target.selectedIndex === 2){
+			$('#recurring-schedule').removeClass('default-hidden');
+		} else {
+			$('#recurring-schedule').addClass('default-hidden');
+		}
+	});
+
 	//show certain form elements based on user selection
 	$('#request-type').on('change', function(event) {
 
