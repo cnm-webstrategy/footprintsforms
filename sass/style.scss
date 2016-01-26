@@ -82,11 +82,13 @@ form {
 		.flex-item {
 			flex: 1 1 auto;
 
+
 			.input-group {
-				width: 100%;
+				//width: 100%;
 
 				.form-control {
-					width: 100%;
+					//width: 100%;
+					width: 228px;
 					
 				}
 
@@ -131,6 +133,14 @@ form {
 			.input-group {
 				width: 30%;
 			}
+		}
+
+		.input-group {
+			width: 280px;
+		}
+
+		.flex-item {
+
 		}
 
 		.flex-item.recurring,

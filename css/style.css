@@ -55,14 +55,12 @@ form {
     -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto; }
-    form .panel-body .flex-item .input-group {
-      width: 100%; }
-      form .panel-body .flex-item .input-group .form-control {
-        width: 100%; }
-      form .panel-body .flex-item .input-group .input-group-addon {
-        border-color: #003a70;
-        background-color: #003a70;
-        color: #f6be00; }
+    form .panel-body .flex-item .input-group .form-control {
+      width: 228px; }
+    form .panel-body .flex-item .input-group .input-group-addon {
+      border-color: #003a70;
+      background-color: #003a70;
+      color: #f6be00; }
   form .panel-body #subject_row .input-group .form-control:last-child {
     border-top-left-radius: 4px; }
   form .panel-body #contact_row {
@@ -87,6 +85,8 @@ form {
             flex-direction: row; }
     form .panel-body #contact_row .input-group {
       width: 30%; }
+  form .panel-body .input-group {
+    width: 280px; }
   form .panel-body .flex-item.recurring,
   form .panel-body .flex-item.request-type {
     -webkit-flex-direction: row;

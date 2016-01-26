@@ -88,13 +88,13 @@
 							
 							<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
 							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-th"></span>
+								<span class="glyphicon glyphicon-calendar"></span>
 							</div>
 						</div>
 					</div>
 
 					<div class="flex-item recurring">
-						<div>
+						<div class=flex-item>
 							<label for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
 							<div class="input-group">
 								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control">
@@ -104,8 +104,8 @@
 								</select>
 							</div>
 						</div>
-						<div class= "default-hidden" id="recurring-schedule">
-							<label for="Recurring__bSchedule">Recurring Scedule</label>
+						<div class= "default-hidden flex-item" id="recurring-schedule">
+							<label for="Recurring__bSchedule">Recurring Schedule</label>
 							<div class="input-group">
 								<select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
@@ -119,7 +119,7 @@
 						</div>
 					</div>
 					<div class="flex-item request-type">
-						<div>
+						<div class="flex-item">
 							<label for="Type__bof__bRequest">Type of Request</label>
 							<div class="input-group">
 								<select name="Type__bof__bRequest" id="request-type" class="form-control">
@@ -133,7 +133,7 @@
 								
 							</div>
 						</div>
-						<div class="default-hidden" id="pi-category-container">
+						<div class="default-hidden flex-item" id="pi-category-container">
 							<label for="PI__bCategory">PI Category</label>
 							<div class="input-group">
 								<select name="PI__bCategory" id="pi-category" class="form-control">
@@ -147,7 +147,7 @@
 								
 							</div>
 						</div>
-						<div class="default-hidden" id="request-type-unknown">
+						<div class="default-hidden flex-item" id="request-type-unknown">
 							<label for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
 							<div class="input-group">
 								<input type="text" class="form-control" id="unknown-description" name="If__bUnknown__bPlease__bDescribe__c">
