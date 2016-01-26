@@ -45,7 +45,7 @@
 	</nav> -->
 
 	<div class="container">
-		<form id="opie-form" name="opie-form" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+		<form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
 			<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
 			<!-- Contact Info panel -->
@@ -60,16 +60,16 @@
 					</div>
 					<div id="contact_row"> <!-- second flexbox item, also a flexbox container -->
 						<div class="input-group">
-							<label for="lastname">Last Name</label>
-							<input type="text" class="form-control" id="lastname" name="lastname" placeholder="required" required>
+							<label for="Last__bName">Last Name</label>
+							<input type="text" class="form-control" id="Last__bName" name="Last__bName" placeholder="required" required>
 						</div>
 						<div class="input-group">
-							<label for="firstname">First Name</label>
-							<input type="text" class="form-control" id="firstname" name="firstname"placeholder="required" required>
+							<label for="First__bName">First Name</label>
+							<input type="text" class="form-control" id="First__bName" name="First__bName"placeholder="required" required>
 						</div>
 						<div class="input-group">
-							<label for="email">Email</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="required" required>
+							<label for="Email__bAddress">Email</label>
+							<input type="Email__bAddress" class="form-control" id="Email__bAddress" name="Email__bAddress" placeholder="required" value="ehigginsiii@cnm.edu" required>
 						</div>
 					</div>
 				</div>
@@ -92,11 +92,12 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="flex-item recurring">
 						<div>
-							<label for="recurring-choice">One time or recurring?</label>
+							<label for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
 							<div class="input-group">
-								<select name="recurring" id="recurring" class="form-control">
+								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control">
 									<option value="no-answer">No choice</option>
 									<option value="one-time">One time</option>
 									<option value="recurring">Recurring</option>
@@ -104,9 +105,9 @@
 							</div>
 						</div>
 						<div class= "default-hidden" id="recurring-schedule">
-							<label for="schedule">Recurring Scedule</label>
+							<label for="Recurring__bSchedule">Recurring Scedule</label>
 							<div class="input-group">
-								<select name="schedule" id="schedule" class="form-control">
+								<select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
 									<OPTION VALUE ="Term" >Term</OPTION>
 									<OPTION VALUE ="Annually" >Annually</OPTION>
@@ -119,9 +120,9 @@
 					</div>
 					<div class="flex-item request-type">
 						<div>
-							<label for="request-type">Type of Request</label>
+							<label for="Type__bof__bRequest">Type of Request</label>
 							<div class="input-group">
-								<select name="request-type" id="request-type" class="form-control">
+								<select name="Type__bof__bRequest" id="request-type" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
 									<OPTION VALUE ="Accreditation Reporting" >Accreditation Reporting</OPTION>
 									<OPTION VALUE ="Institutional Research" >Institutional Research</OPTION>
@@ -133,9 +134,9 @@
 							</div>
 						</div>
 						<div class="default-hidden" id="pi-category-container">
-							<label for="pi-category">PI Category</label>
+							<label for="PI__bCategory">PI Category</label>
 							<div class="input-group">
-								<select name="pi-category" id="pi-category" class="form-control">
+								<select name="PI__bCategory" id="pi-category" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
 									<OPTION VALUE ="Department Profile" >Department Profile</OPTION>
 									<OPTION VALUE ="PI Report" >PI Report</OPTION>
@@ -147,16 +148,16 @@
 							</div>
 						</div>
 						<div class="default-hidden" id="request-type-unknown">
-							<label for="unknown-description">If Unknown Please Describe</label>
+							<label for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="unknown-description" name="unknown-description">
+								<input type="text" class="form-control" id="unknown-description" name="If__bUnknown__bPlease__bDescribe__c">
 							</div>
 						</div>
 					</div>
 					<div class="flex-item">
-						<label for="proposed-audience">Proposed Audience</label>
+						<label for="Proposed__bAudience">Proposed Audience</label>
 						<div class="input-group">
-							<select name="proposed-audience" id="proposed-audience" class="form-control">
+							<select name="Proposed__bAudience" id="proposed-audience" class="form-control">
 								<OPTION VALUE ="No Choice" >No Choice</OPTION>
 								<OPTION VALUE ="Internal CNM " >Internal CNM (Employees only)</OPTION>
 								<OPTION VALUE ="External to CNM" >External to CNM</OPTION>
@@ -173,18 +174,22 @@
 					<h3 class="panel-title">Description and Intended Application</h3>
 				</div>
 				<div class="panel-body">
-					<TEXTAREA NAME="longdescription" placeholder="Knowing how you plan to use the information helps us better serve you." ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+					<TEXTAREA NAME="LONGDESCRIPTION" placeholder="Knowing how you plan to use the information helps us better serve you." ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
 				</div>
 			</div>
+
+			<INPUT TYPE = "hidden" NAME = "Month_Date__bNeeded">
+			<INPUT TYPE = "hidden" NAME = "Day_Date__bNeeded">
+			<INPUT TYPE = "hidden" NAME = "Year_Date__bNeeded">
+
 			<INPUT TYPE=HIDDEN NAME="TO" VALUE="OPIERequests@cnm.edu">
 			<INPUT TYPE=HIDDEN NAME="FROM" VALUE="Web@cnm.edu">
 			<input type = "hidden" name = "PROJECTNUM" value = "23">
 			<input type = "hidden" name = "PROJECTNAME" value = "OPIE">
 			<input name = "DATE_TYPE" type = "hidden" value = "0">
 
-			<input type="hidden" name="hidden-date" id="hidden-date">  
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<input type="submit" value="Submit">
+			<!-- <input type="submit" id="submit" value="Submit"> -->
 		</form>
 
 

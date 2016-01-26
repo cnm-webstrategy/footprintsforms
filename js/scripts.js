@@ -22,15 +22,14 @@ $(document).ready(function() {
 	$('.input-group.date').datepicker();
 	$('#date-needed').on('click', function(event) {
 		event.preventDefault();
-		console.log('hi');
 	});
 	$('#date-needed').on("changeDate", function() {
-	    $('#hidden-date').val(
-	        $('#date-needed').datepicker('getFormattedDate')
-	    );
+		$('#hidden-date').val(
+			$('#date-needed').datepicker('getFormattedDate')
+			);
 	});
 
-	$('#recurring').on('change', function(event) {
+	$('#One__uTime__bor__bRecurring__Q').on('change', function(event) {
 		// if "recurring" is selected
 		if (event.target.selectedIndex === 2){
 			$('#recurring-schedule').removeClass('default-hidden');
@@ -61,6 +60,55 @@ $(document).ready(function() {
 	// make subject line 100% width
 	$('#subject').parents('.input-group').width('100%');
 
+	// submit click
+	$('button').on('click', function(event) {
+		event.preventDefault();
+
+	    // break datepicker down into individual date parts and 
+	    // put into hidden fields :(
+
+    	var dateMilli = Date.parse($('#date-needed').val());
+    	var d = new Date(dateMilli);
+    	var month = d.getMonth() + 1;
+    	var day = d.getDay();
+    	var year = d.getFullYear();
+
+	    $('input[name="Month_Date__bNeeded"]').val(month);
+	    $('input[name="Day_Date__bNeeded"]').val(day);
+	    $('input[name="Year_Date__bNeeded"]').val(year);
+
+
+		var emailField = 'Email__bAddress';
+		var userPriv = 4;
+
+		var errorMsg = "";
+
+		// if (!(document.HTML_FORM.TITLE.value))
+		// 	errorMsg += "The field TITLE is mandatory and has been left blank\n";
+
+		// if (!(document.HTML_FORM.Last__bName.value))
+		// 	errorMsg += "The field Last Name is mandatory and has been left blank\n";
+
+		// if (!(document.HTML_FORM.First__bName.value))
+		// 	errorMsg += "The field First Name is mandatory and has been left blank\n";
+
+		// if (!(document.HTML_FORM.Email__bAddress.value))
+		// 	errorMsg += "The field Email Address is mandatory and has been left blank\n";
+
+		if (errorMsg)
+		{
+			//alert(errorMsg);
+			console.error(errorMsg);
+		}
+		else
+		{
+			console.log($('HTML_FORM'))
+			$('#HTML_FORM')[0].submit();
+        }
+
+    });
+
+
 });
 
-	
+
