@@ -116,8 +116,12 @@ $(document).ready(function() {
         }
 
     });
-
-
+	
+	var fields = $('#subject, #Last__bName,#First__bName,#Email__bAddress');
+	fields.on('focusout', function(event) {
+		console.log($(this));
+		//if($(this).val()==="")
+	});
 });
 
 
