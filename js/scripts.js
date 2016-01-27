@@ -79,7 +79,7 @@ $(document).ready(function() {
     	var dateMilli = Date.parse($('#date-needed').val());
     	var d = new Date(dateMilli);
     	var month = d.getMonth() + 1;
-    	var day = d.getDay();
+    	var day = d.getDate();
     	var year = d.getFullYear();
 
 	    $('input[name="Month_Date__bNeeded"]').val(month);
@@ -117,8 +117,11 @@ $(document).ready(function() {
 
     });
 	
-	var fields = $('#subject, #Last__bName,#First__bName,#Email__bAddress');
-	fields.on('focusout', function(event) {
+	var $fields = $('#subject, #Last__bName,#First__bName,#Email__bAddress');
+	$fields.on('focusout', function(event) {
+		$fields.each(function(index, el) {
+			
+		});
 		console.log($(this));
 		//if($(this).val()==="")
 	});

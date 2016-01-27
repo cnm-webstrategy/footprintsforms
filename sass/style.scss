@@ -76,7 +76,7 @@ form {
 		.flex-container {
 			display:flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: flex-start;
 		}
 		
 
@@ -151,6 +151,16 @@ form {
 		.flex-item.recurring,
 		.flex-item.request-type {
 			flex-direction: row;
+
+			.flex-item {
+				max-width: 280px;
+				margin-right: 20px;
+			}
+		}
+
+		.flex-item.recurring .flex-item {
+			//max-width: 280px;
+			//margin-right: 20px;
 		}
 	}
 }
