@@ -84,11 +84,13 @@
 				<div class="panel-body flex-container">
 					<div class="flex-item">
 						<label for="date-needed">Date Needed</label>
-						<div class="input-group date">
-							
-							<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
-							<div class="input-group-addon">
-								<span class="glyphicon glyphicon-calendar"></span>
+						<div class="form-group">	
+							<div class="input-group date">
+								
+								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -116,6 +118,13 @@
 								
 							</div>
 
+						</div>
+						
+						<div class="default-hidden flex-item" id="explain-other">
+							<label for="Please__bExplain__bOther">Please explain Other</label>
+							<div class="input-group">
+								<INPUT NAME="Please__bExplain__bOther"  class="form-control" SIZE="20" VALUE="">
+							</div>
 						</div>
 					</div>
 					<div class="flex-item request-type">
@@ -174,7 +183,10 @@
 					<h3 class="panel-title">Description and Intended Application</h3>
 				</div>
 				<div class="panel-body">
-					<TEXTAREA NAME="LONGDESCRIPTION" placeholder="Knowing how you plan to use the information helps us better serve you." ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+					<div class="input-group">
+						<TEXTAREA NAME="LONGDESCRIPTION" placeholder="Knowing how you plan to use the information helps us better serve you." class="form-control" ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+					</div>
+					
 				</div>
 			</div>
 

@@ -38,6 +38,15 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#Recurring__bSchedule').on('change', function(event) {
+		console.log(event.target.selectedIndex );
+		if (event.target.selectedIndex === 3){
+			$('#explain-other').removeClass('default-hidden');
+		} else {
+			$('#explain-other').addClass('default-hidden');
+		}
+	});
+
 	//show certain form elements based on user selection
 	$('#request-type').on('change', function(event) {
 

@@ -51,6 +51,7 @@ form {
 
 	.default-hidden {
 		display: none;
+		//visibility: hidden;
 	}
 
 	.form-control {
@@ -84,11 +85,11 @@ form {
 
 
 			.input-group {
-				//width: 100%;
+				max-width: 228px;
 
 				.form-control {
-					//width: 100%;
-					width: 228px;
+					width: 100%;
+					//width: 228px;
 					
 				}
 
@@ -137,6 +138,10 @@ form {
 
 		.input-group {
 			width: 280px;
+		}
+
+		#explain-other .form-control {
+			width: 100%;
 		}
 
 		.flex-item {
