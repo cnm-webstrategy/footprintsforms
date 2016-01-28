@@ -1,0 +1,302 @@
+<HTML>
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=EmulateIE9">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+    <title>Submit Issue to Dean of Students</title>
+    <link type="text/css" rel="stylesheet" href="/tmp/css/base.css?VERSION=11.6.04-11">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+
+
+    <script type="text/javascript">
+        function highlightButton(isOn, id) {
+            theEl = document.getElementById(id);
+            if (isOn)
+                theEl.className = "button_on";
+            else
+                theEl.className = "button_off";
+        }
+
+        function mousedownButton(id) {
+            theEl = document.getElementById(id);
+            theEl.className = "button_pressed";
+        }
+    </script>
+</head>
+
+<BODY bgcolor="#FFFFFF">
+    <FORM name="HTML_FORM" METHOD=POST ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Student Complaint Form</h3>
+            </div>
+            <div class="panel-body">
+                <p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.
+                    <i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Contact Information</h3>
+            </div>
+            <div class="panel-body flex-container">
+                Panel content
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        *First Name
+
+        <INPUT NAME="First__bName" SIZE="20" VALUE=""> *Last Name
+
+        <INPUT NAME="Last__bName" SIZE="20" VALUE=""> *Email Address
+
+        <INPUT NAME="Email__bAddress" SIZE="20" VALUE=""> *User Name
+
+        <INPUT placeholder="If none type email address" NAME="User__bName" SIZE="20" VALUE=""> Phone
+
+        <INPUT NAME="CNM__bPhone" SIZE="20" VALUE=""> CNM ID Number
+
+        <INPUT NAME="CNM__bID__bNumber" SIZE="20" VALUE=""> Student Address
+
+        <INPUT NAME="Student__bAddress" SIZE="20" VALUE=""> City
+
+        <INPUT NAME="City" SIZE="20" VALUE=""> State
+
+        <INPUT NAME="State" SIZE="20" VALUE=""> Zip Code
+
+        <INPUT NAME="Zip__bCode" SIZE="20" VALUE=""> Alt Phone - Cell
+
+        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""> Alt Phone - Home
+
+        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""> Job Title
+
+        <INPUT class="hidden_field" NAME="Job__bTitle" SIZE="20" VALUE=""> Department
+
+        <INPUT class="hidden_field" NAME="Department" SIZE="20" VALUE=""> Office Location
+
+        <INPUT class="hidden_field" NAME="Office__bLocation" SIZE="20" VALUE=""> Campus
+
+        <INPUT class="hidden_field" NAME="Campus" SIZE="20" VALUE=""> Alt Phone - Pager
+
+        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""> Full Name
+
+        <INPUT class="hidden_field" NAME="Full__bName" SIZE="20" VALUE=""> Issue Information *Subject: &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <INPUT TYPE=TEXT NAME=TITLE SIZE=70 VALUE="" MAXLENGTH="250"> *Feedback
+
+        <SELECT NAME="Feedback">
+            <OPTION VALUE="Select Choice">Select Choice</OPTION>
+            <OPTION VALUE="Complaint">Complaint</OPTION>
+            <OPTION VALUE="Compliment">Compliment</OPTION>
+            <OPTION VALUE="General Feedback">General Feedback</OPTION>
+        </SELECT>
+
+
+        Student Status
+
+        <SELECT NAME="Student__bStatus">
+            <OPTION VALUE="No Choice">No Choice</OPTION>
+            <OPTION VALUE="Current Student">Current Student</OPTION>
+            <OPTION VALUE="Former Student">Former Student</OPTION>
+            <OPTION VALUE="Other">Other</OPTION>
+        </SELECT>
+
+
+
+
+
+        Feedback Category
+
+        <INPUT TYPE=HIDDEN NAME=MULTIVALUE_FIELDS VALUE="Feedback__bCategory">
+        <SELECT NAME="Feedback__bCategory" SIZE=4 MULTIPLE>
+            <OPTION VALUE="Service">Service</OPTION>
+            <OPTION VALUE="Building">Building</OPTION>
+            <OPTION VALUE="Individual">Individual</OPTION>
+            <OPTION VALUE="Coursework">Coursework</OPTION>
+            <OPTION VALUE="Other">Other</OPTION>
+        </SELECT>
+
+
+        Date Event Occured Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
+
+        Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute
+
+
+
+        <INPUT TYPE="text" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+        <INPUT TYPE="text" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+        <INPUT TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+
+        <select name="Hour_Date__bEvent__bOccured">
+            <option value="">None
+                <option value="00">0
+                    <option value="01">1
+                        <option value="02">2
+                            <option value="03">3
+                                <option value="04">4
+                                    <option value="05">5
+                                        <option value="06">6
+                                            <option value="07">7
+                                                <option value="08">8
+                                                    <option value="09">9
+                                                        <option value="10">10
+                                                            <option value="11">11
+                                                                <option value="12">12
+                                                                    <option value="13">13
+                                                                        <option value="14">14
+                                                                            <option value="15">15
+                                                                                <option value="16">16
+                                                                                    <option value="17">17
+                                                                                        <option value="18">18
+                                                                                            <option value="19">19
+                                                                                                <option value="20">20
+                                                                                                    <option value="21">21
+                                                                                                        <option value="22">22
+                                                                                                            <option value="23">23
+        </select> :
+        <select name="Minute_Date__bEvent__bOccured">
+            <option value="">None
+                <option value="00">00
+                    <option value="05">05
+                        <option value="10">10
+                            <option value="15">15
+                                <option value="20">20
+                                    <option value="25">25
+                                        <option value="30">30
+                                            <option value="35">35
+                                                <option value="40">40
+                                                    <option value="45">45
+                                                        <option value="50">50
+                                                            <option value="55">55
+        </select>
+
+
+
+
+
+
+        Course Name
+
+        <INPUT placeholder="If realted to a course." NAME="Course__bName" SIZE="30" VALUE=""> Name of Individual
+
+        <INPUT placeholder="If related to an individual" NAME="Name__bof__bIndividual" SIZE="30" VALUE=""> Confidentiality
+
+        <SELECT NAME="Confidentiality">
+            <OPTION VALUE="No Choice">No Choice</OPTION>
+            <OPTION VALUE="You may use my name">You may use my name</OPTION>
+            <OPTION VALUE="You may use my name but only after the end of term">You may use my name but only after the end of term</OPTION>
+            <OPTION VALUE="Do not use my name">Do not use my name</OPTION>
+        </SELECT>
+
+
+        Referred by
+
+        <INPUT NAME="Referred__bby" SIZE="20" VALUE=""> Description of Event
+
+
+        <B><TEXTAREA placeholder="Please descripe the issue or event here." NAME=LONGDESCRIPTION ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+
+
+
+
+Individual Outcome or Discussion
+
+
+<B><TEXTAREA placeholder="If you spoke with an individual please include a quick description of the outcome." NAME = "Individual__bOutcome__bor__bDiscussion" ROWS = "5" COLS = "60" WRAP = "HARD"></TEXTAREA>
+
+
+
+	<script language = "javascript">
+	var emailField = 'Email__bAddress';
+	var userPriv = 1;
+	var abFields = new Array("Last__bName","First__bName","Email__bAddress","User__bName","CNM__bPhone","Alt__bPhone__b__u__bCell","Alt__bPhone__b__u__bPager","Alt__bPhone__b__u__bHome","Job__bTitle","Department","Office__bLocation","Campus","CNM__bID__bNumber","Full__bName");
+	function SubmitIt()
+	{
+		var errorMsg = "";
+
+					if (!(document.HTML_FORM.TITLE.value))
+						errorMsg += "The field TITLE is mandatory and has been left blank\n";
+
+					if (document.HTML_FORM.Feedback.options[0].selected == 1)
+						errorMsg += "The field Feedback is mandatory and has been left blank\n";
+
+					if (!(document.HTML_FORM.Last__bName.value))
+						errorMsg += "The field Last Name is mandatory and has been left blank\n";
+
+					if (!(document.HTML_FORM.First__bName.value))
+						errorMsg += "The field First Name is mandatory and has been left blank\n";
+
+					if (!(document.HTML_FORM.Email__bAddress.value))
+						errorMsg += "The field Email Address is mandatory and has been left blank\n";
+
+					if (!(document.HTML_FORM.User__bName.value))
+						errorMsg += "The field User Name is mandatory and has been left blank\n";
+
+		if (errorMsg)
+		{
+			alert(errorMsg);
+		}
+		else
+		{
+			if (document.HTML_FORM.ANONYMOUS)
+				if (document.HTML_FORM.ANONYMOUS.checked)
+					AnonymousSurvey();
+			if (emailField != '')
+			{
+				if (userPriv <= 1)
+				{
+					//Leo26293: don't replace FROM, it should already contain correct value
+					//eval('document.HTML_FORM.FROM.value = document.HTML_FORM.' + emailField + '.value;');
+				}
+			}
+			document.HTML_FORM.submit();
+		}
+	}
+	function AnonymousSurvey()
+	{
+		for (i = 0; i <= abFields.length; i++)
+		{
+			if (eval('document.HTML_FORM.' + abFields[i]))
+			{
+				eval('document.HTML_FORM.' + abFields[i] + '.value = ""');
+			}
+		}
+		if (document.HTML_FORM.Original__bProject)
+			document.HTML_FORM.Original__bProject.value = "Anonymous";
+		if (document.HTML_FORM.Original__bIssue)
+			document.HTML_FORM.Original__bIssue.value = "0";
+		if (document.HTML_FORM.Original__bAssignees)
+			document.HTML_FORM.Original__bAssignees.value = "Anonymous";
+		if (document.HTML_FORM.originalticket)
+			document.HTML_FORM.originalticket.value = 0;
+		document.HTML_FORM.TITLE.value = "Survey Results";
+	}
+	</script>
+	<INPUT TYPE = "button" VALUE="Submit Issue"
+			onClick = "javascript:SubmitIt()"> 
+			&nbsp;
+<INPUT TYPE=HIDDEN NAME="TO" VALUE="studentcomp@cnm.edu">
+<INPUT TYPE=HIDDEN NAME="FROM" VALUE="Web@cnm.edu">
+<input type = "hidden" name = "PROJECTNUM" value = "21">
+<input type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
+<input name = "DATE_TYPE" type = "hidden" value = "0">
+Click the SUBMIT button to send your Request.  You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.
+</FORM>
+</BODY>
+</HTML>
