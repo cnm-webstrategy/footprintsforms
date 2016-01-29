@@ -46,60 +46,87 @@
                 <h3 class="panel-title">Contact Information</h3>
             </div>
             <div class="panel-body flex-container">
-                Panel content
-            </div>
+                <div class="flex-item flex-container">
+                    <div class="input-group flex-item">
+                    	<label for="First__bName" class="col-sm-2">First Name</label>
+                    	<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required="required" pattern="" title="">
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="First__bName" class="col-sm-2">Last Name</label>
+                        <INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required="required" >
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="Email__bAddress" class="col-sm-2">Email Address</label>
+                        <INPUT class="form-control" type="text" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required="required" > 
+                    </div>
+                </div> <!-- closes 1st row -->
+                <div class="flex-item flex-container">
+                    <div class="input-group flex-item">
+                        <label for="User__bName" class="col-sm-2">User Name</label>
+                        <INPUT  class="form-control" placeholder="If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required="required" > 
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="CNM__bPhone" class="col-sm-2">Phone</label>
+                        <INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="">
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="CNM__bID__bNumber" class="col-sm-2">CNM ID Number</label>
+                        <INPUT class="form-control" type="text" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="">
+                    </div>
+                </div> <!-- closes 2nd row -->
+                <div class="flex-item flex-container">
+                    <div class="input-group flex-item">
+                        <label for="Student__bAddress" class="col-sm-2">Student Address</label>
+                        <INPUT class="form-control" type="text" NAME="Student__bAddress" id="Student__bAddress" SIZE="20" VALUE="">
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="City" class="col-sm-2">City</label>
+                        <INPUT class="form-control" type="text" NAME="City" id="City" SIZE="20" VALUE="">
+                    </div>
+                    <div class="input-group flex-item">
+                        <label for="State" class="col-sm-2">State</label>
+                        <INPUT class="form-control" type="text" NAME="State" id="State" SIZE="20" VALUE="">
+                    </div>
+                </div> <!-- closes 3rd row -->
+                <div class="flex-item flex-container">
+                    <div class="input-group flex-item">
+                        <label for="Zip__bCode" class="col-sm-2">Zip Code</label>
+                        <INPUT class="form-control" type="text" NAME="Zip__bCode" id="Zip__bCode" SIZE="20" VALUE="">
+                    </div>
+                </div> <!-- closes 4th row -->
+            </div> <!-- panel body -->
+        </div> <!-- contact info panel -->
+          
+<!--          Alt Phone - Cell
+
+        <INPUT class="hidden_field" type="hidden"   type="text" NAME="Alt__bPhone__b__u__bCell" id="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""> Alt Phone - Home
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bHome" id="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""> Job Title
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Job__bTitle" id="Job__bTitle" SIZE="20" VALUE=""> Department
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Department" id="Department" SIZE="20" VALUE=""> Office Location
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Office__bLocation" id="Office__bLocation" SIZE="20" VALUE=""> Campus
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Campus" id="Campus" SIZE="20" VALUE=""> Alt Phone - Pager
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bPager" id="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""> Full Name
+
+        <INPUT class="hidden_field" type="hidden"  NAME="Full__bName" id="Full__bName" SIZE="20" VALUE="">  -->
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                    <h3 class="panel-title">Issue Information</h3>
+              </div>
+              <div class="panel-body">
+                    Panel content
+              </div>
         </div>
+         *Subject:
 
+        <INPUT  class="form-control" TYPE="TEXT" NAME="TITLE" id="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> *Feedback
 
-
-
-
-
-
-
-
-
-        *First Name
-
-        <INPUT NAME="First__bName" SIZE="20" VALUE=""> *Last Name
-
-        <INPUT NAME="Last__bName" SIZE="20" VALUE=""> *Email Address
-
-        <INPUT NAME="Email__bAddress" SIZE="20" VALUE=""> *User Name
-
-        <INPUT placeholder="If none type email address" NAME="User__bName" SIZE="20" VALUE=""> Phone
-
-        <INPUT NAME="CNM__bPhone" SIZE="20" VALUE=""> CNM ID Number
-
-        <INPUT NAME="CNM__bID__bNumber" SIZE="20" VALUE=""> Student Address
-
-        <INPUT NAME="Student__bAddress" SIZE="20" VALUE=""> City
-
-        <INPUT NAME="City" SIZE="20" VALUE=""> State
-
-        <INPUT NAME="State" SIZE="20" VALUE=""> Zip Code
-
-        <INPUT NAME="Zip__bCode" SIZE="20" VALUE=""> Alt Phone - Cell
-
-        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""> Alt Phone - Home
-
-        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""> Job Title
-
-        <INPUT class="hidden_field" NAME="Job__bTitle" SIZE="20" VALUE=""> Department
-
-        <INPUT class="hidden_field" NAME="Department" SIZE="20" VALUE=""> Office Location
-
-        <INPUT class="hidden_field" NAME="Office__bLocation" SIZE="20" VALUE=""> Campus
-
-        <INPUT class="hidden_field" NAME="Campus" SIZE="20" VALUE=""> Alt Phone - Pager
-
-        <INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""> Full Name
-
-        <INPUT class="hidden_field" NAME="Full__bName" SIZE="20" VALUE=""> Issue Information *Subject: &nbsp;&nbsp;&nbsp;&nbsp;
-
-        <INPUT TYPE="TEXT" NAME="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> *Feedback
-
-        <SELECT NAME="Feedback">
+        <SELECT  class="form-control" NAME="Feedback" id="Feedback">
             <OPTION VALUE="Select Choice">Select Choice</OPTION>
             <OPTION VALUE="Complaint">Complaint</OPTION></option>
             <OPTION VALUE="Compliment">Compliment</OPTION></option>
@@ -109,7 +136,7 @@
 
         Student Status
 
-        <SELECT NAME="Student__bStatus">
+        <SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus">
             <OPTION VALUE="No Choice">No Choice</OPTION>
             <OPTION VALUE="Current Student">Current Student</OPTION>
             <OPTION VALUE="Former Student">Former Student</OPTION>
@@ -122,8 +149,8 @@
 
         Feedback Category
 
-        <INPUT TYPE="HIDDEN" NAME="MULTIVALUE"_FIELDS VALUE="Feedback__bCategory">
-        <SELECT NAME="Feedback__bCategory" SIZE="4" MULTIPLE>
+        <INPUT  class="form-control" TYPE="HIDDEN" NAME="MULTIVALUE_FIELDS" id="MULTIVALUE_FIELDS" VALUE="Feedback__bCategory">
+        <SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE>
             <OPTION VALUE="Service">Service</OPTION></option>
             <OPTION VALUE="Building">Building</OPTION></option>
             <OPTION VALUE="Individual">Individual</OPTION></option>
@@ -131,20 +158,17 @@
             <OPTION VALUE="Other">Other</OPTION></option>
         </SELECT>
 
-		<select name="" id="input" class="form-control">
-			<option value="">-- Select One --</option>
-		</select>
         Date Event Occured Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
 
         Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute
 
 
 
-        <INPUT TYPE="text" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
-        <INPUT TYPE="text" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
-        <INPUT TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+        <INPUT  class="form-control" TYPE="text" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" id="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+        <INPUT  class="form-control" TYPE="text" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" id="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+        <INPUT  class="form-control" TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
 
-        <select name="Hour_Date__bEvent__bOccured">
+        <select  class="form-control" name="Hour_Date__bEvent__bOccured">
 			<option value="">None</option></option>
 			<option value="00">0</option></option>
 			<option value="01">1</option></option>
@@ -171,7 +195,7 @@
 			<option value="22">22</option>
 			<option value="23">23</option>
         </select> :
-        <select name="Minute_Date__bEvent__bOccured">
+        <select  class="form-control" name="Minute_Date__bEvent__bOccured">
 			<option value="">None</option>
 			<option value="00">00</option>
 			<option value="05">05</option>
@@ -194,11 +218,11 @@
 
         Course Name
 
-        <INPUT placeholder="If realted to a course." NAME="Course__bName" SIZE="30" VALUE=""> Name of Individual
+        <INPUT  class="form-control" placeholder="If realted to a course."  type="text" NAME="Course__bName" id="Course__bName" SIZE="30" VALUE=""> Name of Individual
 
-        <INPUT placeholder="If related to an individual" NAME="Name__bof__bIndividual" SIZE="30" VALUE=""> Confidentiality
+        <INPUT  class="form-control" placeholder="If related to an individual"  type="text" NAME="Name__bof__bIndividual" id="Name__bof__bIndividual" SIZE="30" VALUE=""> Confidentiality
 
-        <SELECT NAME="Confidentiality">
+        <SELECT  class="form-control" NAME="Confidentiality">
             <OPTION VALUE="No Choice">No Choice</OPTION>
             <OPTION VALUE="You may use my name">You may use my name</OPTION>
             <OPTION VALUE="You may use my name but only after the end of term">You may use my name but only after the end of term</OPTION>
@@ -208,7 +232,7 @@
 
         Referred by
 
-        <INPUT NAME="Referred__bby" SIZE="20" VALUE=""> Description of Event
+        <INPUT class="form-control" type="text" NAME="Referred__bby" id="Referred__bby" SIZE="20" VALUE=""> Description of Event
 
 
         <B><TEXTAREA placeholder="Please descripe the issue or event here." NAME="LONGDESCRIPTION" ROWS="5" COLS="60" WRAP="HARD"></TEXTAREA>
@@ -289,14 +313,14 @@ Individual Outcome or Discussion
 		document.HTML_FORM.TITLE.value = "Survey Results";
 	}
 	</script>
-	<INPUT TYPE = "button" VALUE="Submit Issue"
+	<INPUT  class="form-control" TYPE = "button" VALUE="Submit Issue"
 			onClick = "javascript:SubmitIt()"> 
 			&nbsp;
-<INPUT TYPE="HIDDEN" NAME="TO" VALUE="studentcomp@cnm.edu">
-<INPUT TYPE="HIDDEN" NAME="FROM" VALUE="Web@cnm.edu">
-<input type = "hidden" name = "PROJECTNUM" value = "21">
-<input type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
-<input name = "DATE_TYPE" type = "hidden" value = "0">
+<INPUT  class="form-control" TYPE="HIDDEN" NAME="TO" id="TO" VALUE="studentcomp@cnm.edu">
+<INPUT  class="form-control" TYPE="HIDDEN" NAME="FROM" id="FROM" VALUE="Web@cnm.edu">
+<input  class="form-control" type = "hidden" name = "PROJECTNUM" value = "21">
+<input  class="form-control" type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
+<input  class="form-control" name = "DATE_TYPE" type = "hidden" value = "0">
 Click the SUBMIT button to send your Request.  You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.
 </FORM>
 <script type="text/javascript" defer="defer" src="js/jquery.min.js"></script>
