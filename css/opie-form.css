@@ -1,0 +1,4 @@
+#request-info .panel-body.flex-container {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }

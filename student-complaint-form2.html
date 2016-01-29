@@ -1,174 +1,185 @@
 <HTML>
 
 <head>
-    <meta http-equiv="x-ua-compatible" content="IE=EmulateIE9">
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
-    <title>Submit Issue to Dean of Students</title>
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
-    <link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Submit Issue to Dean of Students</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
 
 
-    <script type="text/javascript">
-        function highlightButton(isOn, id) {
-            theEl = document.getElementById(id);
-            if (isOn)
-                theEl.className = "button_on";
-            else
-                theEl.className = "button_off";
-        }
+	<script type="text/javascript">
+		function highlightButton(isOn, id) {
+			theEl = document.getElementById(id);
+			if (isOn)
+				theEl.className = "button_on";
+			else
+				theEl.className = "button_off";
+		}
 
-        function mousedownButton(id) {
-            theEl = document.getElementById(id);
-            theEl.className = "button_pressed";
-        }
-    </script>
+		function mousedownButton(id) {
+			theEl = document.getElementById(id);
+			theEl.className = "button_pressed";
+		}
+	</script>
 </head>
 
-<BODY bgcolor="#FFFFFF">
-    <FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+<BODY>
+	<FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
 
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Student Complaint Form</h3>
-            </div>
-            <div class="panel-body">
-                <p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.
-                    <i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
-            </div>
-        </div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Student Complaint Form</h3>
+			</div>
+			<div class="panel-body">
+				<p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.
+					<i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
+			</div>
+		</div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Contact Information</h3>
-            </div>
-            <div class="panel-body flex-container">
-                <div class="flex-item flex-container">
-                    <div class="input-group flex-item">
-                    	<label for="First__bName" class="col-sm-2">First Name</label>
-                    	<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required="required" pattern="" title="">
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="First__bName" class="col-sm-2">Last Name</label>
-                        <INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required="required" >
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="Email__bAddress" class="col-sm-2">Email Address</label>
-                        <INPUT class="form-control" type="text" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required="required" > 
-                    </div>
-                </div> <!-- closes 1st row -->
-                <div class="flex-item flex-container">
-                    <div class="input-group flex-item">
-                        <label for="User__bName" class="col-sm-2">User Name</label>
-                        <INPUT  class="form-control" placeholder="If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required="required" > 
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="CNM__bPhone" class="col-sm-2">Phone</label>
-                        <INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="">
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="CNM__bID__bNumber" class="col-sm-2">CNM ID Number</label>
-                        <INPUT class="form-control" type="text" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="">
-                    </div>
-                </div> <!-- closes 2nd row -->
-                <div class="flex-item flex-container">
-                    <div class="input-group flex-item">
-                        <label for="Student__bAddress" class="col-sm-2">Student Address</label>
-                        <INPUT class="form-control" type="text" NAME="Student__bAddress" id="Student__bAddress" SIZE="20" VALUE="">
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="City" class="col-sm-2">City</label>
-                        <INPUT class="form-control" type="text" NAME="City" id="City" SIZE="20" VALUE="">
-                    </div>
-                    <div class="input-group flex-item">
-                        <label for="State" class="col-sm-2">State</label>
-                        <INPUT class="form-control" type="text" NAME="State" id="State" SIZE="20" VALUE="">
-                    </div>
-                </div> <!-- closes 3rd row -->
-                <div class="flex-item flex-container">
-                    <div class="input-group flex-item">
-                        <label for="Zip__bCode" class="col-sm-2">Zip Code</label>
-                        <INPUT class="form-control" type="text" NAME="Zip__bCode" id="Zip__bCode" SIZE="20" VALUE="">
-                    </div>
-                </div> <!-- closes 4th row -->
-            </div> <!-- panel body -->
-        </div> <!-- contact info panel -->
-          
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contact Information</h3>
+			</div>
+			<div class="panel-body flex-container">
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="First__bName">First Name</label>
+						<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required="required" pattern="" title="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="First__bName">Last Name</label>
+						<INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required="required" >
+					</div>
+					<div class="input-group flex-item">
+						<label for="Email__bAddress">Email Address</label>
+						<INPUT class="form-control" type="text" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required="required" > 
+					</div>
+				</div> <!-- closes 1st row -->
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="User__bName">User Name</label>
+						<INPUT  class="form-control" placeholder="If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required="required" > 
+					</div>
+					<div class="input-group flex-item">
+						<label for="CNM__bPhone">Phone</label>
+						<INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="CNM__bID__bNumber">CNM ID Number</label>
+						<INPUT class="form-control" type="text" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="">
+					</div>
+				</div> <!-- closes 2nd row -->
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="Student__bAddress">Student Address</label>
+						<INPUT class="form-control" type="text" NAME="Student__bAddress" id="Student__bAddress" SIZE="20" VALUE="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="City">City</label>
+						<INPUT class="form-control" type="text" NAME="City" id="City" SIZE="20" VALUE="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="State">State</label>
+						<INPUT class="form-control" type="text" NAME="State" id="State" SIZE="20" VALUE="">
+					</div>
+				</div> <!-- closes 3rd row -->
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="Zip__bCode">Zip Code</label>
+						<INPUT class="form-control" type="text" NAME="Zip__bCode" id="Zip__bCode" SIZE="20" VALUE="">
+					</div>
+				</div> <!-- closes 4th row -->
+			</div> <!-- panel body -->
+		</div> <!-- contact info panel -->
+		  
 <!--          Alt Phone - Cell
 
-        <INPUT class="hidden_field" type="hidden"   type="text" NAME="Alt__bPhone__b__u__bCell" id="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""> Alt Phone - Home
+		<INPUT class="hidden_field" type="hidden"   type="text" NAME="Alt__bPhone__b__u__bCell" id="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""> Alt Phone - Home
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bHome" id="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""> Job Title
+		<INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bHome" id="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""> Job Title
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Job__bTitle" id="Job__bTitle" SIZE="20" VALUE=""> Department
+		<INPUT class="hidden_field" type="hidden"  NAME="Job__bTitle" id="Job__bTitle" SIZE="20" VALUE=""> Department
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Department" id="Department" SIZE="20" VALUE=""> Office Location
+		<INPUT class="hidden_field" type="hidden"  NAME="Department" id="Department" SIZE="20" VALUE=""> Office Location
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Office__bLocation" id="Office__bLocation" SIZE="20" VALUE=""> Campus
+		<INPUT class="hidden_field" type="hidden"  NAME="Office__bLocation" id="Office__bLocation" SIZE="20" VALUE=""> Campus
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Campus" id="Campus" SIZE="20" VALUE=""> Alt Phone - Pager
+		<INPUT class="hidden_field" type="hidden"  NAME="Campus" id="Campus" SIZE="20" VALUE=""> Alt Phone - Pager
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bPager" id="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""> Full Name
+		<INPUT class="hidden_field" type="hidden"  NAME="Alt__bPhone__b__u__bPager" id="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""> Full Name
 
-        <INPUT class="hidden_field" type="hidden"  NAME="Full__bName" id="Full__bName" SIZE="20" VALUE="">  -->
-        <div class="panel panel-default">
-              <div class="panel-heading">
-                    <h3 class="panel-title">Issue Information</h3>
-              </div>
-              <div class="panel-body">
-                    Panel content
-              </div>
-        </div>
-         *Subject:
+		<INPUT class="hidden_field" type="hidden"  NAME="Full__bName" id="Full__bName" SIZE="20" VALUE="">  -->
+		<div class="panel panel-default">
+			  <div class="panel-heading">
+					<h3 class="panel-title">Issue Information</h3>
+			  </div>
+			  <div class="panel-body flex-container">
+					<div class="input-group flex-item">
+						<label for="TITLE">Subject</label>
+						<INPUT  class="form-control" TYPE="TEXT" NAME="TITLE" id="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> 
+					</div>
+			  </div>
+			  <div class="panel-body flex-container">
+					<div class="input-group flex-item">
+						<label for="Feedback">Feedback</label>
+						<SELECT  class="form-control" NAME="Feedback" id="Feedback">
+							<OPTION VALUE="Select Choice">Select Choice</OPTION>
+							<OPTION VALUE="Complaint">Complaint</OPTION></option>
+							<OPTION VALUE="Compliment">Compliment</OPTION></option>
+							<OPTION VALUE="General Feedback">General Feedback</OPTION>
+						</SELECT>
+					</div>
+					<div class="input-group flex-item">
+						<label for="Student__bStatus">Student Status</label>
+						<SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus">
+							<OPTION VALUE="No Choice">No Choice</OPTION>
+							<OPTION VALUE="Current Student">Current Student</OPTION>
+							<OPTION VALUE="Former Student">Former Student</OPTION>
+							<OPTION VALUE="Other">Other</OPTION></option>
+						</SELECT>
+					</div>
+			  </div>
+		</div>
 
-        <INPUT  class="form-control" TYPE="TEXT" NAME="TITLE" id="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> *Feedback
-
-        <SELECT  class="form-control" NAME="Feedback" id="Feedback">
-            <OPTION VALUE="Select Choice">Select Choice</OPTION>
-            <OPTION VALUE="Complaint">Complaint</OPTION></option>
-            <OPTION VALUE="Compliment">Compliment</OPTION></option>
-            <OPTION VALUE="General Feedback">General Feedback</OPTION>
-        </SELECT>
-
-
-        Student Status
-
-        <SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus">
-            <OPTION VALUE="No Choice">No Choice</OPTION>
-            <OPTION VALUE="Current Student">Current Student</OPTION>
-            <OPTION VALUE="Former Student">Former Student</OPTION>
-            <OPTION VALUE="Other">Other</OPTION></option>
-        </SELECT>
-
-
-
-
-
-        Feedback Category
-
-        <INPUT  class="form-control" TYPE="HIDDEN" NAME="MULTIVALUE_FIELDS" id="MULTIVALUE_FIELDS" VALUE="Feedback__bCategory">
-        <SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE>
-            <OPTION VALUE="Service">Service</OPTION></option>
-            <OPTION VALUE="Building">Building</OPTION></option>
-            <OPTION VALUE="Individual">Individual</OPTION></option>
-            <OPTION VALUE="Coursework">Coursework</OPTION></option>
-            <OPTION VALUE="Other">Other</OPTION></option>
-        </SELECT>
-
-        Date Event Occured Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
-
-        Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute
+		*
 
 
 
-        <INPUT  class="form-control" TYPE="text" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" id="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
-        <INPUT  class="form-control" TYPE="text" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" id="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
-        <INPUT  class="form-control" TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+		
 
-        <select  class="form-control" name="Hour_Date__bEvent__bOccured">
+
+
+
+
+
+		Feedback Category
+
+		<INPUT  class="form-control" TYPE="HIDDEN" NAME="MULTIVALUE_FIELDS" id="MULTIVALUE_FIELDS" VALUE="Feedback__bCategory">
+		<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE>
+			<OPTION VALUE="Service">Service</OPTION></option>
+			<OPTION VALUE="Building">Building</OPTION></option>
+			<OPTION VALUE="Individual">Individual</OPTION></option>
+			<OPTION VALUE="Coursework">Coursework</OPTION></option>
+			<OPTION VALUE="Other">Other</OPTION></option>
+		</SELECT>
+
+		Date Event Occured Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
+
+		Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute
+
+
+
+		<INPUT  class="form-control" TYPE="text" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" id="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+		<INPUT  class="form-control" TYPE="text" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" id="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+		<INPUT  class="form-control" TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+
+		<select  class="form-control" name="Hour_Date__bEvent__bOccured">
 			<option value="">None</option></option>
 			<option value="00">0</option></option>
 			<option value="01">1</option></option>
@@ -194,8 +205,8 @@
 			<option value="21">21</option>
 			<option value="22">22</option>
 			<option value="23">23</option>
-        </select> :
-        <select  class="form-control" name="Minute_Date__bEvent__bOccured">
+		</select> :
+		<select  class="form-control" name="Minute_Date__bEvent__bOccured">
 			<option value="">None</option>
 			<option value="00">00</option>
 			<option value="05">05</option>
@@ -209,33 +220,33 @@
 			<option value="45">45</option>
 			<option value="50">50</option>
 			<option value="55">55</option>
-        </select>
+		</select>
 
 
 
 
 
 
-        Course Name
+		Course Name
 
-        <INPUT  class="form-control" placeholder="If realted to a course."  type="text" NAME="Course__bName" id="Course__bName" SIZE="30" VALUE=""> Name of Individual
+		<INPUT  class="form-control" placeholder="If realted to a course."  type="text" NAME="Course__bName" id="Course__bName" SIZE="30" VALUE=""> Name of Individual
 
-        <INPUT  class="form-control" placeholder="If related to an individual"  type="text" NAME="Name__bof__bIndividual" id="Name__bof__bIndividual" SIZE="30" VALUE=""> Confidentiality
+		<INPUT  class="form-control" placeholder="If related to an individual"  type="text" NAME="Name__bof__bIndividual" id="Name__bof__bIndividual" SIZE="30" VALUE=""> Confidentiality
 
-        <SELECT  class="form-control" NAME="Confidentiality">
-            <OPTION VALUE="No Choice">No Choice</OPTION>
-            <OPTION VALUE="You may use my name">You may use my name</OPTION>
-            <OPTION VALUE="You may use my name but only after the end of term">You may use my name but only after the end of term</OPTION>
-            <OPTION VALUE="Do not use my name">Do not use my name</OPTION>
-        </SELECT>
-
-
-        Referred by
-
-        <INPUT class="form-control" type="text" NAME="Referred__bby" id="Referred__bby" SIZE="20" VALUE=""> Description of Event
+		<SELECT  class="form-control" NAME="Confidentiality">
+			<OPTION VALUE="No Choice">No Choice</OPTION>
+			<OPTION VALUE="You may use my name">You may use my name</OPTION>
+			<OPTION VALUE="You may use my name but only after the end of term">You may use my name but only after the end of term</OPTION>
+			<OPTION VALUE="Do not use my name">Do not use my name</OPTION>
+		</SELECT>
 
 
-        <B><TEXTAREA placeholder="Please descripe the issue or event here." NAME="LONGDESCRIPTION" ROWS="5" COLS="60" WRAP="HARD"></TEXTAREA>
+		Referred by
+
+		<INPUT class="form-control" type="text" NAME="Referred__bby" id="Referred__bby" SIZE="20" VALUE=""> Description of Event
+
+
+		<B><TEXTAREA placeholder="Please descripe the issue or event here." NAME="LONGDESCRIPTION" ROWS="5" COLS="60" WRAP="HARD"></TEXTAREA>
 
 
 

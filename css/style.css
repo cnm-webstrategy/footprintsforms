@@ -48,8 +48,7 @@ form {
     border-color: #003a70;
     color: #f6be00; }
   form .panel-body .flex-item.recurring,
-  form .panel-body .flex-item.request-type,
-  form .panel-body .flex-container {
+  form .panel-body .flex-item.request-type, form .panel-body.flex-container {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -94,12 +93,14 @@ form {
     width: 280px; }
   form .panel-body #explain-other .form-control {
     width: 100%; }
+  form .panel-body.flex-container,
   form .panel-body .flex-container,
   form .panel-body .flex-item.recurring,
   form .panel-body .flex-item.request-type {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row; }
+    form .panel-body.flex-container .flex-item,
     form .panel-body .flex-container .flex-item,
     form .panel-body .flex-item.recurring .flex-item,
     form .panel-body .flex-item.request-type .flex-item {
