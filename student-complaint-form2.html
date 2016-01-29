@@ -28,7 +28,7 @@
 </head>
 
 <BODY bgcolor="#FFFFFF">
-    <FORM name="HTML_FORM" METHOD=POST ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+    <FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
 
 
         <div class="panel panel-default">
@@ -97,12 +97,12 @@
 
         <INPUT class="hidden_field" NAME="Full__bName" SIZE="20" VALUE=""> Issue Information *Subject: &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <INPUT TYPE=TEXT NAME=TITLE SIZE=70 VALUE="" MAXLENGTH="250"> *Feedback
+        <INPUT TYPE="TEXT" NAME="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> *Feedback
 
         <SELECT NAME="Feedback">
             <OPTION VALUE="Select Choice">Select Choice</OPTION>
-            <OPTION VALUE="Complaint">Complaint</OPTION>
-            <OPTION VALUE="Compliment">Compliment</OPTION>
+            <OPTION VALUE="Complaint">Complaint</OPTION></option>
+            <OPTION VALUE="Compliment">Compliment</OPTION></option>
             <OPTION VALUE="General Feedback">General Feedback</OPTION>
         </SELECT>
 
@@ -113,7 +113,7 @@
             <OPTION VALUE="No Choice">No Choice</OPTION>
             <OPTION VALUE="Current Student">Current Student</OPTION>
             <OPTION VALUE="Former Student">Former Student</OPTION>
-            <OPTION VALUE="Other">Other</OPTION>
+            <OPTION VALUE="Other">Other</OPTION></option>
         </SELECT>
 
 
@@ -122,16 +122,18 @@
 
         Feedback Category
 
-        <INPUT TYPE=HIDDEN NAME=MULTIVALUE_FIELDS VALUE="Feedback__bCategory">
-        <SELECT NAME="Feedback__bCategory" SIZE=4 MULTIPLE>
-            <OPTION VALUE="Service">Service</OPTION>
-            <OPTION VALUE="Building">Building</OPTION>
-            <OPTION VALUE="Individual">Individual</OPTION>
-            <OPTION VALUE="Coursework">Coursework</OPTION>
-            <OPTION VALUE="Other">Other</OPTION>
+        <INPUT TYPE="HIDDEN" NAME="MULTIVALUE"_FIELDS VALUE="Feedback__bCategory">
+        <SELECT NAME="Feedback__bCategory" SIZE="4" MULTIPLE>
+            <OPTION VALUE="Service">Service</OPTION></option>
+            <OPTION VALUE="Building">Building</OPTION></option>
+            <OPTION VALUE="Individual">Individual</OPTION></option>
+            <OPTION VALUE="Coursework">Coursework</OPTION></option>
+            <OPTION VALUE="Other">Other</OPTION></option>
         </SELECT>
 
-
+		<select name="" id="input" class="form-control">
+			<option value="">-- Select One --</option>
+		</select>
         Date Event Occured Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
 
         Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute
@@ -143,46 +145,46 @@
         <INPUT TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
 
         <select name="Hour_Date__bEvent__bOccured">
-            <option value="">None
-                <option value="00">0
-                    <option value="01">1
-                        <option value="02">2
-                            <option value="03">3
-                                <option value="04">4
-                                    <option value="05">5
-                                        <option value="06">6
-                                            <option value="07">7
-                                                <option value="08">8
-                                                    <option value="09">9
-                                                        <option value="10">10
-                                                            <option value="11">11
-                                                                <option value="12">12
-                                                                    <option value="13">13
-                                                                        <option value="14">14
-                                                                            <option value="15">15
-                                                                                <option value="16">16
-                                                                                    <option value="17">17
-                                                                                        <option value="18">18
-                                                                                            <option value="19">19
-                                                                                                <option value="20">20
-                                                                                                    <option value="21">21
-                                                                                                        <option value="22">22
-                                                                                                            <option value="23">23
+			<option value="">None</option></option>
+			<option value="00">0</option></option>
+			<option value="01">1</option></option>
+			<option value="02">2</option>
+			<option value="03">3</option>
+			<option value="04">4</option>
+			<option value="05">5</option>
+			<option value="06">6</option>
+			<option value="07">7</option>
+			<option value="08">8</option>
+			<option value="09">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
         </select> :
         <select name="Minute_Date__bEvent__bOccured">
-            <option value="">None
-                <option value="00">00
-                    <option value="05">05
-                        <option value="10">10
-                            <option value="15">15
-                                <option value="20">20
-                                    <option value="25">25
-                                        <option value="30">30
-                                            <option value="35">35
-                                                <option value="40">40
-                                                    <option value="45">45
-                                                        <option value="50">50
-                                                            <option value="55">55
+			<option value="">None</option>
+			<option value="00">00</option>
+			<option value="05">05</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="25">25</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="45">45</option>
+			<option value="50">50</option>
+			<option value="55">55</option>
         </select>
 
 
@@ -209,7 +211,7 @@
         <INPUT NAME="Referred__bby" SIZE="20" VALUE=""> Description of Event
 
 
-        <B><TEXTAREA placeholder="Please descripe the issue or event here." NAME=LONGDESCRIPTION ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+        <B><TEXTAREA placeholder="Please descripe the issue or event here." NAME="LONGDESCRIPTION" ROWS="5" COLS="60" WRAP="HARD"></TEXTAREA>
 
 
 
@@ -290,8 +292,8 @@ Individual Outcome or Discussion
 	<INPUT TYPE = "button" VALUE="Submit Issue"
 			onClick = "javascript:SubmitIt()"> 
 			&nbsp;
-<INPUT TYPE=HIDDEN NAME="TO" VALUE="studentcomp@cnm.edu">
-<INPUT TYPE=HIDDEN NAME="FROM" VALUE="Web@cnm.edu">
+<INPUT TYPE="HIDDEN" NAME="TO" VALUE="studentcomp@cnm.edu">
+<INPUT TYPE="HIDDEN" NAME="FROM" VALUE="Web@cnm.edu">
 <input type = "hidden" name = "PROJECTNUM" value = "21">
 <input type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
 <input name = "DATE_TYPE" type = "hidden" value = "0">
