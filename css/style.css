@@ -95,14 +95,16 @@ form {
     width: 100%; }
   form .panel-body.flex-container,
   form .panel-body .flex-container,
-  form .panel-body .flex-item.recurring,
   form .panel-body .flex-item.request-type {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row; }
     form .panel-body.flex-container .flex-item,
     form .panel-body .flex-container .flex-item,
-    form .panel-body .flex-item.recurring .flex-item,
     form .panel-body .flex-item.request-type .flex-item {
       max-width: 280px;
-      margin-right: 20px; } }
+      margin-right: 20px; }
+  form .panel-body.column {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; } }

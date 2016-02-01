@@ -52,14 +52,14 @@
 			<!-- Contact Info panel -->
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
-				<div class="panel-body"> <!-- this is the outer flexbox for this panel -->
-					<div id="subject-row"> <!-- first flexbox item -->
+				<div class="panel-body flex-container column" id="first-panel"> <!-- this is the outer flexbox for this panel -->
+					<div id="subject-row flex-item"> <!-- first flexbox item -->
 						<div class="input-group">
 							<label for="TITLE">Subject:</label>
 							<input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="required" required>
 						</div>
 					</div>
-					<div id="contact_row " class="flex-container"> <!-- second flexbox item, also a flexbox container -->
+					<div id="contact_row " class="flex-item flex-container"> <!-- second flexbox item, also a flexbox container -->
 						<div class="input-group flex-item">
 							<label for="Last__bName">Last Name</label>
 							<input type="text" class="form-control" id="Last__bName" name="Last__bName" placeholder="required" required>

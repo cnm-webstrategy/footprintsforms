@@ -2,3 +2,11 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+@media screen and (min-width: 768px) {
+  form .panel-body.flex-container .flex-item.request-type, form .panel-body.flex-container .flex-item.recurring {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    max-width: 100%;
+    width: 100%; } }
