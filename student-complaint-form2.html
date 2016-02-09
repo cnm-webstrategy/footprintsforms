@@ -7,7 +7,8 @@
 	<title>Submit Issue to Dean of Students</title>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
-	<link type="text/css" rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+	<!-- <link type="text/css" rel="stylesheet" href="css/bootstrap-datetimepicker.css"> -->
+	<link type="text/css" rel="stylesheet" href="css/jquery.filthypillow.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/student-complaint.css">
 
@@ -36,7 +37,7 @@
 				<div class="flex-item flex-container">
 					<div class="input-group flex-item">
 						<label class="control-label" for="First__bName">First Name</label>
-						<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required pattern="" title="" placeholder="Required">
+						<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required title="" placeholder="Required">
 					</div>
 					<div class="input-group flex-item">
 						<label class="control-label" for="First__bName">Last Name</label>
@@ -144,18 +145,17 @@
 					<div class="flex-item">
 						<label for="date-occurred">Date Event Occurred</label>
 						<!-- <div class="form-group"> -->	
-							<div class="input-group date datetimepicker" data-date-format="dd MM yyyy - HH:ii P">
+							<div class="input-group date " data-date-format="dd MM yyyy - HH:ii P">
 								
-								<input type="text" class="form-control" id="date-occurred" name="date-occurred" placeholder="click to pick date">
+								<input type="datetime" class="form-control datetimepicker" id="date-occurred" name="date-occurred" placeholder="click to pick date">
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 								</div>
 							</div>
 						<!-- </div> -->
 					</div>
-					<div class="flex-item">
+					<!-- <div class="flex-item">
 						<label for="time-occurred">Time Event Occurred</label>
-						<!-- <div class="form-group"> -->	
 							<div class="input-group date">
 								
 								<input type="text" class="form-control" id="time-occurred" name="time-occurred" placeholder="click to pick time"  data-format="MM/dd/yyyy">
@@ -163,8 +163,7 @@
 									<span class="glyphicon glyphicon-time"></span>
 								</div>
 							</div>
-						<!-- </div> -->
-					</div>
+					</div> -->
 					<div class="input-group flex-item">
 						<label for="Course__bName">Course Name</label>
 						<INPUT  class="form-control" placeholder="If realated to a course."  type="text" NAME="Course__bName" id="Course__bName" SIZE="30" VALUE="">
@@ -322,9 +321,14 @@
 	// 	document.HTML_FORM.TITLE.value = "Survey Results";
 	// }
 	</script>
-	<button  class="btn btn-default" TYPE="submit" name="submit_button">Submit Issue</button> 
 	<!-- <INPUT  class="form-control" TYPE = "button" VALUE="Submit Issue"
 			onClick = "javascript:SubmitIt()"> -->
+
+<!-- recreate the original date form fields -->
+<INPUT  class="form-control" TYPE="hidden" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" id="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+<INPUT  class="form-control" TYPE="hidden" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" id="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+<INPUT  class="form-control" TYPE="hidden" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+
 <INPUT  class="form-control" TYPE="HIDDEN" NAME="TO" id="TO" VALUE="studentcomp@cnm.edu">
 <INPUT  class="form-control" TYPE="HIDDEN" NAME="FROM" id="FROM" VALUE="Web@cnm.edu">
 <input  class="form-control" type = "hidden" name = "PROJECTNUM" value = "21">
@@ -332,12 +336,15 @@
 <input  class="form-control" name = "DATE_TYPE" type = "hidden" value = "0">
 <p>You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.</p>
 
+<button  class="btn btn-default" TYPE="submit" name="submit_button">Submit Issue</button> 
 
 </FORM>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/jquery.filthypillow.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<!-- <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script> -->
 
 <!-- <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript" src="js/additional-methods.js"></script> -->

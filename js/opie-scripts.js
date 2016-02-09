@@ -122,7 +122,7 @@ $(document).ready(function() {
 		$fields.each(function(index, el) {
 			
 		});
-		console.log($(this));
+		//console.log($(this));
 		//if($(this).val()==="")
 	});
 });
