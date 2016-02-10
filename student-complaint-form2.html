@@ -37,7 +37,7 @@
 				<div class="flex-item flex-container">
 					<div class="input-group flex-item">
 						<label class="control-label" for="First__bName">First Name</label>
-						<input class="form-control" type="text" name="First__bName" id="First__bName" class="form-control" value="" required title="" placeholder="Required">
+						<input class="form-control" type="text" name="First__bName" id="First__bName" value="" required title="" placeholder="Required">
 					</div>
 					<div class="input-group flex-item">
 						<label class="control-label" for="First__bName">Last Name</label>
@@ -45,13 +45,13 @@
 					</div>
 					<div class="input-group flex-item">
 						<label class="control-label" for="Email__bAddress">Email Address</label>
-						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required"> 
+						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
 				</div> <!-- closes 1st row -->
 				<div class="flex-item flex-container">
 					<div class="input-group flex-item">
 						<label class="control-label" for="User__bName">User Name</label>
-						<INPUT  class="form-control" placeholder=" Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"> 
+						<INPUT  class="form-control" placeholder=" Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required>
 					</div>
 					<div class="input-group flex-item">
 						<label for="CNM__bPhone">Phone</label>
@@ -115,21 +115,21 @@
 			  <div class="panel-body flex-container">
 					<div class="input-group flex-item">
 						<label for="Feedback">Feedback</label>
-						<SELECT  class="form-control" NAME="Feedback" id="Feedback">
+						<SELECT  class="form-control" NAME="Feedback" id="Feedback" required>
 							<OPTION VALUE="Select Choice">Select Choice</OPTION>
-							<OPTION VALUE="Complaint">Complaint</OPTION></option>
-							<OPTION VALUE="Compliment">Compliment</OPTION></option>
+							<OPTION VALUE="Complaint">Complaint</option>
+							<OPTION VALUE="Compliment">Compliment</option>
 							<OPTION VALUE="General Feedback">General Feedback</OPTION>
 						</SELECT>
 					</div>
 					<div class="input-group flex-item">
 						<label for="Feedback__bCategory">Feedback Category</label>
 						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE required>
-							<OPTION VALUE="Service">Service</OPTION></option>
-							<OPTION VALUE="Building">Building</OPTION></option>
-							<OPTION VALUE="Individual">Individual</OPTION></option>
-							<OPTION VALUE="Coursework">Coursework</OPTION></option>
-							<OPTION VALUE="Other">Other</OPTION></option>
+							<OPTION VALUE="Service">Service</option>
+							<OPTION VALUE="Building">Building</option>
+							<OPTION VALUE="Individual">Individual</option>
+							<OPTION VALUE="Coursework">Coursework</option>
+							<OPTION VALUE="Other">Other</option>
 						</SELECT>
 					</div>
 					<div class="input-group flex-item">
@@ -138,7 +138,7 @@
 							<OPTION VALUE="No Choice">No Choice</OPTION>
 							<OPTION VALUE="Current Student">Current Student</OPTION>
 							<OPTION VALUE="Former Student">Former Student</OPTION>
-							<OPTION VALUE="Other">Other</OPTION></option>
+							<OPTION VALUE="Other">Other</option>
 						</SELECT>
 					</div>
 
@@ -182,7 +182,8 @@
 						  </OPTION>
 						  <OPTION VALUE="Do not use my name">Do not use my name</OPTION>
 					  </SELECT>
-
+				  </div>
+				  <div class="input-group flex-item">
 					  <label for="Referred__bby">Referred by</label>
 					  <INPUT class="form-control" type="text" NAME="Referred__bby" id="Referred__bby" SIZE="20"
 							 VALUE="">
@@ -214,9 +215,9 @@
 		<INPUT  class="form-control" TYPE="text" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
 
 		<select  class="form-control" name="Hour_Date__bEvent__bOccured">
-			<option value="">None</option></option>
-			<option value="00">0</option></option>
-			<option value="01">1</option></option>
+			<option value="">None</option>
+			<option value="00">0</option>
+			<option value="01">1</option>
 			<option value="02">2</option>
 			<option value="03">3</option>
 			<option value="04">4</option>
@@ -338,7 +339,7 @@
 <input  class="form-control" name = "DATE_TYPE" type = "hidden" value = "0">
 <p>You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.</p>
 
-<button  class="btn btn-default" TYPE="submit" name="submit_button">Submit Issue</button> 
+<button  class="btn btn-default" TYPE="submit" id="submit_button" name="submit_button" disabled>Submit Issue</button>
 
 </FORM>
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -351,7 +352,7 @@
 <!-- <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript" src="js/additional-methods.js"></script> -->
 
-<script type="text/javascript" src="js/script2.js"></script>
+<script type="text/javascript" src="js/scripts2.js"></script>
 <script type="text/javascript" src="js/student-complaints.js"></script>
 
 </BODY>

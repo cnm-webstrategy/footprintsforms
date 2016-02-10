@@ -1,25 +1,27 @@
-jQuery(document).ready(function($) {
+$(document).ready(function() {
 
     var $submitButton = $('#submit_button');
-
-    // disable submit button by default
-    $submitButton.prop('disabled', true);
 
     // collect all of the fields that are required
     var $required = $('input,textarea,select').filter('[required]');
 
+
+
     // isEmpty function
     var isEmpty = function ($fields) {
+
+        this.empty = false;
+        var self = this;
         //  for each required item check to see if it's empty
         $fields.each(function(index, el) {
             //  if it's empty return true
             if ($(el).val() === ""){
-                return true;
+                self.empty = true;
             }
             
         });
         //      if not return false
-        //return false;
+        return this.empty;
     };
 
     // find email input
@@ -45,16 +47,22 @@ jQuery(document).ready(function($) {
     // check each keystroke in required fields to see if 
     // the error style should be removed.
     $required.bind('input', function(event) {
+
         $target = $(event.target);
         $parent = $target.parent();
 
+
         if($target.val() !== "") {
-            if ($parent.hasClass('has-error')) {
-                $parent.removeClass('has-error');
-            };
+            console.log($target.parent());
+            $parent.removeClass('has-error')
+                .addClass('has-success');
+
         } else {
+            $parent.addClass('has-error')
+                .removeClass('has-success')
             console.log('empty');
         }
+        //$parent.addClass('has-success');
     });
 
     var theEmail = findEmail($required);
@@ -63,10 +71,11 @@ jQuery(document).ready(function($) {
     $required.on('blur', function(event) {
         var $target = $(event.target);
         //  get email field
-        var emailField = findEmail($required);           
+        var emailField = findEmail($required);
+
 
         //  if any required fields are empty, or if email is malformed, 
-        if (isEmpty($required) != undefined || isValidEmail(emailField)) {
+        if (isEmpty($required) === true || isValidEmail(emailField) === false ) {
             //make submit button inactive
             $submitButton.prop('disabled', true);
             
@@ -78,6 +87,7 @@ jQuery(document).ready(function($) {
             //     .append(errorTag);
 
         } else {
+            console.log($submitButton);
             $submitButton.prop('disabled', false);
         }
 
