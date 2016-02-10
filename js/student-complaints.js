@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 jQuery(document).ready(function($) {
 	var $fp = $(".datetimepicker");
 	var now = moment().subtract(1,"years");
@@ -24,4 +22,3 @@ jQuery(document).ready(function($) {
 
 	} );
 });
->>>>>>> student-complaint-markup
