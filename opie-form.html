@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
 	<link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/opie-form.css">
 
 </head>
 
@@ -51,25 +52,26 @@
 			<!-- Contact Info panel -->
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
-				<div class="panel-body"> <!-- this is the outer flexbox for this panel -->
-					<div id="subject-row"> <!-- first flexbox item -->
+				<div class="panel-body flex-container column" id="first-panel"> <!-- this is the outer flexbox for this panel -->
+					<div id="subject-row flex-item"> <!-- first flexbox item -->
 						<div class="input-group">
-							<label for="TITLE">Subject:</label>
+							<label class="control-label" for="TITLE">Subject</label>
 							<input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="required" required>
 						</div>
 					</div>
-					<div id="contact_row " class="flex-container"> <!-- second flexbox item, also a flexbox container -->
+					<div id="contact_row " class="flex-item flex-container flex-row"> <!-- second flexbox item, also a flexbox container -->
 						<div class="input-group flex-item">
-							<label for="Last__bName">Last Name</label>
+							<label class="control-label" for="Last__bName">Last Name</label>
 							<input type="text" class="form-control" id="Last__bName" name="Last__bName" placeholder="required" required>
 						</div>
 						<div class="input-group flex-item">
-							<label for="First__bName">First Name</label>
+							<label class="control-label" for="First__bName">First Name</label>
 							<input type="text" class="form-control" id="First__bName" name="First__bName" placeholder="required" required>
 						</div>
 						<div class="input-group flex-item">
-							<label for="Email__bAddress">Email</label>
-							<input type="Email__bAddress" class="form-control" id="Email__bAddress" name="Email__bAddress" placeholder="required" value="" required>
+							<label class="control-label" for="Email__bAddress">Email</label>
+							<input type="email" class="form-control" id="Email__bAddress" name="Email__bAddress" placeholder="required" value="" required>
+							<span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>
 						</div>
 					</div>
 				</div>
@@ -77,13 +79,13 @@
 
 			<!-- Request Information panel -->
 			
-			<div class="panel panel-default">
+			<div class="panel panel-default" id="request-info">
 				<div class="panel-heading">
 					<h3 class="panel-title">Request Information</h3>
 				</div>
 				<div class="panel-body flex-container">
 					<div class="flex-item">
-						<label for="date-needed">Date Needed</label>
+						<label class="control-label" for="date-needed">Date Needed</label>
 						<div class="form-group">	
 							<div class="input-group date">
 								
@@ -97,7 +99,7 @@
 
 					<div class="flex-item recurring">
 						<div class=flex-item>
-							<label for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
+							<label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
 							<div class="input-group">
 								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control">
 									<option value="no-answer">No choice</option>
@@ -107,7 +109,7 @@
 							</div>
 						</div>
 						<div class= "default-hidden flex-item" id="recurring-schedule">
-							<label for="Recurring__bSchedule">Recurring Schedule</label>
+							<label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
 							<div class="input-group">
 								<select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
@@ -121,7 +123,7 @@
 						</div>
 						
 						<div class="default-hidden flex-item" id="explain-other">
-							<label for="Please__bExplain__bOther">Please explain Other</label>
+							<label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
 							<div class="input-group">
 								<INPUT NAME="Please__bExplain__bOther"  class="form-control" SIZE="20" VALUE="">
 							</div>
@@ -129,7 +131,7 @@
 					</div>
 					<div class="flex-item request-type">
 						<div class="flex-item">
-							<label for="Type__bof__bRequest">Type of Request</label>
+							<label class="control-label" for="Type__bof__bRequest">Type of Request</label>
 							<div class="input-group">
 								<select name="Type__bof__bRequest" id="request-type" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
@@ -143,7 +145,7 @@
 							</div>
 						</div>
 						<div class="default-hidden flex-item" id="pi-category-container">
-							<label for="PI__bCategory">PI Category</label>
+							<label class="control-label" for="PI__bCategory">PI Category</label>
 							<div class="input-group">
 								<select name="PI__bCategory" id="pi-category" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
@@ -157,14 +159,14 @@
 							</div>
 						</div>
 						<div class="default-hidden flex-item" id="request-type-unknown">
-							<label for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
+							<label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
 							<div class="input-group">
 								<input type="text" class="form-control" id="unknown-description" name="If__bUnknown__bPlease__bDescribe__c">
 							</div>
 						</div>
 					</div>
 					<div class="flex-item">
-						<label for="Proposed__bAudience">Proposed Audience</label>
+						<label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
 						<div class="input-group">
 							<select name="Proposed__bAudience" id="proposed-audience" class="form-control">
 								<OPTION VALUE ="No Choice" >No Choice</OPTION>
@@ -200,7 +202,7 @@
 			<input type = "hidden" name = "PROJECTNAME" value = "OPIE">
 			<input name = "DATE_TYPE" type = "hidden" value = "0">
 
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" id="submit_button" class="btn btn-primary">Submit</button>
 			<!-- <input type="submit" id="submit" value="Submit"> -->
 		</form>
 
@@ -216,8 +218,8 @@
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-
-    <script src="js/scripts.js"></script>
+	<script src="js/scripts2.js"></script>
+    <script src="js/opie-scripts.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
