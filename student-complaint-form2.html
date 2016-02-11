@@ -13,7 +13,6 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/student-complaint.css">
 
->>>>>>> student-complaint-markup
 
 </head>
 
@@ -37,20 +36,20 @@
 			</div>
 			<div class="panel-body flex-container">
 				<div class="flex-item flex-container">
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="First__bName">First Name</label>
 						<input class="form-control" type="text" name="First__bName" id="First__bName" value="" required title="" placeholder="Required">
 					</div>
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="First__bName">Last Name</label>
 						<INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required placeholder="Required">
 					</div>
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="Email__bAddress">Email Address</label>
 						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
 				</div> <!-- closes 1st row -->
-				<div class="flex-item flex-container">
+				<div class="flex-item flex-container has-feedback">
 					<div class="input-group flex-item">
 						<label class="control-label" for="User__bName">User Name</label>
 						<INPUT  class="form-control" placeholder=" Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required>
@@ -115,7 +114,7 @@
 					</div>
 			  </div>
 			  <div class="panel-body flex-container">
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label for="Feedback">Feedback</label>
 						<SELECT  class="form-control" NAME="Feedback" id="Feedback" required>
 							<OPTION VALUE="Select Choice">Select Choice</OPTION>
@@ -126,7 +125,7 @@
 					</div>
 					<div class="input-group flex-item">
 						<label for="Feedback__bCategory">Feedback Category</label>
-						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE required>
+						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE>
 							<OPTION VALUE="Service">Service</option>
 							<OPTION VALUE="Building">Building</option>
 							<OPTION VALUE="Individual">Individual</option>
@@ -136,7 +135,7 @@
 					</div>
 					<div class="input-group flex-item">
 						<label for="Student__bStatus">Student Status</label>
-						<SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus" required>
+						<SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus">
 							<OPTION VALUE="No Choice">No Choice</OPTION>
 							<OPTION VALUE="Current Student">Current Student</OPTION>
 							<OPTION VALUE="Former Student">Former Student</OPTION>
