@@ -57,7 +57,8 @@ label {
   color: #f6be00; }
 
 .panel-body .flex-item.recurring,
-.panel-body .flex-item.request-type, .panel-body.flex-container {
+.panel-body .flex-item.request-type,
+.panel-body .flex-container, .panel-body.flex-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
