@@ -6,12 +6,12 @@ $(document).ready(function() {
     var $required = $('input,textarea,select').filter('[required]');
 
     $("#submit_button").on("click",function(){
-        consle.log("yo")
+        //
     })
 
     var addAsterisks = function(){
         $required.each(function(i,el){
-            console.log($(el).siblings('label').append("*"));
+            $(el).siblings('label').append("*");
         })
     }
 
@@ -43,18 +43,15 @@ $(document).ready(function() {
         switch (el.type) {
             case "text":
                 if($(el).val() === "") {
-                    console.log("text false")
                     return false;
                 }
                 break;
             case "email":
                 if($(el).val() === "" || !isValidEmail($(el).val())) {
-                    console.log("email false")
                     return false;
                 }
                 break;
             case "select-one":
-                console.log($(el).val());
                 if($(el).val() === "Select Choice") {
                     return false;
                 }

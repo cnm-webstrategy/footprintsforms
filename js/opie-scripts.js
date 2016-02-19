@@ -6,18 +6,18 @@ $(document).ready(function() {
 	});
 
 
-	jQuery.validator.setDefaults({
-		debug: true,
-		success: "valid"
-	});
-	$( "#opie-form" ).validate({
-		rules: {
-			email: {
-				required: true,
-				email: true
-			}
-		}
-	});	
+	//jQuery.validator.setDefaults({
+	//	debug: true,
+	//	success: "valid"
+	//});
+	//$( "#opie-form" ).validate({
+	//	rules: {
+	//		email: {
+	//			required: true,
+	//			email: true
+	//		}
+	//	}
+	//});
 
 	$('.input-group.date').datepicker();
 	$('#date-needed').on('click', function(event) {
