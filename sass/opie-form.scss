@@ -1,0 +1,34 @@
+	#request-info {
+		.panel-body {
+			&.flex-container {
+				flex-direction: column;
+			}
+		}
+	}
+@media screen and (min-width: 768px) {
+	//form {
+		.panel-body{
+			
+			&.flex-container {
+				.flex-item {
+					&.request-type,
+					&.recurring {
+						flex-direction: row;
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				#contact_row {
+				&.flex-item {
+					flex-direction: row;
+					max-width: 100%;
+					width: 100%;
+				}
+				}
+
+			}
+
+		}
+	//}		
+}
+
