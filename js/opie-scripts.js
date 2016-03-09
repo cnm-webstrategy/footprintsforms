@@ -5,20 +5,6 @@ $(document).ready(function() {
 		console.log('x');
 	});
 
-
-	//jQuery.validator.setDefaults({
-	//	debug: true,
-	//	success: "valid"
-	//});
-	//$( "#opie-form" ).validate({
-	//	rules: {
-	//		email: {
-	//			required: true,
-	//			email: true
-	//		}
-	//	}
-	//});
-
 	$('.input-group.date').datepicker();
 	$('#date-needed').on('click', function(event) {
 		event.preventDefault();
@@ -92,18 +78,6 @@ $(document).ready(function() {
 
 		var errorMsg = "";
 
-		// if (!(document.HTML_FORM.TITLE.value))
-		// 	errorMsg += "The field TITLE is mandatory and has been left blank\n";
-
-		// if (!(document.HTML_FORM.Last__bName.value))
-		// 	errorMsg += "The field Last Name is mandatory and has been left blank\n";
-
-		// if (!(document.HTML_FORM.First__bName.value))
-		// 	errorMsg += "The field First Name is mandatory and has been left blank\n";
-
-		// if (!(document.HTML_FORM.Email__bAddress.value))
-		// 	errorMsg += "The field Email Address is mandatory and has been left blank\n";
-
 		if (errorMsg)
 		{
 			//alert(errorMsg);
@@ -122,8 +96,7 @@ $(document).ready(function() {
 		$fields.each(function(index, el) {
 			
 		});
-		//console.log($(this));
-		//if($(this).val()==="")
+
 	});
 });
 
