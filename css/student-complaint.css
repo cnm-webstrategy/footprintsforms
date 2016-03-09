@@ -1,1 +1,13 @@
-student-complaint.css
+.panel-body.flex-container .flex-item.full-width-textarea {
+  max-width: 100%;
+  width: 100%; }
+  .panel-body.flex-container .flex-item.full-width-textarea textarea {
+    width: 100%; }
+
+.input-group {
+  max-width: 100%;
+  width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .input-group {
+    max-width: 228px; } }
