@@ -15,4 +15,6 @@
         -ms-flex-direction: row;
             flex-direction: row;
     max-width: 100%;
-    width: 100%; } }
+    width: 100%; }
+  #TITLE {
+    width: 600px; } }
