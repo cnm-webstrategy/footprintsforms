@@ -17,7 +17,8 @@
 </head>
 
 <BODY class="container">
-	<FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+	<!-- <FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl"> -->
+	<FORM name="HTML_FORM" METHOD="POST" ACTION="#">
 		<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
 		<div class="panel panel-default">
@@ -42,11 +43,11 @@
 					</div>
 					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="First__bName">Last Name</label>
-						<INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required placeholder="Required: CNM Email Preferred">
+						<INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required placeholder="Required">
 					</div>
 					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="Email__bAddress">Email Address</label>
-						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required: CNM Email Preferred"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
 				</div> <!-- closes 1st row -->
 				<div class="flex-item flex-container has-feedback">
@@ -60,7 +61,7 @@
 					</div>
 					<div class="input-group flex-item">
 						<label for="CNM__bID__bNumber">CNM ID Number</label>
-						<INPUT class="form-control" type="text" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="">
+						<INPUT class="form-control" type="number" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="" required placeholder="Required">
 					</div>
 				</div> <!-- closes 2nd row -->
 				<div class="flex-item flex-container">

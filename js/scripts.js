@@ -26,6 +26,14 @@ $(document).ready(function() {
         return pattern.test(str);
     }
 
+    var isNumber = function(str) {
+        return !isNaN(parseFloat(str)) && isFinite(str);
+    }
+
+    // var numberLength = function(n) {
+    //     return Math.floor(Math.log(n) / Math.LN10 + 1);
+    // }
+
     var fieldIsValid = function(el) {
 
         switch (el.type) {
@@ -43,6 +51,14 @@ $(document).ready(function() {
                 if($(el).val() === "Select Choice") {
                     return false;
                 }
+                break;
+            case "number":
+                var $userInput = $(el).val();
+
+                if(!isNumber($userInput) ) {
+                    return false;
+                }
+                break;
         }
 
         return true;
