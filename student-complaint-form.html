@@ -8,7 +8,6 @@
 	<title>Submit Issue to Dean of Students</title>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
-	<!-- <link type="text/css" rel="stylesheet" href="css/bootstrap-datetimepicker.css"> -->
 	<link type="text/css" rel="stylesheet" href="css/jquery.filthypillow.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/student-complaint.css">
@@ -17,8 +16,7 @@
 </head>
 
 <BODY class="container">
-	<!-- <FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl"> -->
-	<FORM name="HTML_FORM" METHOD="POST" ACTION="#">
+	<FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
 		<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
 		<div class="panel panel-default">
@@ -53,11 +51,11 @@
 				<div class="flex-item flex-container has-feedback">
 					<div class="input-group flex-item">
 						<label class="control-label" for="User__bName">User Name</label>
-						<INPUT  class="form-control" placeholder=" Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required>
+						<INPUT  class="form-control" placeholder="Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required>
 					</div>
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label for="CNM__bPhone">Phone</label>
-						<INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="">
+						<INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="" required placeholder="Required">
 					</div>
 					<div class="input-group flex-item">
 						<label for="CNM__bID__bNumber">CNM ID Number</label>
@@ -107,9 +105,9 @@
 							<OPTION VALUE="General Feedback">General Feedback</OPTION>
 						</SELECT>
 					</div>
-					<div class="input-group flex-item">
+					<div class="input-group flex-item has-feedback">
 						<label for="Feedback__bCategory">Feedback Category</label>
-						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE>
+						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE required>
 							<OPTION VALUE="Service">Service</option>
 							<OPTION VALUE="Building">Building</option>
 							<OPTION VALUE="Individual">Individual</option>
