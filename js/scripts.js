@@ -11,6 +11,7 @@ $(document).ready(function() {
 
     var addAsterisks = function(){
         $required.each(function(i,el){
+            //if $required[i].type === 'select-one'
             $(el).siblings('label').append("*");
         })
     }
@@ -48,7 +49,8 @@ $(document).ready(function() {
                 }
                 break;
             case "select-one":
-                if($(el).val() === "Select Choice") {
+            
+                if($(el).val() === "") {
                     return false;
                 }
                 break;

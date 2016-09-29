@@ -53,7 +53,9 @@
 							<!--<span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>-->
 						</div>
 					</div>
+					* denotes required
 				</div>
+
 			</div>
 
 			<!-- Request Information panel -->
@@ -78,10 +80,11 @@
 
 					<div class="flex-item recurring">
 						<div class=flex-item>
-							<label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
+						
 							<div class="input-group">
-								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control">
-									<option value="no-answer">No choice</option>
+								<label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
+								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control" required>
+									<option value="">No choice</option>
 									<option value="one-time">One time</option>
 									<option value="recurring">Recurring</option>
 								</select>

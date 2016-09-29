@@ -2,7 +2,6 @@ $(document).ready(function() {
 	$('#email').on('click',  function(event) {
 		event.preventDefault();
 		/* Act on the event */
-		console.log('x');
 	});
 
 	$('.input-group.date').datepicker();
@@ -25,7 +24,6 @@ $(document).ready(function() {
 	});
 
 	$('#Recurring__bSchedule').on('change', function(event) {
-		console.log(event.target.selectedIndex );
 		if (event.target.selectedIndex === 3){
 			$('#explain-other').removeClass('default-hidden');
 		} else {
@@ -85,7 +83,6 @@ $(document).ready(function() {
 		}
 		else
 		{
-			console.log($('HTML_FORM'))
 			$('#HTML_FORM')[0].submit();
         }
 
