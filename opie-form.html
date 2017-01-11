@@ -66,11 +66,12 @@
 				</div>
 				<div class="panel-body flex-container">
 					<div class="flex-item">
-						<label class="control-label" for="date-needed">Date Needed</label>
-						<div class="form-group">	
+
+						<div class="form-group">
+							<label class="control-label" for="date-needed">Date Needed</label>
 							<div class="input-group date">
-								
-								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
+
+								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker" placeholder="required" required>
 								<div class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 								</div>
@@ -95,7 +96,8 @@
 							<div class="input-group">
 								<select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
-									<OPTION VALUE ="Term" >Term</OPTION>
+									<option value="Monthly">Monthly</option>
+									<OPTION VALUE ="Term" >Each Term</OPTION>
 									<OPTION VALUE ="Annually" >Annually</OPTION>
 									<OPTION VALUE ="Other" >Other</OPTION>
 								</select>
@@ -115,7 +117,7 @@
 						<div class="flex-item">
 							<label class="control-label" for="Type__bof__bRequest">Type of Request</label>
 							<div class="input-group">
-								<select name="Type__bof__bRequest" id="request-type" class="form-control">
+								<select name="Type__bof__bRequest" id="request-type" class="form-control" required>
 									<OPTION VALUE ="No Choice" >No Choice</OPTION>
 									<OPTION VALUE ="Accreditation Reporting" >Accreditation Reporting</OPTION>
 									<OPTION VALUE ="Institutional Research" >Institutional Research</OPTION>
@@ -150,7 +152,7 @@
 					<div class="flex-item">
 						<label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
 						<div class="input-group">
-							<select name="Proposed__bAudience" id="proposed-audience" class="form-control">
+							<select name="Proposed__bAudience" id="proposed-audience" class="form-control" required>
 								<OPTION VALUE ="No Choice" >No Choice</OPTION>
 								<OPTION VALUE ="Internal CNM " >Internal CNM (Employees only)</OPTION>
 								<OPTION VALUE ="External to CNM" >External to CNM</OPTION>

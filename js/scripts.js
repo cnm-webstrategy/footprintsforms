@@ -10,9 +10,20 @@ $(document).ready(function() {
     })
 
     var addAsterisks = function(){
+
         $required.each(function(i,el){
-            //if $required[i].type === 'select-one'
-            $(el).siblings('label').append("*");
+
+            if ($(el).siblings('label').length > 0 ){
+                $(el).siblings('label').append("*");
+            } else if ($(el).parent().siblings('label').length > 0 ) {
+                $(el).parent().siblings('label').append("*");
+            }
+
+            // else if ( $(el).parent().siblings('label').length > 0 ) {
+            //     $(el).parent().siblings('label').append("*");
+            //     console.log( "parent" )
+            // }
+
         })
     }
 
@@ -49,8 +60,7 @@ $(document).ready(function() {
                 }
                 break;
             case "select-one":
-            
-                if($(el).val() === "") {
+                if($(el).val() === "" || $(el).val() === "No Choice") {
                     return false;
                 }
                 break;
@@ -66,12 +76,13 @@ $(document).ready(function() {
         return true;
     }
 
-    var formIsValid = function (evt) {
+    var formIsValid = function () {
         this.isValid = false;
         var self = this;
 
         // check to see if ANY fields are empty, if they are, invalidate form
         $required.each(function(i, el){
+
             if(!fieldIsValid(el)){
                 self.isValid = false;
                 return false;
@@ -87,9 +98,9 @@ $(document).ready(function() {
 
     // check each keystroke in required fields to see if 
     // the error style should be removed.
-    $required.bind('input', function(event) {
-        if(formIsValid(event)){
+    $required.on('change', function(event) {
 
+        if(formIsValid()){
 
             $submitButton.prop('disabled', false);
         } else {
