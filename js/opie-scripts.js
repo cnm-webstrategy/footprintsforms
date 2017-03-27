@@ -24,7 +24,9 @@ $(document).ready(function() {
 	});
 
 	$('#Recurring__bSchedule').on('change', function(event) {
-		if (event.target.selectedIndex === 3){
+
+		console.log(event.target.selectedIndex)
+		if (event.target.selectedIndex === 4){
 			$('#explain-other').removeClass('default-hidden');
 		} else {
 			$('#explain-other').addClass('default-hidden');
