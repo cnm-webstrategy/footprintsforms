@@ -1,0 +1,1091 @@
+<HTML><head><meta http-equiv="x-ua-compatible" content="IE=EmulateIE9">
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+<title>Submit Issue to Dean of Students</title><link type="text/css" rel="stylesheet" href="/tmp/css/base.css?VERSION=11.6.04-11">
+<link type="text/css" rel="stylesheet" href="/tmp/css/global.css?VERSION=11.6.04-11">
+<link type="text/css" rel="stylesheet" href="/tmp/css/bmc.css?VERSION=11.6.04-11">
+<link type="text/css" rel="stylesheet" href="/tmp/javascript/yui/build/fonts/fonts-min.css?VERSION=11.6.04-11">
+<!--[if IE]><link type="text/css" rel="stylesheet" href="/tmp/css/ie.css?VERSION=11.6.04-11">
+<![endif]--><script type="text/javascript" defer="defer" src="/tmp/javascript/ResizeDocument.js?VERSION=11.6.04-11"></script>
+<style type="text/css">
+
+
+/* FP VERSION: 11.6.04  */
+
+
+
+/* styles for Quick Templates and Preventive Maintenance issue form */
+.hidden_field{
+	display:none;
+}
+.ygtvitem, .ygtvlabel, .ygtvlabel:link .ygtvlabel:visited, .ygtvlabel:hover{background-color:#FFFFFF !important;}
+.ygtvfocus, .ygtvfocus .ygtvlabel, .ygtvfocus .ygtvlabel:hover{font-weight:bold;background-color:#FFFFFF !important;}
+.ygtvfocus .emptyGroup{font-weight:normal;background-color:#FFFFFF !important;} 
+
+
+/* td.fieldLabel - apply to the cell holding label for proj and ab field input */
+td.fieldLabel, div.fieldLabel
+{
+    text-align: left;
+    font-weight: bold;
+    vertical-align: top;
+/*     white-space:nowrap; */
+}
+
+/* td.fieldInput - apply to the cell holding input for proj and ab field */
+td.fieldInput, div.fieldInput
+{
+    text-align: left;
+/*     white-space: nowrap; */
+    vertical-align: top;   
+}
+div.fieldInput, div.fieldLabel
+{
+    white-space: nowrap;
+}
+/* fix what ext-all.css took away */
+td.fieldInput ul,td.fieldInput ol, div.fieldInput ul,div.fieldInput ol, span.description ul, span.description ol { margin: 20px; }
+td.fieldInput ul, div.fieldInput ul, span.description ul, span.description ul li { list-style: disc; }
+td.fieldInput ul ul, div.fieldInput ul ul, span.description ul ul { list-style: circle; }
+td.fieldInput ul ul ul, div.fieldInput ul ul ul, span.description ul ul ul { list-style: square; }
+td.fieldInput ol, div.fieldInput ol, span.description ol { list-style: decimal; }
+
+td.fieldInput strong, div.fieldInput strong, td.fieldInput th, span.description strong, span.description th { font-weight: bold; }
+
+table.straightenColumnsSingle td .indented
+{
+    margin-left: 0;
+}
+
+/* notice the input cell doesn't get a width within straightenColumnsSingle tables */
+table.straightenColumns td.fieldInput,
+table.straightenColumns div.fieldInput
+{
+   /* width: 20%;*/
+    white-space:nowrap;
+}
+
+table.straightenColumns td.dateFieldInput,
+table.straightenColumns span.dateFieldInput
+{
+    width: 30%;
+}
+
+
+/* select.ticketField -- apply to text inputs, dropdowns and multi-selects used for project and ab fields */
+.cell .fieldInput select.ticketField, .cell .fieldInput input.ticketField, .cell .fieldInput textarea.ticketField
+{
+  width: 98%;
+}
+.cols-2 .cell .fieldInput textarea.ticketField, .cols-3 .cell .fieldInput textarea.ticketField
+{
+    width: 90%;
+}
+.cols-4 .cell .fieldInput textarea.ticketField, .cols-5 .cell .fieldInput textarea.ticketField, .cols-6 .cell .fieldInput textarea.ticketField
+{
+    width: 80%;
+}
+/* sfi - subtask field inheritance; set on the create template page; if present - takes part of the input div */
+.ticketFieldIncludeSFI
+{
+  width: 80%;
+
+}
+
+select.ticketTitleInput, input.ticketTitleInput
+{
+  width: 40em;
+}
+
+
+
+
+/* table.dialog -- these are the islands you find in places like the create page. Style makes them spaced apart and proper bgcolor */
+table.dialog
+{
+    margin-bottom: 6px;
+    background-color: #FFFFFF;
+    border: 1px solid #006699;
+    width: 100%;
+}
+
+.FBstyle table.dialog
+{
+    border: 1px solid #cccccc;
+}
+
+/* combine with above to remove border */
+table.nested
+{
+    border: none;
+}
+
+/* pair this with table.dialog to override the blue border on a tab group */
+table.tabbed
+{
+/*    border: 1px outset threedhighlight !important;*/
+}
+
+
+table.tabbed 
+{
+    /* Let's us come closer to bottom of screen without scrollbars appearing on window  */
+    margin-bottom: 0px;
+    /* fixes misaligment of tab menu caused by a rule in reset.css*/
+    border-collapse: separate; 
+}
+
+/* rounded dialogs combine table.dialog and table.roundedDialog to remove border */
+table.roundedDialog
+{
+    border: none;
+}
+
+
+/* table.dialogHeading -- used to start off a floating table with a dark bar going across top */
+table.dialogHeading
+{
+    height: 26px;
+    background-color: #006699;
+    background-image: url(/MRimg/gradientDialog_sys.gif);
+    background-position: bottom;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.FBstyle table.dialogHeading, .FBstyle table.dialogHeading td.dialogTitle
+{
+    /* taken partially from .pageHeader */
+    font-size: 13px;
+    color: #006699;
+    font-weight: bold;    
+
+    /* additional */
+    background-color: #FFFFFF;
+    margin-top: 5px;
+    margin-left: 8px;
+    width: 98%;
+    background-image: none;  
+}
+.FBstyle table.dialogHeading td.dialogTitle
+{
+   /*display: block;*/
+   width:400px;
+}
+
+
+/* td.dialogTitle --  to format the title of a floating table */
+table.dialogHeading td.dialogTitle
+{
+    padding-left: 4px;
+    font-weight: bold;
+    font-size: 9pt;
+    font-family: Arial;
+}
+
+/* td.dialogHeadingItem --  cell for the controls that could go along the top of a dialog */
+table.dialogHeading td.dialogHeadingItem
+{
+    white-space: nowrap;
+}
+/* any dropdown along the header bar should have inverse colors and bold text */
+table.dialogHeading td select
+{
+    color: #006699;
+/*    background-color: #FFFFFF; */
+    font-weight: bold;
+}
+
+td.dialogMainContent
+{
+    padding: 3px 4px 11px 11px;
+    width: 100%;
+}
+
+
+/* Used for displaying controls at the top of an expand/collapse or tabbed dialog */
+table.inlineDialogHeading
+{
+    margin-bottom: 6px;
+}
+
+table.inlineDialogHeading td
+{
+    padding-right: 24px;
+}
+
+
+
+
+
+/* tr.homepageRow - Homepage ticket row */
+tr.homepageRow
+{
+    background-color: #E4E1DC;
+}
+/* this makes the assignees dropdown match the background color of the rest of the row */
+tr.homepageRow select
+{
+    background-color: #E4E1DC;
+}
+
+/* tr.selectedRow - When you mouseover a homepage ticket row */
+tr.selectedRow, tr.selectedRow select
+{
+    cursor: pointer;
+    background-color: #F0EFEA;
+}
+tr.homepageRow td, tr.selectedRow td
+{
+    border-bottom: 1px outset threedhighlight;
+}
+tr.homepageRow td.leftEdge, tr.selectedRow td.leftEdge
+{
+    border-left: 1px outset threedshadow;
+}
+tr.homepageRow td.rightEdge, tr.selectedRow td.rightEdge
+{
+    border-right: 1px solid threedshadow;
+}
+
+/* tr.homepageTopRow  - bar along the top of homepage table containing the display dropdown */
+tr.homepageTopRow
+{
+    
+            background-color: #006699;
+            background-image: url(/MRimg/gradientDialog_sys.gif);
+            background-position: bottom;
+}
+
+/* set text attributes for the whole top row including the nested table */
+tr.homepageTopRow, tr.homepageTopRow table
+{
+    text-align: left;
+    color: #FFFFFF;
+    font-weight: bold
+}
+tr.homepageTopRow td
+{
+    border-top: 1px outset threedhighlight;
+    border-top: 1px solid #006699;
+    
+}
+/* this is to prevent the previous declaration from carrying into subtables in the homepageTopRow row. IE 6 doesn't handle child selector or I'd use that*/
+tr.homepageTopRow table td
+{
+    border-top: none;
+}
+tr.homepageTopRow td.rightEdge
+{
+    border-right: 1px solid #006699;
+    
+}
+tr.homepageTopRow td.leftEdge
+{
+    border-left: 1px solid #006699;
+        
+}
+tr.homepageTopRow span /* handles the refresh button text */
+{
+    color: #FFFFFF;
+}
+tr.homepageTopRow select /* homepage display dropdown */
+{
+    color: #006699;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* apply to column headings along top of homepage list */
+tr.homepageHeadingsRow th
+{
+    height: 22px;
+    vertical-align: bottom;
+    text-align: left;
+    font-weight: bold;
+    color: #006699;
+    background-color: #D5DFE5; /* matches toolbar frame background */
+    border-right: 1px solid #006699;
+    border-bottom: 1px solid #006699;
+    padding-left: 4px; /* space between text and separator */
+}
+tr.homepageHeadingsRow th.rightEdge
+{
+    border-right: 1px solid #006699;
+}
+tr.homepageHeadingsRow th.leftEdge
+{
+    border-left: 1px solid #006699;
+    border-right: none;
+}
+/*  make sure links within column headings won't take on the VLINK, LINK or ALINK colors
+    this should match color of tr.homepageHeadingsRow */
+tr.homepageHeadingsRow th a:link { color: #006699; text-decoration: none; }
+tr.homepageHeadingsRow th a:hover { text-decoration: underline; }
+
+
+
+
+body
+{
+    color: black;
+    background-color: #EFEFEF;
+    
+}
+
+body.tightPage { margin: 1px .125in 6px .125in; }
+
+/* CI Toolbar needs to have the same background as the page body */
+.citoolbar{background-color: #EFEFEF;}
+
+/* table.projectTotals -- project totals and global issues tables that go at the top of homepage */
+table.projectTotals
+{
+    color : #777777;
+}
+table.projectTotals a
+{
+    color : #777777;
+}
+
+
+/* td.projectTotalsContainer -- holds the project totals and global issues tables */
+td.projectTotalsContainer
+{
+      background-color: #E4E1DC;
+      text-align: center;
+      vertical-align: top;
+      border: solid 1px navy;
+}
+
+*.pageHeader
+{
+    font-size: 13px;
+    color: #006699;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+/* a heading placed inside an island to divide the island's content */
+*.internalHeader
+{
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #777777;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    margin-top: 24px; /* assume we're not the first in a series of sections */
+}
+*.firstInternalHeader
+{
+    margin-top: 4px;
+}
+
+    
+/* text to introduce a section after an internalHeader */
+div.sectionIntro
+{
+    margin-top: 2px;
+    margin-bottom: 12px;
+}
+
+
+table.reportTable
+{
+    border: 1px solid black;
+}
+tr.reportHeadingsRow
+{
+    background-color: #F0EFEA;
+}
+th.reportColumnTitle, td.reportColumnTitle
+{
+    font-weight: bold;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+th.reportRowTitle, td.reportRowTitle
+{
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    background-color: #E4E1DC;
+    white-space: nowrap;
+    border-top: 1px solid black;
+}
+
+td.reportDataCell
+{
+    border-top: 1px solid black; border-left: 1px solid black;
+    text-align: right;
+    padding: 5px;
+}
+
+div.reportTimestamp
+{
+    text-align: right;
+    font-size: xx-small;
+    color: #006699;
+    margin-top: 50px;
+    margin-right:14px;
+}
+
+/* rules for assignee picker with teams. This does not work in IE */
+option.member { padding-left: 2em; }
+option.team, option.tabBreak
+{
+    background-color:  #006699;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    margin: 1px 0px 1px 2px;
+}
+
+
+/* used on field maintenance and CI Type config. overriding bg color defined above; */
+option.tabBreak {    background-color: dodgerblue; border-width:1px; }
+option + option.tabBreak { margin-top: 6px; }
+
+.mandatory { color: #990000; } /* an element using this class will cause the tab containing it to appear red too */
+.note { color: #990000; font-style: italic; font-weight: bold; }
+
+/* only visible when the labels they belong to are mandatory */
+                span.asteriskHolder {    display: none;   }
+label.mandatory span.asteriskHolder {    display: inline; }
+
+
+a.button:link, a.button:visited, a.button:hover, a.button:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+div.button_off
+{
+  border: none;
+  padding: 3px 4px 3px 4px;
+}
+
+div.button_on
+{
+  border: outset threedhighlight 2px;
+  padding: 1px 2px 1px 2px;
+}
+
+div.button_pressed
+{
+  border: inset threedhighlight 2px;
+  padding: 2px 1px 0px 3px;
+}
+
+
+/* these are the messages given after a ticket gets created or edited */
+*.refreshMessage 
+{
+    color: #006699;
+    font-style: italic;
+    display: block;
+    margin-bottom: 6px;
+}
+
+
+/* for disabled form fields and associated text */
+.disabled, .perms-disabled
+{
+    color:      #808080;
+}
+
+/* Skin YUI and ExtJS components to match our theme */
+.yui-panel
+{
+    margin-bottom: 6px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border: 1px solid #006699;
+}
+
+.yui-panel .hd
+{
+    background-color: #006699;
+    background-image: url(/MRimg/gradientDialog_sys.gif);
+    background-position: bottom;
+    color: #FFFFFF;
+    border: none;
+}
+
+.yui-panel .bd, .yui-panel .ft
+{
+    background-color: #FFFFFF;
+}
+/* to use same close icon ExtJs uses */
+.yui-panel .container-close
+{
+    background: transparent url(/tmp/javascript/ext/resources/images/default/panel/tool-sprites.gif) no-repeat scroll 0 0;
+    height: 15px;
+    width: 15px;
+    top: 2px;
+}
+
+
+/* these need to be marked !important because often we'll load an Ext theme after printing them */
+.x-window-tc { background: #006699 url(/MRimg/gradientComponent_sys.gif) repeat-x !important; text-align: left; }
+.x-window-tl { background: url(/MRimg/componentTopLeft_sys.gif) no-repeat !important }
+.x-window-tr { background: url(/MRimg/componentTopRight_sys.gif) repeat-x scroll right top !important }
+.x-window-bl { background: url(/MRimg/componentBottomLeft_sys.gif) no-repeat scroll left bottom !important; }
+.x-window-br { background: url(/MRimg/componentBottomRight_sys.gif) no-repeat scroll right bottom !important }
+.x-window-ml,  .x-window-mr  { background: #006699 !important }
+.x-window-bc { background: #FFFFFF !important; border-bottom: 3px solid #006699 }
+
+/* to make the bottom, left & right edges line up with our smaller corner images */
+.x-window-ml { padding-left: 4px !important; }
+.x-window-mr { padding-right: 4px !important; }
+.x-window-bc .x-window-footer { padding-bottom: 3px !important; }
+.x-window-bl { padding-left: 11px !important }
+.x-window-br { padding-right: 11px !important }
+
+.x-window-mc { border: none !important; text-align: left; background: #FFFFFF !important;}
+.x-window-header-text { color: #FFFFFF !important; font-size: 10pt !important}
+.fp-large-title .x-window-header-text { font-size: 15pt !important; }
+.x-window-plain .x-window-body, .x-window-body { background: #FFFFFF !important; } 
+
+/* make window footer match table color */
+.x-panel-btns-ct { background: #FFFFFF !important;}
+
+/* this is useful in general */
+.x-window-body {  padding: 10px !important }
+
+.x-window-bwrap .x-window-ml .x-window-mr .x-window-mc .x-window-body { position: relative; }
+
+/* configure an Ext.menu with cls: 'fp-no-icon-menu' and there will not be a space reserved on the left for an icon */
+.fp-no-icon-menu { background: #f0f0f0 }
+.fp-no-icon-menu A.x-menu-item { padding-left: 3px; }
+
+/*  Set minimal width for non mobile pages */
+.MinWidth {min-width: 900px;}
+/*  Overloaded color settings   */
+#ContentWrapper {
+    background-color: #FFFFFF;
+    box-shadow:0px 0px 15px #858585
+}
+
+/*#Nav { background-color: #D5DFE5; border-bottom-color: #006699;}*/ /* from custom.css */
+/*#Nav li a:hover { color: #006699; }*/ /* from custom.css */
+/*#Nav li ul { border-color: #006699; }*/ /* from custom.css */
+
+div#Nav li a:hover {
+    color: #006699;
+}
+
+div#Nav li ul {
+    border-color: #006699;
+}
+
+div#NavBg {
+    height: 100%;
+    background: #D5DFE5;
+    background: -moz-linear-gradient(top, #ffffff, #D5DFE5);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#D5DFE5));
+    background: -webkit-linear-gradient(top, #ffffff, #D5DFE5);
+    background: -o-linear-gradient(top, #ffffff, #D5DFE5);
+    background: -ms-linear-gradient(top, #ffffff, #D5DFE5);
+    background: linear-gradient(top, #ffffff, #D5DFE5);
+    background: linear-gradient(top, #ffffff, #D5DFE5);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#D5DFE5');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#D5DFE5')";
+    zoom: 1;
+}
+
+/* toolbar icons */
+div#NavBg a.toolbar-link img {
+    max-height: 28px;
+    max-width: 33px;
+}
+
+#Widgets {
+    background: #FFFFFF;
+    background: -moz-linear-gradient(top, #D5DFE5, #FFFFFF);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D5DFE5), color-stop(100%,#FFFFFF));
+    background: -webkit-linear-gradient(top, #D5DFE5, #FFFFFF);
+    background: -o-linear-gradient(top, #D5DFE5, #FFFFFF);
+    background: -ms-linear-gradient(top, #D5DFE5, #FFFFFF);
+    background: linear-gradient(top, #D5DFE5, #FFFFFF);
+    background: linear-gradient(top, #D5DFE5, #FFFFFF);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#D5DFE5', endColorstr='#FFFFFF');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#D5DFE5', endColorstr='#FFFFFF')";
+    zoom: 1;
+}
+
+
+
+a#Project
+{
+    color: #006699;
+}
+
+.breadcrumbdarkblue
+{
+    color: #006699;
+}
+
+table.tickets td        { color: #777777; } /* from homepage.css */
+table.tickets { border: 1px solid #006699; width: 100% } /* from homepage.css */
+table.tickets th /* from homepage.css */
+{ 
+     background-image: url(/MRimg/gradientDialog_sys.gif); 
+     background-color: #006699;
+} 
+table.tickets th, table.tickets th a { color: #FFFFFF; } /* from homepage.css */
+.quiet                  { color: #777777 !important;}  /* from global.css */
+
+/* Document Resizing Mechanism */
+.DocumentWidth    { width: 950px; }
+.DocumentSubWidth { width: 936px; }
+
+
+/*dependency group color regions*/
+.dependency-1, .dependency-parent-1, .cell.dependency-parent-1, .dependency-1 .cell .fieldLabel div, .dependency-parent-1.cell .fieldLabel div, 
+.dependency-5, .dependency-parent-5, .cell.dependency-parent-5, .dependency-5 .cell .fieldLabel div, .dependency-parent-5.cell .fieldLabel div, 
+.dependency-9, .dependency-parent-9, .cell.dependency-parent-9, .dependency-9 .cell .fieldLabel div, .dependency-parent-9.cell .fieldLabel div, 
+.dependency-13, .dependency-parent-13, .cell.dependency-parent-13, .dependency-13 .cell .fieldLabel div, .dependency-parent-13.cell .fieldLabel div {
+    background-color: #FAFAD2 !important;
+}
+
+.dependency-2, .dependency-parent-2, .cell.dependency-parent-2, .dependency-2 .cell .fieldLabel div, .dependency-parent-2.cell .fieldLabel div, 
+.dependency-6, .dependency-parent-6, .cell.dependency-parent-6, .dependency-6 .cell .fieldLabel div, .dependency-parent-6.cell .fieldLabel div, 
+.dependency-10, .dependency-parent-10, .cell.dependency-parent-10, .dependency-10 .cell .fieldLabel div, .dependency-parent-10.cell .fieldLabel div,
+.dependency-14, .dependency-parent-14, .cell.dependency-parent-14, .dependency-14 .cell .fieldLabel div, .dependency-parent-14.cell .fieldLabel div {
+    background-color: #E6E6FA !important;
+}
+
+.dependency-3, .dependency-parent-3, .cell.dependency-parent-3, .dependency-3 .cell .fieldLabel div, .dependency-parent-3.cell .fieldLabel div,
+.dependency-7, .dependency-parent-7, .cell.dependency-parent-7, .dependency-7 .cell .fieldLabel div, .dependency-parent-7.cell .fieldLabel div,
+.dependency-11, .dependency-parent-11, .cell.dependency-parent-11, .dependency-11 .cell .fieldLabel div, .dependency-parent-11.cell .fieldLabel div,
+.dependency-15, .dependency-parent-15, .cell.dependency-parent-15, .dependency-15 .cell .fieldLabel div, .dependency-parent-15.cell .fieldLabel div {
+    background-color: #FFDDFF !important;
+}
+
+.dependency-4, .dependency-parent-4, .cell.dependency-parent-4, .dependency-4 .cell .fieldLabel div, .dependency-parent-4.cell .fieldLabel div,
+.dependency-8, .dependency-parent-8, .cell.dependency-parent-8, .dependency-8 .cell .fieldLabel div, .dependency-parent-8.cell .fieldLabel div,
+.dependency-12, .dependency-parent-12, .cell.dependency-parent-12, .dependency-12 .cell .fieldLabel div, .dependency-parent-12.cell .fieldLabel div,
+.dependency-16, .dependency-parent-16, .cell.dependency-parent-16, .dependency-16 .cell .fieldLabel div, .dependency-parent-16.cell .fieldLabel div {
+    background-color: #CFFFEE !important;
+}
+
+strong, b {font-weight: bolder;}
+i, cite, em, var, address {font-style: italic;}
+
+/*active tab should have the same color as the body background*/
+#VerticalTabsAndMenuHolder #tabMenu ul li.chosen {background: #FFFFFF;}
+
+/*subtasks checkboxes*/
+.SubtasksUpdaterFS {
+  display: inline; border: none; padding: 0px 5px 0px 0px
+}
+.SubtasksUpdaterFS .subtaskSpan {margin-right: 12px;float:left;}
+.SubtasksUpdaterFS .subtaskSpan label {display:inline}
+
+/* social media */
+div.smc_bc_label{
+    text-align: right; padding: 5px 15px;
+}
+
+div.fieldGroupContainer{
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-right: 5px;
+}
+div.fieldGroupHeader{
+    font-weight: bold;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 3px;
+}
+div.fieldGroupContent{
+    
+}
+
+</style>
+<script type="text/javascript">
+
+
+function highlightButton(isOn, id)
+{
+    theEl = document.getElementById(id);
+    if (isOn)
+        theEl.className = "button_on";
+    else
+        theEl.className = "button_off";    
+}
+function mousedownButton(id)
+{
+    theEl = document.getElementById(id);
+    theEl.className = "button_pressed";
+}
+</script>
+</head><BODY bgcolor = "#FFFFFF">
+<FORM name = "HTML_FORM" METHOD=POST ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+<BR>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0  class = "dialog" width="100%">
+<tr class = "dialogHeading"><td><table border = "0" class = "dialogHeading"><tr><td class = "dialogTitle">
+<font size="4">Student Complaint Form</font></td></tr></table></td></tr><tr><td>
+<font face=""Verdana, Arial, Helvetica, sans-serif"" size="-1" color = "#990000"> ** Mandatory fields are highlighted and preceded by an asterisk</font><p><B>
+<p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.
+<br><i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
+<BR>
+</TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 class = "dialog" width="100%">
+ <TR class = "dialogHeading">
+  <td><table border = "0" class = "dialogHeading"><tr><td class = "dialogTitle">
+<font size="4">Contact Information</font></td></tr></table></td></tr>
+<tr><td class = "dialog"><br><table border=0><TR>
+
+<Th align = "left">
+<FONT COLOR = "#990000">*First Name</font>
+</th>
+<td><INPUT NAME="First__bName" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left">
+<FONT COLOR = "#990000">*Last Name</font>
+</th>
+<td><INPUT NAME="Last__bName" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left">
+<FONT COLOR = "#990000">*Email Address</font>
+</th>
+<td><INPUT NAME="Email__bAddress" SIZE="20" VALUE=""><BR></td>
+</TD>
+</TR>
+
+<TR>
+<Th align = "left">
+<FONT COLOR = "#990000">*User Name</font>
+</th>
+<td><INPUT placeholder="If none type email address" NAME="User__bName" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left">
+Phone</font>
+</th>
+<td><INPUT NAME="CNM__bPhone" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left">
+CNM ID Number</font>
+</th>
+<td><INPUT NAME="CNM__bID__bNumber" SIZE="20" VALUE=""><BR></td>
+</tr>
+
+<tr> 
+<Th align = "left">
+Student Address</font>
+</th>
+<td><INPUT NAME="Student__bAddress" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left">
+City</font>
+</th>
+<td><INPUT NAME="City" SIZE="20" VALUE=""><BR></td>
+
+
+<Th align = "left">
+State</font>
+</th>
+<td><INPUT NAME="State" SIZE="20" VALUE=""><BR></td>
+
+<tr>
+<Th align = "left">
+Zip Code</font>
+</th>
+<td><INPUT NAME="Zip__bCode" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left" class="hidden_field">
+Alt Phone - Cell</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bCell" SIZE="20" VALUE=""><BR></td>
+</TD>
+</TR>
+
+<TR>
+<Th align = "left" class="hidden_field">
+Alt Phone - Home</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bHome" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left" class="hidden_field">
+Job Title</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Job__bTitle" SIZE="20" VALUE=""><BR></td>
+</TD>
+</TR>
+
+<TR>
+<Th align = "left" class="hidden_field">
+Department</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Department" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left" class="hidden_field">
+Office Location</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Office__bLocation" SIZE="20" VALUE=""><BR></td>
+
+<Th align = "left" class="hidden_field">
+Campus</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Campus" SIZE="20" VALUE=""><BR></td>
+</TD>
+</TR>
+
+<TR>
+<Th align = "left" class="hidden_field">
+Alt Phone - Pager</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Alt__bPhone__b__u__bPager" SIZE="20" VALUE=""></td>
+
+<Th align = "left" class="hidden_field">
+Full Name</font>
+</th>
+<td><INPUT class="hidden_field" NAME="Full__bName" SIZE="20" VALUE=""></td>
+</TD>
+</TR>
+</TABLE></td></tr></table></table><br></table>
+
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 class = "dialog" width="100%">
+ <TR class = "dialogHeading">
+  <td><table border = "0" class = "dialogHeading"><tr><td class = "dialogTitle">
+<font size="4">Issue Information</font></td></tr></table></td></tr>
+<tr><td class = "dialog"><br><table border=0><TR>
+
+<Table>
+<Th align = "left">
+<FONT COLOR = "#990000">*Subject:</FONT>
+</th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT TYPE=TEXT NAME=TITLE SIZE=70 VALUE="" MAXLENGTH="250"><BR></td>   
+</Table>
+<br>
+
+<table>
+<tr>
+<Th align = "left">
+<FONT COLOR = "#990000">*Feedback</font>
+</th>
+<td><SELECT NAME="Feedback" >
+<OPTION VALUE ="Select Choice" >Select Choice</OPTION>
+<OPTION VALUE ="Complaint" >Complaint</OPTION>
+<OPTION VALUE ="Compliment" >Compliment</OPTION>
+<OPTION VALUE ="General Feedback" >General Feedback</OPTION>
+</SELECT></FONT><BR></td>
+
+<Th align = "left">
+Student Status</font>
+</th>
+<td><SELECT NAME="Student__bStatus" >
+<OPTION VALUE ="No Choice" >No Choice</OPTION>
+<OPTION VALUE ="Current Student" >Current Student</OPTION>
+<OPTION VALUE ="Former Student" >Former Student</OPTION>
+<OPTION VALUE ="Other" >Other</OPTION>
+</SELECT></FONT><BR></td>
+</TD>
+</TR>
+
+<TR>
+<Th align = "left">
+Feedback Category</font>
+</th>
+<td><INPUT TYPE=HIDDEN NAME=MULTIVALUE_FIELDS VALUE="Feedback__bCategory"><SELECT NAME="Feedback__bCategory" SIZE=4 MULTIPLE>
+<OPTION VALUE ="Service" >Service</OPTION>
+<OPTION VALUE ="Building" >Building</OPTION>
+<OPTION VALUE ="Individual" >Individual</OPTION>
+<OPTION VALUE ="Coursework" >Coursework</OPTION>
+<OPTION VALUE ="Other" >Other</OPTION>
+</SELECT></FONT><BR></td>
+
+<Th align = "left">
+Date Event Occured</font>
+</th>
+<TD>
+<TABLE border=0>
+<TR>
+<TH nowrap> Mon &nbsp;&nbsp;&nbsp;Day &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </B>
+</Th>
+<th> Hour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minute </th>
+</TR>
+<TR>
+<TH nowrap>
+<INPUT TYPE = "text" placeholder=" MM" NAME = "Month_Date__bEvent__bOccured" SIZE = "2" VALUE = "" MAXLENGTH = "2">
+<INPUT TYPE = "text" placeholder=" DD" NAME = "Day_Date__bEvent__bOccured" SIZE = "2" VALUE = "" MAXLENGTH = "2">
+<INPUT TYPE = "text" placeholder=" YYYY" NAME = "Year_Date__bEvent__bOccured" SIZE = "4" VALUE = "" MAXLENGTH = "4">
+</td><td nowrap>
+<select name = "Hour_Date__bEvent__bOccured">
+<option value = "">None<option value = "00">0
+<option value = "01">1
+<option value = "02">2
+<option value = "03">3
+<option value = "04">4
+<option value = "05">5
+<option value = "06">6
+<option value = "07">7
+<option value = "08">8
+<option value = "09">9
+<option value = "10">10
+<option value = "11">11
+<option value = "12">12
+<option value = "13">13
+<option value = "14">14
+<option value = "15">15
+<option value = "16">16
+<option value = "17">17
+<option value = "18">18
+<option value = "19">19
+<option value = "20">20
+<option value = "21">21
+<option value = "22">22
+<option value = "23">23
+</select> : <select name = "Minute_Date__bEvent__bOccured">
+<option value = "">None<option value = "00">00
+<option value = "05">05
+<option value = "10">10
+<option value = "15">15
+<option value = "20">20
+<option value = "25">25
+<option value = "30">30
+<option value = "35">35
+<option value = "40">40
+<option value = "45">45
+<option value = "50">50
+<option value = "55">55
+</select></TH>
+</TR>
+</TABLE></td>
+</tr>
+
+<tr>
+    <Th align = "left">
+Course Name</font>
+</th>
+<td><INPUT placeholder="If realted to a course." NAME="Course__bName" SIZE="30" VALUE=""><BR></td>
+</tr>
+
+<tr>
+<Th align = "left">
+Name of Individual</font>
+</th>
+<td><INPUT placeholder="If related to an individual" NAME="Name__bof__bIndividual" SIZE="30" VALUE=""><BR></td>
+</TD>
+
+</tr>
+
+<Th align = "left">
+Confidentiality</font>
+</th>
+<td><SELECT NAME="Confidentiality">
+<OPTION VALUE ="No Choice" >No Choice</OPTION>
+<OPTION VALUE ="You may use my name" >You may use my name</OPTION>
+<OPTION VALUE ="You may use my name but only after the end of term" >You may use my name but only after the end of term</OPTION>
+<OPTION VALUE ="Do not use my name" >Do not use my name</OPTION>
+</SELECT></FONT><BR></td>
+
+<Th align = "left">
+Referred by</font>
+</th>
+<td><INPUT NAME="Referred__bby" SIZE="20" VALUE=""><BR></td>
+</TD>
+</TR>
+
+
+<TR>
+<Th align = "left">
+</th></tr><tr><th align = "left">Description of Event</font>
+</th>
+<TD colspan=3>
+<B><TEXTAREA placeholder="Please descripe the issue or event here." NAME=LONGDESCRIPTION ROWS=5 COLS=60 WRAP=HARD></TEXTAREA><BR><br>
+</TD></TD>
+</TR>
+<TR>
+<Th align = "left">
+</th></tr><tr><th align = "left">Individual Outcome or Discussion</font>
+</th>
+<TD colspan=3>
+<B><TEXTAREA placeholder="If you spoke with an individual please include a quick description of the outcome." NAME = "Individual__bOutcome__bor__bDiscussion" ROWS = "5" COLS = "60" WRAP = "HARD"></TEXTAREA><BR>
+</TD></TD>
+</TR>
+</TABLE><br></td></tr></table></table><br>
+    <script language = "javascript">
+    var emailField = 'Email__bAddress';
+    var userPriv = 1;
+    var abFields = new Array("Last__bName","First__bName","Email__bAddress","User__bName","CNM__bPhone","Alt__bPhone__b__u__bCell","Alt__bPhone__b__u__bPager","Alt__bPhone__b__u__bHome","Job__bTitle","Department","Office__bLocation","Campus","CNM__bID__bNumber","Full__bName");
+    function SubmitIt()
+    {
+        var errorMsg = "";
+
+                    if (!(document.HTML_FORM.TITLE.value))
+                        errorMsg += "The field TITLE is mandatory and has been left blank\n";
+
+                    if (document.HTML_FORM.Feedback.options[0].selected == 1)
+                        errorMsg += "The field Feedback is mandatory and has been left blank\n";
+
+                    if (!(document.HTML_FORM.Last__bName.value))
+                        errorMsg += "The field Last Name is mandatory and has been left blank\n";
+
+                    if (!(document.HTML_FORM.First__bName.value))
+                        errorMsg += "The field First Name is mandatory and has been left blank\n";
+
+                    if (!(document.HTML_FORM.Email__bAddress.value))
+                        errorMsg += "The field Email Address is mandatory and has been left blank\n";
+
+                    if (!(document.HTML_FORM.User__bName.value))
+                        errorMsg += "The field User Name is mandatory and has been left blank\n";
+
+        if (errorMsg)
+        {
+            alert(errorMsg);
+        }
+        else
+        {
+            if (document.HTML_FORM.ANONYMOUS)
+                if (document.HTML_FORM.ANONYMOUS.checked)
+                    AnonymousSurvey();
+            if (emailField != '')
+            {
+                if (userPriv <= 1)
+                {
+                    //Leo26293: don't replace FROM, it should already contain correct value
+                    //eval('document.HTML_FORM.FROM.value = document.HTML_FORM.' + emailField + '.value;');
+                }
+            }
+            document.HTML_FORM.submit();
+        }
+    }
+    function AnonymousSurvey()
+    {
+        for (i = 0; i <= abFields.length; i++)
+        {
+            if (eval('document.HTML_FORM.' + abFields[i]))
+            {
+                eval('document.HTML_FORM.' + abFields[i] + '.value = ""');
+            }
+        }
+        if (document.HTML_FORM.Original__bProject)
+            document.HTML_FORM.Original__bProject.value = "Anonymous";
+        if (document.HTML_FORM.Original__bIssue)
+            document.HTML_FORM.Original__bIssue.value = "0";
+        if (document.HTML_FORM.Original__bAssignees)
+            document.HTML_FORM.Original__bAssignees.value = "Anonymous";
+        if (document.HTML_FORM.originalticket)
+            document.HTML_FORM.originalticket.value = 0;
+        document.HTML_FORM.TITLE.value = "Survey Results";
+    }
+    </script>
+    <INPUT TYPE = "button" VALUE="Submit Issue"
+            onClick = "javascript:SubmitIt()"> <font color = "#990000" face = ""Verdana, Arial, Helvetica, sans-serif"">
+            </FONT><BR></td></tr><tr><td>&nbsp;</td></tr></table>
+<INPUT TYPE=HIDDEN NAME="TO" VALUE="studentcomp@cnm.edu">
+<INPUT TYPE=HIDDEN NAME="FROM" VALUE="Web@cnm.edu">
+<input type = "hidden" name = "PROJECTNUM" value = "21">
+<input type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
+<input name = "DATE_TYPE" type = "hidden" value = "0">
+<br><font color = "#006699">Click the SUBMIT button to send your Request.  You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form.</font><BR><font color = "#990000" face = "Verdana, Arial, Helvetica, sans-serif"> Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.</font></FORM></BODY></HTML>

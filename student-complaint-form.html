@@ -1,0 +1,204 @@
+<HTML>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Submit Issue to Dean of Students</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
+	<link type="text/css" rel="stylesheet" href="css/jquery.filthypillow.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/student-complaint.css">
+
+
+</head>
+
+<BODY class="container">
+	<FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+		<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Student Complaint Form</h3>
+			</div>
+			<div class="panel-body">
+				<p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.</p>
+					<p><i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contact Information</h3>
+			</div>
+			<div class="panel-body flex-container">
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item has-feedback">
+						<label class="control-label" for="First__bName">First Name</label>
+						<input class="form-control" type="text" name="First__bName" id="First__bName" value="" required title="" placeholder="Required">
+					</div>
+					<div class="input-group flex-item has-feedback">
+						<label class="control-label" for="First__bName">Last Name</label>
+						<INPUT class="form-control" type="text" NAME="Last__bName" id="Last__bName" SIZE="20" VALUE="" required placeholder="Required">
+					</div>
+					<div class="input-group flex-item has-feedback">
+						<label class="control-label" for="Email__bAddress">Email Address</label>
+						<INPUT class="form-control" type="email" NAME="Email__bAddress" id="Email__bAddress" SIZE="20" VALUE="" required  placeholder="Required: CNM Email Preferred"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+					</div>
+				</div> <!-- closes 1st row -->
+				<div class="flex-item flex-container has-feedback">
+					<div class="input-group flex-item">
+						<label class="control-label" for="User__bName">User Name</label>
+						<INPUT  class="form-control" placeholder="Required. If none type email address"  type="text" NAME="User__bName" id="User__bName" SIZE="20" VALUE="" required>
+					</div>
+					<div class="input-group flex-item has-feedback">
+						<label for="CNM__bPhone">Phone</label>
+						<INPUT class="form-control" type="text" NAME="CNM__bPhone" id="CNM__bPhone" SIZE="20" VALUE="" required placeholder="Required">
+					</div>
+					<div class="input-group flex-item">
+						<label for="CNM__bID__bNumber">CNM ID Number</label>
+						<INPUT class="form-control" type="number" NAME="CNM__bID__bNumber" id="CNM__bID__bNumber" SIZE="20" VALUE="" required placeholder="Required">
+					</div>
+				</div> <!-- closes 2nd row -->
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="Student__bAddress">Student Address</label>
+						<INPUT class="form-control" type="text" NAME="Student__bAddress" id="Student__bAddress" SIZE="20" VALUE="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="City">City</label>
+						<INPUT class="form-control" type="text" NAME="City" id="City" SIZE="20" VALUE="">
+					</div>
+					<div class="input-group flex-item">
+						<label for="State">State</label>
+						<INPUT class="form-control" type="text" NAME="State" id="State" SIZE="20" VALUE="">
+					</div>
+				</div> <!-- closes 3rd row -->
+				<div class="flex-item flex-container">
+					<div class="input-group flex-item">
+						<label for="Zip__bCode">Zip Code</label>
+						<INPUT class="form-control" type="text" NAME="Zip__bCode" id="Zip__bCode" SIZE="20" VALUE="">
+					</div>
+				</div> <!-- closes 4th row -->
+			</div> <!-- panel body -->
+		</div> <!-- contact info panel -->
+		  
+		<div class="panel panel-default">
+			  <div class="panel-heading">
+					<h3 class="panel-title">Issue Information</h3>
+			  </div>
+			  <div class="panel-body flex-container ">
+					<div class="input-group flex-item subject">
+						<label for="TITLE">Subject</label>
+						<INPUT  class="form-control" TYPE="TEXT" NAME="TITLE" id="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> 
+					</div>
+			  </div>
+			  <div class="panel-body flex-container">
+					<div class="input-group flex-item has-feedback">
+						<label for="Feedback">Feedback</label>
+						<SELECT  class="form-control" NAME="Feedback" id="Feedback" required>
+							<OPTION VALUE="Select Choice">Select Choice</OPTION>
+							<OPTION VALUE="Complaint">Complaint</option>
+							<OPTION VALUE="Compliment">Compliment</option>
+							<OPTION VALUE="General Feedback">General Feedback</OPTION>
+						</SELECT>
+					</div>
+					<div class="input-group flex-item has-feedback">
+						<label for="Feedback__bCategory">Feedback Category</label>
+						<SELECT  class="form-control" NAME="Feedback__bCategory" id="Feedback__bCategory" SIZE="4" MULTIPLE required>
+							<OPTION VALUE="Service">Service</option>
+							<OPTION VALUE="Building">Building</option>
+							<OPTION VALUE="Individual">Individual</option>
+							<OPTION VALUE="Coursework">Coursework</option>
+							<OPTION VALUE="Other">Other</option>
+						</SELECT>
+					</div>
+					<div class="input-group flex-item">
+						<label for="Student__bStatus">Student Status</label>
+						<SELECT  class="form-control" NAME="Student__bStatus" id="Student__bStatus">
+							<OPTION VALUE="No Choice">No Choice</OPTION>
+							<OPTION VALUE="Current Student">Current Student</OPTION>
+							<OPTION VALUE="Former Student">Former Student</OPTION>
+							<OPTION VALUE="Other">Other</option>
+						</SELECT>
+					</div>
+
+					<div class="flex-item">
+						<label for="date-occurred">Date Event Occurred</label>
+						<!-- <div class="form-group"> -->	
+							<div class="input-group date " data-date-format="dd MM yyyy - HH:ii P">
+								
+								<input type="datetime" class="form-control datetimepicker" id="date-occurred" name="date-occurred" placeholder="click to pick date">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</div>
+							</div>
+						<!-- </div> -->
+					</div>
+					<div class="input-group flex-item">
+						<label for="Course__bName">Course Name</label>
+						<INPUT  class="form-control" placeholder="If realated to a course."  type="text" NAME="Course__bName" id="Course__bName" SIZE="30" VALUE="">
+					</div>
+					<div class="input-group flex-item has-feedback">
+						<label for="Name__bof__bIndividual">Name of Individual</label>
+						<INPUT  class="form-control" placeholder="Required: If related to an individual"  type="text" NAME="Name__bof__bIndividual" id="Name__bof__bIndividual" SIZE="30" VALUE="" required >
+					</div>
+				  <div class="input-group flex-item">
+					  <label for="Confidentiality">Confidentiality</label>
+					  <SELECT class="form-control" NAME="Confidentiality" id="Confidentiality">
+						  <OPTION VALUE="No Choice">No Choice</OPTION>
+						  <OPTION VALUE="You may use my name">You may use my name</OPTION>
+						  <OPTION VALUE="You may use my name but only after the end of term">You may use my name but
+							  only after the end of term
+						  </OPTION>
+						  <OPTION VALUE="Do not use my name">Do not use my name</OPTION>
+					  </SELECT>
+				  </div>
+				  <div class="input-group flex-item">
+					  <label for="Referred__bby">Referred by</label>
+					  <INPUT class="form-control" type="text" NAME="Referred__bby" id="Referred__bby" SIZE="20"
+							 VALUE="">
+				  </div>
+				  <div class="input-group flex-item full-width-textarea">
+						<label for="LONGDESCRIPTION">Description of Event</label>
+						<TEXTAREA class="form-control" placeholder="Please descripe the issue or event here." id="LONGDESCRIPTION" NAME="LONGDESCRIPTION" ROWS="5" COLS="60" WRAP="HARD"></TEXTAREA>
+					</div>
+					<div class="input-group flex-item full-width-textarea">
+						<label for="Individual__bOutcome__bor__bDiscussion">Individual Outcome or Discussion</label>
+						<TEXTAREA class="form-control" placeholder="If you spoke with an individual please include a quick description of the outcome." id="Individual__bOutcome__bor__bDiscussion" NAME = "Individual__bOutcome__bor__bDiscussion" ROWS = "5" COLS = "60" WRAP = "HARD"></TEXTAREA>
+					</div>
+
+			  </div>
+
+		</div>
+
+
+
+
+		<!-- recreate the original date form fields -->
+		<INPUT  class="form-control" TYPE="hidden" placeholder=" MM" NAME="Month_Date__bEvent__bOccured" id="Month_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+		<INPUT  class="form-control" TYPE="hidden" placeholder=" DD" NAME="Day_Date__bEvent__bOccured" id="Day_Date__bEvent__bOccured" SIZE="2" VALUE="" MAXLENGTH="2">
+		<INPUT  class="form-control" TYPE="hidden" placeholder=" YYYY" NAME="Year_Date__bEvent__bOccured" id="Year_Date__bEvent__bOccured" SIZE="4" VALUE="" MAXLENGTH="4">
+
+		<INPUT  class="form-control" TYPE="HIDDEN" NAME="TO" id="TO" VALUE="studentcomp@cnm.edu">
+		<INPUT  class="form-control" TYPE="HIDDEN" NAME="FROM" id="FROM" VALUE="Web@cnm.edu">
+		<input  class="form-control" type = "hidden" name = "PROJECTNUM" value = "21">
+		<input  class="form-control" type = "hidden" name = "PROJECTNAME" value = "Dean of Students">
+		<input  class="form-control" name = "DATE_TYPE" type = "hidden" value = "0">
+		<p>You will receive an email confirmation if your Request is successfully registered.  Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.</p>
+
+		<button  class="btn btn-default" TYPE="submit" id="submit_button" name="submit_button" disabled>Submit Issue</button>
+
+	</FORM>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript" src="js/jquery.filthypillow.js"></script>
+	<script type="text/javascript" src="js/moment.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/student-complaints.js"></script>
+
+</BODY>
+</HTML>

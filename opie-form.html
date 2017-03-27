@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>OPIE Web Form</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700|Lato' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/opie-form.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+		<form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
+			<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
+
+			<!-- Contact Info panel -->
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
+				<div class="panel-body flex-container column" id="first-panel"> <!-- this is the outer flexbox for this panel -->
+					<div id="subject-row flex-item"> <!-- first flexbox item -->
+						<div class="input-group">
+							<label class="control-label" for="TITLE">Subject</label>
+							<input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="required" required>
+						</div>
+					</div>
+					<div id="contact_row " class="flex-item flex-container flex-row"> <!-- second flexbox item, also a flexbox container -->
+						<div class="input-group flex-item">
+							<label class="control-label" for="Last__bName">Last Name</label>
+							<input type="text" class="form-control" id="Last__bName" name="Last__bName" placeholder="required" required>
+						</div>
+						<div class="input-group flex-item">
+							<label class="control-label" for="First__bName">First Name</label>
+							<input type="text" class="form-control" id="First__bName" name="First__bName" placeholder="required" required>
+						</div>
+						<div class="input-group flex-item">
+							<label class="control-label" for="Email__bAddress">Email</label>
+							<input type="email" class="form-control" id="Email__bAddress" name="Email__bAddress" placeholder="required" value="" required>
+							<!--<span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>-->
+						</div>
+					</div>
+					* denotes required
+				</div>
+
+			</div>
+
+			<!-- Request Information panel -->
+			
+			<div class="panel panel-default" id="request-info">
+				<div class="panel-heading">
+					<h3 class="panel-title">Request Information</h3>
+				</div>
+				<div class="panel-body flex-container">
+					<div class="flex-item">
+						<label class="control-label" for="date-needed">Date Needed</label>
+						<div class="form-group">	
+							<div class="input-group date">
+								
+								<input type="text" class="form-control" id="date-needed" name="date-needed" placeholder="click to pick date"  data-provide="datepicker">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="flex-item recurring">
+						<div class=flex-item>
+						
+							<div class="input-group">
+								<label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
+								<select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q" class="form-control" required>
+									<option value="">No choice</option>
+									<option value="one-time">One time</option>
+									<option value="recurring">Recurring</option>
+								</select>
+							</div>
+						</div>
+						<div class= "default-hidden flex-item" id="recurring-schedule">
+							<label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
+							<div class="input-group">
+								<select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
+									<OPTION VALUE ="No Choice" >No Choice</OPTION>
+									<OPTION VALUE ="Term" >Term</OPTION>
+									<OPTION VALUE ="Annually" >Annually</OPTION>
+									<OPTION VALUE ="Other" >Other</OPTION>
+								</select>
+								
+							</div>
+
+						</div>
+						
+						<div class="default-hidden flex-item" id="explain-other">
+							<label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
+							<div class="input-group">
+								<INPUT NAME="Please__bExplain__bOther"  class="form-control" SIZE="20" VALUE="">
+							</div>
+						</div>
+					</div>
+					<div class="flex-item request-type">
+						<div class="flex-item">
+							<label class="control-label" for="Type__bof__bRequest">Type of Request</label>
+							<div class="input-group">
+								<select name="Type__bof__bRequest" id="request-type" class="form-control">
+									<OPTION VALUE ="No Choice" >No Choice</OPTION>
+									<OPTION VALUE ="Accreditation Reporting" >Accreditation Reporting</OPTION>
+									<OPTION VALUE ="Institutional Research" >Institutional Research</OPTION>
+									<OPTION VALUE ="Learning Assessment" >Learning Assessment</OPTION>
+									<OPTION VALUE ="Performance Improvement" >Performance Improvement</OPTION>
+									<OPTION VALUE ="Unknown" >Unknown</OPTION>
+								</select>
+								
+							</div>
+						</div>
+						<div class="default-hidden flex-item" id="pi-category-container">
+							<label class="control-label" for="PI__bCategory">PI Category</label>
+							<div class="input-group">
+								<select name="PI__bCategory" id="pi-category" class="form-control">
+									<OPTION VALUE ="No Choice" >No Choice</OPTION>
+									<OPTION VALUE ="Department Profile" >Department Profile</OPTION>
+									<OPTION VALUE ="PI Report" >PI Report</OPTION>
+									<OPTION VALUE ="Resources" >Resources</OPTION>
+									<OPTION VALUE ="Survey" >Survey</OPTION>
+									<OPTION VALUE ="Training" >Training</OPTION>
+								</select>
+								
+							</div>
+						</div>
+						<div class="default-hidden flex-item" id="request-type-unknown">
+							<label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="unknown-description" name="If__bUnknown__bPlease__bDescribe__c">
+							</div>
+						</div>
+					</div>
+					<div class="flex-item">
+						<label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
+						<div class="input-group">
+							<select name="Proposed__bAudience" id="proposed-audience" class="form-control">
+								<OPTION VALUE ="No Choice" >No Choice</OPTION>
+								<OPTION VALUE ="Internal CNM " >Internal CNM (Employees only)</OPTION>
+								<OPTION VALUE ="External to CNM" >External to CNM</OPTION>
+								<OPTION VALUE ="Both" >Both</OPTION>
+							</select>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Description and Intended Application</h3>
+				</div>
+				<div class="panel-body">
+					<div class="input-group">
+						<TEXTAREA NAME="LONGDESCRIPTION" placeholder="Knowing how you plan to use the information helps us better serve you." class="form-control" ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>
+					</div>
+					
+				</div>
+			</div>
+
+			<INPUT TYPE = "hidden" NAME = "Month_Date__bNeeded">
+			<INPUT TYPE = "hidden" NAME = "Day_Date__bNeeded">
+			<INPUT TYPE = "hidden" NAME = "Year_Date__bNeeded">
+
+			<INPUT TYPE=HIDDEN NAME="TO" VALUE="OPIERequests@cnm.edu">
+			<INPUT TYPE=HIDDEN NAME="FROM" VALUE="Web@cnm.edu">
+			<input type = "hidden" name = "PROJECTNUM" value = "23">
+			<input type = "hidden" name = "PROJECTNAME" value = "OPIE">
+			<input name = "DATE_TYPE" type = "hidden" value = "0">
+
+			<button type="submit" id="submit_button" class="btn btn-primary" disabled>Submit</button>
+
+		</form>
+
+
+	</div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/scripts.js"></script>
+    <script src="js/opie-scripts.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
