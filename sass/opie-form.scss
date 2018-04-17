@@ -7,6 +7,9 @@
 	}
 @media screen and (min-width: 768px) {
 	//form {
+	#date-needed {
+		input {width: 1%;}
+	}
 		.panel-body{
 			
 			&.flex-container {

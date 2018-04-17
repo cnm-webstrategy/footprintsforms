@@ -17,15 +17,23 @@ $(document).ready(function() {
 				email: true
 			}
 		}
-	});	
+	});
 
-	$('.input-group.date').datepicker();
+    $('#date-needed').datetimepicker({
+        daysOfWeekDisabled:[0,6],
+        // // daysOfWeekHighlighted: '12345',
+        defaultDate: moment().add(2,'weeks'),
+        format: 'L'
+    });
+	// $('#date-needed').on('click', function(event) {
 	$('#date-needed').on('click', function(event) {
 		event.preventDefault();
 	});
-	$('#date-needed').on("changeDate", function() {
+	$('#date-needed').trigger("change.datetimepicker");
+	$('#date-needed').on("change.datetimepicker", function() {
+		console.log('clicked');
 		$('#hidden-date').val(
-			$('#date-needed').datepicker('getFormattedDate')
+			$('#date-needed').datetimepicker('getFormattedDate')
 			);
 	});
 
