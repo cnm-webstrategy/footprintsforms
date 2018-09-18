@@ -30,12 +30,12 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 	$('#date-needed').trigger("change.datetimepicker");
-	$('#date-needed').on("change.datetimepicker", function() {
-		console.log('clicked');
-		$('#hidden-date').val(
-			$('#date-needed').datetimepicker('getFormattedDate')
-			);
-	});
+	// $('#date-needed').on("change.datetimepicker", function() {
+	// 	console.log('clicked');
+	// 	$('#hidden-date').val(
+	// 		$('#date-needed').datetimepicker('getFormattedDate')
+	// 		);
+	// });
 
 	$('#One__uTime__bor__bRecurring__Q').on('change', function(event) {
 		// if "recurring" is selected
@@ -119,8 +119,12 @@ $(document).ready(function() {
 		}
 		else
 		{
-			console.log($('HTML_FORM'))
-			$('#HTML_FORM')[0].submit();
+			// console.log($('HTML_FORM'))
+			// $('#HTML_FORM')[0].submit();
+            $('#HTML_FORM').submit(function( event ) {
+            console.log( $( this ).serializeArray() );
+            event.preventDefault();
+        });
         }
 
     });
