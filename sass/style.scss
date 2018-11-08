@@ -13,18 +13,18 @@ body {
 
 }
 
-.panel-default {
+.card {
 	border-color: $dark-blue;
-	> .panel-heading {
+	.card-heading {
+		padding: 10px 15px;
 		color: #f6be00;
 		background-color: $dark-blue;
 		border-color: $dark-blue;
 
-		.panel-title {
+		.card-title {
 			font-size: 24px;
 			letter-spacing: .05em;
 		}
-
 	}
 }
 
@@ -90,7 +90,7 @@ label {
 	color: $yellow;
 }
 
-.panel-body {
+.card-body {
 
 	.flex-item.recurring,
 	.flex-item.request-type,
@@ -141,7 +141,7 @@ label {
 
 @media screen and (min-width:768px){
 //form {
-	.panel-body {
+	.card-body {
 		#contact_row {
 			flex-direction: row;
 

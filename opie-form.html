@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
 
+    <!--<link rel="stylesheet" href="css/bootstrap-datepicker.standalone.css">-->
+    <!--<link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.css">-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/opie-form.css">
 
@@ -53,11 +55,11 @@
     <form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="">
         <img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
-        <!-- Contact Info panel -->
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title">Submit Request to OPIE</h3></div>
-            <div class="panel-body flex-container column" id="first-panel">
-                <!-- this is the outer flexbox for this panel -->
+        <!-- Contact Info card -->
+        <div class="card ">
+            <div class="card-heading"><h3 class="card-title">Submit Request to OPIE</h3></div>
+            <div class="card-body flex-container column" id="first-card">
+                <!-- this is the outer flexbox for this card -->
                 <div id="subject-row flex-item"> <!-- first flexbox item -->
                     <div class="input-group">
                         <label class="control-label" for="TITLE">Subject</label>
@@ -86,13 +88,13 @@
             </div>
         </div>
 
-        <!-- Request Information panel -->
+        <!-- Request Information card -->
 
-        <div class="panel panel-default" id="request-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">Request Information</h3>
+        <div class="card " id="request-info">
+            <div class="card-heading">
+                <h3 class="card-title">Request Information</h3>
             </div>
-            <div class="panel-body flex-container">
+            <div class="card-body flex-container">
                 <div class="flex-item">
                     <label class="control-label" for="date-needed">Date Needed</label>
                     <h4>Please give us two weeks notice for requests</h4>
@@ -205,11 +207,11 @@
             </div>
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Description and Intended Application</h3>
+        <div class="card ">
+            <div class="card-heading">
+                <h3 class="card-title">Description and Intended Application</h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <div class="input-group">
                     <TEXTAREA NAME="LONGDESCRIPTION"
                               placeholder="Knowing how you plan to use the information helps us better serve you."

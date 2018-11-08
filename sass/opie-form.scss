@@ -1,5 +1,5 @@
 	#request-info {
-		.panel-body {
+		.card-body {
 			&.flex-container {
 				flex-direction: column;
 			}
@@ -10,7 +10,7 @@
 	#date-needed {
 		input {width: 1%;}
 	}
-		.panel-body{
+		.card-body{
 			
 			&.flex-container {
 				.flex-item {
