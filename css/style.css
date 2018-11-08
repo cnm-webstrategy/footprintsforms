@@ -59,46 +59,37 @@ label {
 .panel-body .flex-item.recurring,
 .panel-body .flex-item.request-type,
 .panel-body .flex-container, .panel-body.flex-container {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
 
 .panel-body .flex-item {
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto; }
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto; }
   .panel-body .flex-item .input-group .input-group-addon {
     border-color: #003a70;
     background-color: #003a70;
     color: #f6be00; }
 
 .panel-body #contact_row {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .panel-body #contact_row .input-group {
     width: 100%; }
 
 @media screen and (min-width: 768px) {
   .panel-body #contact_row {
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row; }
+    -ms-flex-direction: row;
+        flex-direction: row; }
     .panel-body #contact_row .input-group {
       width: 30%; }
   .panel-body .input-group {
@@ -108,9 +99,8 @@ label {
   .panel-body.flex-container,
   .panel-body .flex-container,
   .panel-body .flex-item.request-type {
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row; }
+    -ms-flex-direction: row;
+        flex-direction: row; }
     .panel-body.flex-container .flex-item,
     .panel-body .flex-container .flex-item,
     .panel-body .flex-item.request-type .flex-item {
@@ -127,6 +117,5 @@ label {
         width: 100%;
         max-width: 100%; }
   .panel-body.column {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; } }
+    -ms-flex-direction: column;
+        flex-direction: column; } }

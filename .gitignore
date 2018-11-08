@@ -26,3 +26,8 @@ Thumbs.db
 
 
 node_modules
+
+# this means that gulp will need to be run on the webserver
+css/opie-form.css
+css/student-complaint.css
+css/styles.css
