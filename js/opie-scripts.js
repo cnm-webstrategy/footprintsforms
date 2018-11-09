@@ -4,15 +4,36 @@ $(document).ready(function() {
 		/* Act on the event */
 	});
 
-	$('.input-group.date').datepicker();
+	jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	$( "#opie-form" ).validate({
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
+		}
+	});
+
+    $('#date-needed').datetimepicker({
+        daysOfWeekDisabled:[0,6],
+        // // daysOfWeekHighlighted: '12345',
+        defaultDate: moment().add(2,'weeks'),
+        format: 'L'
+    });
+	// $('#date-needed').on('click', function(event) {
 	$('#date-needed').on('click', function(event) {
 		event.preventDefault();
 	});
-	$('#date-needed').on("changeDate", function() {
-		$('#hidden-date').val(
-			$('#date-needed').datepicker('getFormattedDate')
-			);
-	});
+	$('#date-needed').trigger("change.datetimepicker");
+	// $('#date-needed').on("change.datetimepicker", function() {
+	// 	console.log('clicked');
+	// 	$('#hidden-date').val(
+	// 		$('#date-needed').datetimepicker('getFormattedDate')
+	// 		);
+	// });
 
 	$('#One__uTime__bor__bRecurring__Q').on('change', function(event) {
 		// if "recurring" is selected
@@ -85,7 +106,13 @@ $(document).ready(function() {
 		}
 		else
 		{
-			$('#HTML_FORM')[0].submit();
+
+			// console.log($('HTML_FORM'))
+			// $('#HTML_FORM')[0].submit();
+            $('#HTML_FORM').submit(function( event ) {
+            console.log( $( this ).serializeArray() );
+            event.preventDefault();
+        });
         }
 
     });

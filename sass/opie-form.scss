@@ -1,5 +1,5 @@
 	#request-info {
-		.panel-body {
+		.card-body {
 			&.flex-container {
 				flex-direction: column;
 			}
@@ -7,7 +7,10 @@
 	}
 @media screen and (min-width: 768px) {
 	//form {
-		.panel-body{
+	#date-needed {
+		input {width: 1%;}
+	}
+		.card-body{
 			
 			&.flex-container {
 				.flex-item {

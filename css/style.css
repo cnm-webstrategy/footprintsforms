@@ -6,13 +6,14 @@ body {
 .emphasis {
   font-style: italic; }
 
-.panel-default {
+.card {
   border-color: #003a70; }
-  .panel-default > .panel-heading {
+  .card .card-heading {
+    padding: 10px 15px;
     color: #f6be00;
     background-color: #003a70;
     border-color: #003a70; }
-    .panel-default > .panel-heading .panel-title {
+    .card .card-heading .card-title {
       font-size: 24px;
       letter-spacing: .05em; }
 
@@ -56,9 +57,9 @@ label {
   border-color: #003a70;
   color: #f6be00; }
 
-.panel-body .flex-item.recurring,
-.panel-body .flex-item.request-type,
-.panel-body .flex-container, .panel-body.flex-container {
+.card-body .flex-item.recurring,
+.card-body .flex-item.request-type,
+.card-body .flex-container, .card-body.flex-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -68,54 +69,54 @@ label {
   -ms-flex-pack: start;
       justify-content: flex-start; }
 
-.panel-body .flex-item {
+.card-body .flex-item {
   -ms-flex: 1 1 auto;
       flex: 1 1 auto; }
-  .panel-body .flex-item .input-group .input-group-addon {
+  .card-body .flex-item .input-group .input-group-addon {
     border-color: #003a70;
     background-color: #003a70;
     color: #f6be00; }
 
-.panel-body #contact_row {
+.card-body #contact_row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   -ms-flex-pack: justify;
       justify-content: space-between; }
-  .panel-body #contact_row .input-group {
+  .card-body #contact_row .input-group {
     width: 100%; }
 
 @media screen and (min-width: 768px) {
-  .panel-body #contact_row {
+  .card-body #contact_row {
     -ms-flex-direction: row;
         flex-direction: row; }
-    .panel-body #contact_row .input-group {
+    .card-body #contact_row .input-group {
       width: 30%; }
-  .panel-body .input-group {
+  .card-body .input-group {
     width: 280px; }
-  .panel-body #explain-other .form-control {
+  .card-body #explain-other .form-control {
     width: 100%; }
-  .panel-body.flex-container,
-  .panel-body .flex-container,
-  .panel-body .flex-item.request-type {
+  .card-body.flex-container,
+  .card-body .flex-container,
+  .card-body .flex-item.request-type {
     -ms-flex-direction: row;
         flex-direction: row; }
-    .panel-body.flex-container .flex-item,
-    .panel-body .flex-container .flex-item,
-    .panel-body .flex-item.request-type .flex-item {
+    .card-body.flex-container .flex-item,
+    .card-body .flex-container .flex-item,
+    .card-body .flex-item.request-type .flex-item {
       max-width: 281px;
       margin-right: 20px; }
-      .panel-body.flex-container .flex-item.subject,
-      .panel-body .flex-container .flex-item.subject,
-      .panel-body .flex-item.request-type .flex-item.subject {
+      .card-body.flex-container .flex-item.subject,
+      .card-body .flex-container .flex-item.subject,
+      .card-body .flex-item.request-type .flex-item.subject {
         max-width: 100%;
         width: 100%; }
-      .panel-body.flex-container .flex-item.flex-row,
-      .panel-body .flex-container .flex-item.flex-row,
-      .panel-body .flex-item.request-type .flex-item.flex-row {
+      .card-body.flex-container .flex-item.flex-row,
+      .card-body .flex-container .flex-item.flex-row,
+      .card-body .flex-item.request-type .flex-item.flex-row {
         width: 100%;
         max-width: 100%; }
-  .panel-body.column {
+  .card-body.column {
     -ms-flex-direction: column;
         flex-direction: column; } }
