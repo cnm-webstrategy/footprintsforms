@@ -6,7 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Submit Issue to Dean of Students</title>
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<!-- Bootstrap core CSS -->
+	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/ie10-viewport-bug-workaround.css">
 	<link type="text/css" rel="stylesheet" href="css/jquery.filthypillow.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css">
@@ -19,21 +20,21 @@
 	<FORM name="HTML_FORM" METHOD="POST" ACTION="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">
 		<img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Student Complaint Form</h3>
+		<div class="card card-default">
+			<div class="card-heading">
+				<h3 class="card-title">Student Complaint Form</h3>
 			</div>
-			<div class="panel-body">
+			<div class="card-body">
 				<p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM administration or who cooperate in the investigation of such reports. To the extent possible, the confidentiality of the reports will be maintained.</p>
 					<p><i>Please note: This form may also be used to communicate compliments or affirmations of outstanding service and/or attitude from members of the CNM community.</i></p>
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Contact Information</h3>
+		<div class="card">
+			<div class="card-heading">
+				<h3 class="card-title">Contact Information</h3>
 			</div>
-			<div class="panel-body flex-container">
+			<div class="card-body flex-container">
 				<div class="flex-item flex-container">
 					<div class="input-group flex-item has-feedback">
 						<label class="control-label" for="First__bName">First Name</label>
@@ -82,20 +83,20 @@
 						<INPUT class="form-control" type="text" NAME="Zip__bCode" id="Zip__bCode" SIZE="20" VALUE="">
 					</div>
 				</div> <!-- closes 4th row -->
-			</div> <!-- panel body -->
-		</div> <!-- contact info panel -->
+			</div> <!-- card body -->
+		</div> <!-- contact info card -->
 		  
-		<div class="panel panel-default">
-			  <div class="panel-heading">
-					<h3 class="panel-title">Issue Information</h3>
+		<div class="card card-default">
+			  <div class="card-heading">
+					<h3 class="card-title">Issue Information</h3>
 			  </div>
-			  <div class="panel-body flex-container ">
+			  <div class="card-body flex-container ">
 					<div class="input-group flex-item subject">
 						<label for="TITLE">Subject</label>
 						<INPUT  class="form-control" TYPE="TEXT" NAME="TITLE" id="TITLE" SIZE="70" VALUE="" MAXLENGTH="250"> 
 					</div>
 			  </div>
-			  <div class="panel-body flex-container">
+			  <div class="card-body flex-container">
 					<div class="input-group flex-item has-feedback">
 						<label for="Feedback">Feedback</label>
 						<SELECT  class="form-control" NAME="Feedback" id="Feedback" required>
