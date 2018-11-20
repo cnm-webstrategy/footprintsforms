@@ -72,6 +72,26 @@ $(document).ready(function() {
 		};
 
 	});
+	
+	$('#Strategic__bgoal__bto__bwhich__bthis__brelates').on('change', function (event) {
+		if (event.target.value === 'Student__bSuccess') {
+			$('#student-success-strategic-initiative').removeClass('default-hidden');
+		} else {
+			$('#student-success-strategic-initiative').addClass('default-hidden');
+		}
+		if (event.target.value === 'Community__bSuccess') {
+			$('#community-success-strategic-initiative').removeClass('default-hidden');
+		} else {
+			$('#community-success-strategic-initiative').addClass('default-hidden');
+		}
+		if (event.target.value === 'Organization__bExcellence__band__bInnovation') {
+			$('#organization-strategic-initiative').removeClass('default-hidden');
+		} else {
+			$('#organization-strategic-initiative').addClass('default-hidden');
+		}
+	})
+	
+	
 
 	// make subject line 100% width
 	$('#subject').parents('.input-group').width('100%');

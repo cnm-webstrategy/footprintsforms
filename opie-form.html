@@ -30,6 +30,27 @@
 
 <body>
 
+<!-- 	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav> -->
+
 <div class="container">
     <!--<form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">-->
     <form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="">
@@ -42,24 +63,24 @@
                 <!-- this is the outer flexbox for this card -->
                 <div id="subject-row flex-item"> <!-- first flexbox item -->
                     <div class="input-group">
-                        <label class="col-form-label" for="TITLE">Subject</label>
+                        <label class="control-label" for="TITLE">Subject</label>
                         <input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="required" required>
                     </div>
                 </div>
                 <div id="contact_row " class="flex-item flex-container flex-row">
                     <!-- second flexbox item, also a flexbox container -->
                     <div class="input-group flex-item">
-                        <label class="col-form-label" for="Last__bName">Last Name</label>
+                        <label class="control-label" for="Last__bName">Last Name</label>
                         <input type="text" class="form-control" id="Last__bName" name="Last__bName"
                                placeholder="required" required>
                     </div>
                     <div class="input-group flex-item">
-                        <label class="col-form-label" for="First__bName">First Name</label>
+                        <label class="control-label" for="First__bName">First Name</label>
                         <input type="text" class="form-control" id="First__bName" name="First__bName"
                                placeholder="required" required>
                     </div>
                     <div class="input-group flex-item">
-                        <label class="col-form-label" for="Email__bAddress">Email</label>
+                        <label class="control-label" for="Email__bAddress">Email</label>
                         <input type="email" class="form-control" id="Email__bAddress" name="Email__bAddress"
                                placeholder="required" value="" required>
                         <span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>
@@ -76,8 +97,19 @@
             </div>
             <div class="card-body flex-container">
                 <div class="flex-item">
-                    <label class="col-form-label" for="date-needed">Date Needed</label>
+                    <label class="control-label" for="date-needed">Date Needed</label>
                     <h4>Please give us two weeks notice for requests</h4>
+                    <!--<div class="form-group">-->
+                    <!--<div class="input-group date" id="datetimepicker1">-->
+
+                    <!--<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"-->
+                    <!--id="date-needed" name="date-needed" placeholder="click to pick date">-->
+                    <!--<span class="input-group-addon" data-target="#date-needed" data-toggle="datetimepicker">-->
+                    <!--<span class="glyphicon glyphicon-calendar"></span>-->
+                    <!--</span>-->
+
+                    <!--</div>-->
+                    <!--</div>-->
 
                     <div class="form-group">
                         <div class="input-group date" id="date-needed" data-target-input="nearest">
@@ -92,8 +124,7 @@
 
                 <div class="flex-item recurring">
                     <div class=flex-item>
-                        <label class="col-form-label" for="One__uTime__bor__bRecurring__Q">One time or
-                            recurring?</label>
+                        <label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
                         <div class="input-group">
                             <select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q"
                                     class="form-control">
@@ -104,7 +135,7 @@
                         </div>
                     </div>
                     <div class="default-hidden flex-item" id="recurring-schedule">
-                        <label class="col-form-label" for="Recurring__bSchedule">Recurring Schedule</label>
+                        <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
                         <div class="input-group">
                             <select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
@@ -118,7 +149,7 @@
                     </div>
 
                     <div class="default-hidden flex-item" id="explain-other">
-                        <label class="col-form-label" for="Please__bExplain__bOther">Please explain Other</label>
+                        <label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
                         <div class="input-group">
                             <INPUT NAME="Please__bExplain__bOther" class="form-control" SIZE="20" VALUE="">
                         </div>
@@ -126,7 +157,7 @@
                 </div>
                 <div class="flex-item request-type">
                     <div class="flex-item">
-                        <label class="col-form-label" for="Type__bof__bRequest">Type of Request</label>
+                        <label class="control-label" for="Type__bof__bRequest">Type of Request</label>
                         <div class="input-group">
                             <select name="Type__bof__bRequest" id="request-type" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
@@ -140,7 +171,7 @@
                         </div>
                     </div>
                     <div class="default-hidden flex-item" id="pi-category-container">
-                        <label class="col-form-label" for="PI__bCategory">PI Category</label>
+                        <label class="control-label" for="PI__bCategory">PI Category</label>
                         <div class="input-group">
                             <select name="PI__bCategory" id="pi-category" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
@@ -154,7 +185,7 @@
                         </div>
                     </div>
                     <div class="default-hidden flex-item" id="request-type-unknown">
-                        <label class="col-form-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please
+                        <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please
                             Describe</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="unknown-description"
@@ -163,7 +194,7 @@
                     </div>
                 </div>
                 <div class="flex-item">
-                    <label class="col-form-label" for="Proposed__bAudience">Proposed Audience</label>
+                    <label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
                     <div class="input-group">
                         <select name="Proposed__bAudience" id="proposed-audience" class="form-control">
                             <OPTION VALUE="No Choice">No Choice</OPTION>
@@ -174,17 +205,18 @@
 
                     </div>
                 </div>
-                <div class="flex-item strategic-goal">
-                    <div class="flex-item">
-                        <label class="col-form-label" for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic
-                            goal
-                            to
+
+                <!--strategic goal-->
+                <div class="row strategic-goal">
+                    <div class="col-6">
+                        <label class="control-label"
+                               for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to
                             which this relates</label>
                         <div class="input-group">
                             <select
                                     name="Strategic__bgoal__bto__bwhich__bthis__brelates"
                                     id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32"
-                                    class="form-control" title="">
+                                    class="form-control">
                                 <option value="" selected="true">No Choice</option>
                                 <option value="Student__bSuccess">Student Success</option>
                                 <option value="Community__bSuccess">Community Success</option>
@@ -195,16 +227,14 @@
                             </select>
                         </div>
                     </div>
-
-                    <!--Student success-->
-                    <div class="flex-item default-hidden">
-                        <label class="col-form-label">Strategic
+                    <div class="col-6 default-hidden" id="student-success-strategic-initiative">
+                        <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
                             initiative to which this relates</label>
                         <div class="input-group">
                             <select
                                     name="Strategic__binitiative__bto__bwhich__bthis__brelates"
                                     id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
-                                    class="form-control" title="">
+                                    class="form-control">
                                 <option value="" selected="true">No Choice</option>
                                 <option value="All__bFirst__uTime__M__bFull__uTime__M__bDegree__uSeeking__bStudents__bHave__ban__bAcademic__bPlan">
                                     All First-Time, Full-Time, Degree-Seeking Students Have an Academic Plan
@@ -212,12 +242,10 @@
                                 <option value="Create__ba__bStudent__uCentered__bCourse__bSchedule">Create a
                                     Student-Centered Course Schedule
                                 </option>
-                                <option value="Create__bComprehensive__bOnline__bCollege">Create Comprehensive
-                                    Online
+                                <option value="Create__bComprehensive__bOnline__bCollege">Create Comprehensive Online
                                     College
                                 </option>
-                                <option value="Develop__bEarly__bChildhood__bConnect__bCenter__bof__bExcellence">
-                                    Develop
+                                <option value="Develop__bEarly__bChildhood__bConnect__bCenter__bof__bExcellence">Develop
                                     Early Childhood Connect Center of Excellence
                                 </option>
                                 <option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning
@@ -256,22 +284,20 @@
                             </select>
                         </div>
                     </div>
-
-                    <!--Community success-->
-                    <div class="flex-item default-hidden">
-                        <label class="col-form-label"
-                               for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic initiative to which
-                            this relates</label>
+                    <div class="col-6 default-hidden" id="community-success-strategic-initiative">
+                        <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
+                            initiative to which this relates</label>
                         <div class="input-group">
                             <select
-                                name="Strategic__binitiative__bto__bwhich__bthis__brelates"
-                                id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
-                                class="form-control">
+                                    name="Strategic__binitiative__bto__bwhich__bthis__brelates"
+                                    id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
+                                    class="form-control">
                                 <option value="" selected="true">No Choice</option>
                                 <option value="Create__bComprehensive__bOnline__bCollege">Create Comprehensive Online
                                     College
                                 </option>
-                                <option value="Develop__band__bImplement__bComprehensive__bMakerspace">Develop and Implement
+                                <option value="Develop__band__bImplement__bComprehensive__bMakerspace">Develop and
+                                    Implement
                                     Comprehensive Makerspace
                                 </option>
                                 <option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning
@@ -283,7 +309,8 @@
                                 <option value="Expand__bBusiness__bSupport__bthrough__bBusiness__bAccelerator__band__bSBDCs">
                                     Expand Business Support through Business Accelerator and SBDCs
                                 </option>
-                                <option value="Expand__bCollege__b__7__bCareer__bHigh__bSchool">Expand College &amp; Career
+                                <option value="Expand__bCollege__b__7__bCareer__bHigh__bSchool">Expand College &amp;
+                                    Career
                                     High School
                                 </option>
                                 <option value="Expand__bFast__uTrack__bDegree__bOfferings">Expand Fast-Track Degree
@@ -295,6 +322,42 @@
                                 <option value="Grow__bIntersession">Grow Intersession</option>
                                 <option value="Implement__bCompetency__uBased__bEducation__bOptions">Implement
                                     Competency-Based Education Options
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6 default-hidden" id="organization-strategic-initiative">
+                        <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
+                            initiative to which this relates</label>
+                        <div class="input-group">
+                            <select
+                                name="Strategic__binitiative__bto__bwhich__bthis__brelates"
+                                id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
+                                class="form-control">
+                                <option value="" selected="true">No Choice</option>
+                                <option value="Articulate__band__bImplement__bSpace__bEfficiency__bInitiatives">Articulate
+                                    and Implement Space Efficiency Initiatives
+                                </option>
+                                <option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning
+                                    Initiative
+                                </option>
+                                <option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work
+                                    Experience Program
+                                </option>
+                                <option value="Enhance__bIntellectual__bProperty__bInitiatives">Enhance Intellectual
+                                    Property Initiatives
+                                </option>
+                                <option value="Implement__bValues__uBased__bEmployee__bInitiatives">Implement Values-Based
+                                    Employee Initiatives
+                                </option>
+                                <option value="Streamline__band__bDocument__ball__bProcesses__band__bProcedures">Streamline
+                                    and Document all Processes and Procedures
+                                </option>
+                                <option value="Transform__bCustomer__bService__bExperience">Transform Customer Service
+                                    Experience
+                                </option>
+                                <option value="Transition__bfrom__bCollege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology">
+                                    Transition from College-Owned Technology to Student-Owned Technology
                                 </option>
                             </select>
                         </div>

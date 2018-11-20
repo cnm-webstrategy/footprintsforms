@@ -23,6 +23,7 @@
 *.sublime-workspace
 nbproject
 Thumbs.db
+*.iml
 
 
 node_modules
