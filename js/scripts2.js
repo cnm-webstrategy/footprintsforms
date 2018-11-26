@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     var $submitButton = $('#submit_button');
 
     // disable submit button by default
-    $submitButton.prop('disabled', true);
+    //$submitButton.prop('disabled', true);
 
     // collect all of the fields that are required
     var $required = $('input,textarea,select').filter('[required]');
@@ -60,27 +60,44 @@ jQuery(document).ready(function($) {
     var theEmail = findEmail($required);
 
     //  when a required field loses focus
-    $required.on('blur', function(event) {
-        var $target = $(event.target);
-        //  get email field
-        var emailField = findEmail($required);           
-
-        //  if any required fields are empty, or if email is malformed, 
-        if (isEmpty($required) != undefined || isValidEmail(emailField)) {
-            //make submit button inactive
-            $submitButton.prop('disabled', true);
-            
-            // change style of input to reflect bootstrap valid state
-   
-            // var errorTag = "<span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>"
-            // $target.parent()
-            //     .addClass('has-error has-feedback')
-            //     .append(errorTag);
-
-        } else {
-            $submitButton.prop('disabled', false);
-        }
-
-    //  when submit button is clicked, submit form
-    });
+    // $required.on('blur', function(event) {
+    //     var $target = $(event.target);
+    //     //  get email field
+    //     var emailField = findEmail($required);
+    //
+    //     //  if any required fields are empty, or if email is malformed,
+    //     if (isEmpty($required) != undefined || isValidEmail(emailField)) {
+    //         //make submit button inactive
+    //         $submitButton.prop('disabled', true);
+    //
+    //         // change style of input to reflect bootstrap valid state
+    //
+    //         // var errorTag = "<span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>"
+    //         // $target.parent()
+    //         //     .addClass('has-error has-feedback')
+    //         //     .append(errorTag);
+    //
+    //     } else {
+    //         $submitButton.prop('disabled', false);
+    //     }
+    //
+    // //  when submit button is clicked, submit form
+    // });
+	(function() {
+		'use strict';
+		window.addEventListener('load', function() {
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
+	})();
 });

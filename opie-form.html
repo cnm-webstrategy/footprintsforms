@@ -53,7 +53,7 @@
 
 <div class="container">
     <!--<form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl">-->
-    <form id="HTML_FORM" name="HTML_FORM" method="POST" role="form" action="">
+    <form id="HTML_FORM" class="needs-validation" name="HTML_FORM" method="POST" role="form" action="" novalidate>
         <img src="img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
         <!-- Contact Info card -->
@@ -84,6 +84,9 @@
                         <input type="email" class="form-control" id="Email__bAddress" name="Email__bAddress"
                                placeholder="required" value="" required>
                         <span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -391,6 +394,9 @@
         <input name="DATE_TYPE" type="hidden" value="0">
 
         <button type="submit" id="submit_button" class="btn btn-primary">Submit</button>
+        <div class="invalid-feedback">
+            There are errors, please correct them.
+        </div>
         <!-- <input type="submit" id="submit" value="Submit"> -->
     </form>
 
@@ -404,8 +410,8 @@
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="node_modules/moment/min/moment.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<!--<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>-->
+<!--<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>-->
 <!--<script src="node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>-->
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
