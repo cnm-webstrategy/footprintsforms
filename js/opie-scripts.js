@@ -4,18 +4,18 @@ $(document).ready(function() {
 		/* Act on the event */
 	});
 
-	jQuery.validator.setDefaults({
-		debug: true,
-		success: "valid"
-	});
-	$( "#opie-form" ).validate({
-		rules: {
-			email: {
-				required: true,
-				email: true
-			}
-		}
-	});
+	// jQuery.validator.setDefaults({
+	// 	debug: true,
+	// 	success: "valid"
+	// });
+	// $( "#opie-form" ).validate({
+	// 	rules: {
+	// 		email: {
+	// 			required: true,
+	// 			email: true
+	// 		}
+	// 	}
+	// });
 
     $('#date-needed').datetimepicker({
         daysOfWeekDisabled:[0,6],
@@ -128,11 +128,11 @@ $(document).ready(function() {
 		{
 
 			// console.log($('HTML_FORM'))
-			// $('#HTML_FORM')[0].submit();
-            $('#HTML_FORM').submit(function( event ) {
-            console.log( $( this ).serializeArray() );
-            event.preventDefault();
-        });
+			$('#HTML_FORM')[0].submit();
+            // $('#HTML_FORM').submit(function( event ) {
+            // console.log( $( this ).serializeArray() );
+            // event.preventDefault();
+        // });
         }
 
     });
