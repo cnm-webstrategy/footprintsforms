@@ -1,10 +1,5 @@
 jQuery(document).ready(function ($) {
 	
-	var $submitButton = $('#submit_button');
-	
-	// disable submit button by default
-	//$submitButton.prop('disabled', true);
-	
 	// collect all of the fields that are required
 	var $required = $('input,textarea,select').filter('[required]');
 	
