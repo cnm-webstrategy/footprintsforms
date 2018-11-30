@@ -45,24 +45,24 @@
             <div class="card-body flex-container column" id="first-card">
                 <!-- this is the outer flexbox for this card -->
                 <div id="subject-row flex-item"> <!-- first flexbox item -->
-                    <div class="input-group">
+                    <div class="form-group">
                         <label class="control-label" for="TITLE">Subject</label>
                         <input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="required" required>
                     </div>
                 </div>
                 <div id="contact_row " class="flex-item flex-container flex-row">
                     <!-- second flexbox item, also a flexbox container -->
-                    <div class="input-group flex-item">
+                    <div class="form-group flex-item">
                         <label class="control-label" for="Last__bName">Last Name</label>
                         <input type="text" class="form-control" id="Last__bName" name="Last__bName"
                                placeholder="required" required>
                     </div>
-                    <div class="input-group flex-item">
+                    <div class="form-group flex-item">
                         <label class="control-label" for="First__bName">First Name</label>
                         <input type="text" class="form-control" id="First__bName" name="First__bName"
                                placeholder="required" required>
                     </div>
-                    <div class="input-group flex-item">
+                    <div class="form-group flex-item">
                         <label class="control-label" for="Email__bAddress">Email</label>
                         <input type="email" class="form-control" id="Email__bAddress" name="Email__bAddress"
                                placeholder="required" value="" required>
@@ -85,17 +85,6 @@
                 <div class="flex-item">
                     <label class="control-label" for="date-needed">Date Needed</label>
                     <p class="help-block">Please give us two weeks notice for requests</p>
-                    <!--<div class="form-group">-->
-                    <!--<div class="input-group date" id="datetimepicker1">-->
-
-                    <!--<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"-->
-                    <!--id="date-needed" name="date-needed" placeholder="click to pick date">-->
-                    <!--<span class="input-group-addon" data-target="#date-needed" data-toggle="datetimepicker">-->
-                    <!--<span class="glyphicon glyphicon-calendar"></span>-->
-                    <!--</span>-->
-
-                    <!--</div>-->
-                    <!--</div>-->
 
                     <div class="form-group">
                         <div class="input-group date" id="date-needed" data-target-input="nearest">
@@ -111,7 +100,7 @@
                 <div class="flex-item recurring">
                     <div class=flex-item>
                         <label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select name="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q"
                                     class="form-control">
                                 <option value="no-answer">No choice</option>
@@ -122,7 +111,7 @@
                     </div>
                     <div class="default-hidden flex-item" id="recurring-schedule">
                         <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select name="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
                                 <OPTION VALUE="Term">Term</OPTION>
@@ -136,7 +125,7 @@
 
                     <div class="default-hidden flex-item" id="explain-other">
                         <label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <INPUT NAME="Please__bExplain__bOther" class="form-control" SIZE="20" VALUE="">
                         </div>
                     </div>
@@ -144,7 +133,7 @@
                 <div class="flex-item request-type">
                     <div class="flex-item">
                         <label class="control-label" for="Type__bof__bRequest">Type of Request</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select name="Type__bof__bRequest" id="request-type" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
                                 <OPTION VALUE="Accreditation Reporting">Accreditation Reporting</OPTION>
@@ -158,7 +147,7 @@
                     </div>
                     <div class="default-hidden flex-item" id="pi-category-container">
                         <label class="control-label" for="PI__bCategory">PI Category</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select name="PI__bCategory" id="pi-category" class="form-control">
                                 <OPTION VALUE="No Choice">No Choice</OPTION>
                                 <OPTION VALUE="Department Profile">Department Profile</OPTION>
@@ -173,7 +162,7 @@
                     <div class="default-hidden flex-item" id="request-type-unknown">
                         <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please
                             Describe</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <input type="text" class="form-control" id="unknown-description"
                                    name="If__bUnknown__bPlease__bDescribe__c">
                         </div>
@@ -181,7 +170,7 @@
                 </div>
                 <div class="flex-item">
                     <label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
-                    <div class="input-group">
+                    <div class="form-group">
                         <select name="Proposed__bAudience" id="proposed-audience" class="form-control">
                             <OPTION VALUE="No Choice">No Choice</OPTION>
                             <OPTION VALUE="Internal CNM ">Internal CNM (Employees only)</OPTION>
@@ -198,7 +187,7 @@
                         <label class="control-label"
                                for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to
                             which this relates</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select
                                     name="Strategic__bgoal__bto__bwhich__bthis__brelates"
                                     id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32"
@@ -216,7 +205,7 @@
                     <div class="col-6 default-hidden" id="student-success-strategic-initiative">
                         <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
                             initiative to which this relates</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select
                                     name="Strategic__binitiative__bto__bwhich__bthis__brelates"
                                     id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
@@ -273,7 +262,7 @@
                     <div class="col-6 default-hidden" id="community-success-strategic-initiative">
                         <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
                             initiative to which this relates</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select
                                     name="Strategic__binitiative__bto__bwhich__bthis__brelates"
                                     id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
@@ -315,7 +304,7 @@
                     <div class="col-6 default-hidden" id="organization-strategic-initiative">
                         <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
                             initiative to which this relates</label>
-                        <div class="input-group">
+                        <div class="form-group">
                             <select
                                 name="Strategic__binitiative__bto__bwhich__bthis__brelates"
                                 id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
@@ -357,7 +346,7 @@
                 <h3 class="card-title">Description and Intended Application</h3>
             </div>
             <div class="card-body">
-                <div class="input-group">
+                <div class="form-group">
                     <TEXTAREA NAME="LONGDESCRIPTION"
                               placeholder="Knowing how you plan to use the information helps us better serve you."
                               class="form-control" ROWS=5 COLS=60 WRAP=HARD></TEXTAREA>

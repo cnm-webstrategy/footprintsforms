@@ -35,10 +35,11 @@ body {
 	.form-control {
 		width: 100%;
 		//width: 228px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
 
 		&:last-child {
-			border-top-left-radius: 4px;
-			border-bottom-left-radius: 4px;
+
 		}
 		
 	}
@@ -117,23 +118,13 @@ label {
 		}
 	}
 
-	#subject_row {
-		.input-group .form-control:last-child {
-			//border-top-left-radius: 4px;
-		}
-	}
-
 	#contact_row {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		.input-group .form-control:last-child {
-			//border-top-left-radius: 4px;
-		}
 
 		.input-group {
-			//flex: 1;
-			//max-width: 228px;
+
 			width: 100%;
 
 		}
