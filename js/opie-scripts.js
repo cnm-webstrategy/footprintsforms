@@ -1,21 +1,4 @@
 $(document).ready(function() {
-	$('#email').on('click',  function(event) {
-		event.preventDefault();
-		/* Act on the event */
-	});
-
-	// jQuery.validator.setDefaults({
-	// 	debug: true,
-	// 	success: "valid"
-	// });
-	// $( "#opie-form" ).validate({
-	// 	rules: {
-	// 		email: {
-	// 			required: true,
-	// 			email: true
-	// 		}
-	// 	}
-	// });
 
     $('#date-needed').datetimepicker({
         daysOfWeekDisabled:[0,6],
@@ -23,17 +6,22 @@ $(document).ready(function() {
         defaultDate: moment().add(2,'weeks'),
         format: 'L'
     });
-	// $('#date-needed').on('click', function(event) {
-	$('#date-needed').on('click', function(event) {
-		event.preventDefault();
+
+	// $('#date-needed').trigger("change.datetimepicker");
+	$('#date-needed').on("change.datetimepicker", function (e) {
+		
+		// break datepicker down into individual date parts and
+		// put into hidden fields :(
+		var dateMilli = Date.parse($('#date-needed').val());
+		var d = new Date(dateMilli);
+		var month = e.date.format('M'); //d.getMonth() + 1;
+		var day = e.date.format('D'); //d.getDate();
+		var year = e.date.format('YYYY');
+		
+		$('input[name="Month_Date__bNeeded"]').val(month);
+		$('input[name="Day_Date__bNeeded"]').val(day);
+		$('input[name="Year_Date__bNeeded"]').val(year);
 	});
-	$('#date-needed').trigger("change.datetimepicker");
-	// $('#date-needed').on("change.datetimepicker", function() {
-	// 	console.log('clicked');
-	// 	$('#hidden-date').val(
-	// 		$('#date-needed').datetimepicker('getFormattedDate')
-	// 		);
-	// });
 
 	$('#One__uTime__bor__bRecurring__Q').on('change', function(event) {
 		// if "recurring" is selected
@@ -90,60 +78,10 @@ $(document).ready(function() {
 			$('#organization-strategic-initiative').addClass('default-hidden');
 		}
 	})
-	
-	
 
 	// make subject line 100% width
 	$('#subject').parents('.input-group').width('100%');
 
-	// submit click
-	$('button').on('click', function(event) {
-		event.preventDefault();
-
-	    // break datepicker down into individual date parts and 
-	    // put into hidden fields :(
-
-    	var dateMilli = Date.parse($('#date-needed').val());
-    	var d = new Date(dateMilli);
-    	var month = d.getMonth() + 1;
-    	var day = d.getDate();
-    	var year = d.getFullYear();
-
-	    $('input[name="Month_Date__bNeeded"]').val(month);
-	    $('input[name="Day_Date__bNeeded"]').val(day);
-	    $('input[name="Year_Date__bNeeded"]').val(year);
-
-
-		var emailField = 'Email__bAddress';
-		var userPriv = 4;
-
-		var errorMsg = "";
-
-		if (errorMsg)
-		{
-			//alert(errorMsg);
-			console.error(errorMsg);
-		}
-		else
-		{
-
-			// console.log($('HTML_FORM'))
-			$('#HTML_FORM')[0].submit();
-            // $('#HTML_FORM').submit(function( event ) {
-            // console.log( $( this ).serializeArray() );
-            // event.preventDefault();
-        // });
-        }
-
-    });
-	
-	var $fields = $('#subject, #Last__bName,#First__bName,#Email__bAddress');
-	$fields.on('focusout', function(event) {
-		$fields.each(function(index, el) {
-			
-		});
-
-	});
 });
 
 
