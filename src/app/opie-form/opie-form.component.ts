@@ -22,15 +22,16 @@ export class OpieFormComponent implements OnInit {
     Last__bName: new FormControl(''),
     Email__bAddress: new FormControl(''),
 
-    One__uTime__bor__bRecurring__Q: new FormControl(''),
-    Recurring__bSchedule: new FormControl(''),
-    Please__bExplain__bOther: new FormControl(this.recurring[0].id)
+    One__uTime__bor__bRecurring__Q: new FormControl(this.recurring[0].id),
+    Recurring__bSchedule: new FormControl(),
+    Please__bExplain__bOther: new FormControl()
     // Please__bExplain__bOther: new FormControl(''),
   });
 
   constructor() { }
 
   ngOnInit() {
+    console.warn(this.recurring[0].id);
   }
 
   onSubmit() {
