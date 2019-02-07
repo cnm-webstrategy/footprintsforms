@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OpieFormComponent } from './opie-form/opie-form.component';
 
 const routes: Routes = [
-  { path: 'opie', component: OpieFormComponent }
+  { path: 'opie-form.html', component: OpieFormComponent }
 ];
 
 @NgModule({
