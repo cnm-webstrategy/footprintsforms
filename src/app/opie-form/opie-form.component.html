@@ -58,9 +58,10 @@
 
         <div class="form-group">
           <div class="input-group date" id="date-needed" data-target-input="nearest">
-            <input type="text" class="form-control datetimepicker-input" data-target="#date-needed"/>
-            <div class="input-group-append" data-target="#date-needed" data-toggle="datetimepicker">
-              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            <input formControlName="dateNeeded" class="form-control" placeholder="yyyy-mm-dd"
+                    name="dp" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
             </div>
           </div>
         </div>
@@ -72,15 +73,17 @@
           <label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
           <div class="form-group">
             <select formControlName="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q"
+                    #One__uTime__bor__bRecurring__Q
                     class="form-control">
               <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.name }}</option>
             </select>
           </div>
         </div>
-        <div class="default-hidden flex-item" id="recurring-schedule">
+        <div class="flex-item" id="recurring-schedule" *ngIf="One__uTime__bor__bRecurring__Q.value == 'recurring' ">
           <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
           <div class="form-group">
-            <select formControlName="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
+            <select formControlName="Recurring__bSchedule" #Recurring__bSchedule id="Recurring__bSchedule"
+                    class="form-control">
               <option *ngFor="let option of recurring_schedule" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.name }}</option>
             </select>
 
@@ -88,61 +91,51 @@
 
         </div>
 
-        <!--<div class="default-hidden flex-item" id="explain-other">-->
-          <!--<label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>-->
-          <!--<div class="form-group">-->
-            <!--<INPUT formControlName="Please__bExplain__bOther" class="form-control" SIZE="20" VALUE="">-->
-          <!--</div>-->
-        <!--</div>-->
+        <div class="flex-item" id="explain-other" *ngIf="showExplainOther">
+          <label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
+          <div class="form-group">
+            <input formControlName="Please__bExplain__bOther" #Please__bExplain__bOther class="form-control" SIZE="20" value="">
+          </div>
+        </div>
       <!--</div>-->
 
 
-      <!--<div class="flex-item request-type">-->
-        <!--<div class="flex-item">-->
-          <!--<label class="control-label" for="Type__bof__bRequest">Type of Request</label>-->
-          <!--<div class="form-group">-->
-            <!--<select formControlName="Type__bof__bRequest" id="request-type" class="form-control">-->
-              <!--<OPTION VALUE="No Choice">No Choice</OPTION>-->
-              <!--<OPTION VALUE="Accreditation Reporting">Accreditation Reporting</OPTION>-->
-              <!--<OPTION VALUE="Institutional Research">Institutional Research</OPTION>-->
-              <!--<OPTION VALUE="Learning Assessment">Learning Assessment</OPTION>-->
-              <!--<OPTION VALUE="Performance Improvement">Performance Improvement</OPTION>-->
-              <!--<OPTION VALUE="Unknown">Unknown</OPTION>-->
-            <!--</select>-->
+      <div class="flex-item request-type">
+        <div class="flex-item">
+          <label class="control-label" for="Type__bof__bRequest">Type of Request</label>
+          <div class="form-group">
+            <select formControlName="Type__bof__bRequest" #Type__bof__bRequest id="request-type" class="form-control">
+              <option *ngFor="let option of type_of_request" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.name }}</option>
+            </select>
 
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="default-hidden flex-item" id="pi-category-container">-->
-          <!--<label class="control-label" for="PI__bCategory">PI Category</label>-->
-          <!--<div class="form-group">-->
-            <!--<select formControlName="PI__bCategory" id="pi-category" class="form-control">-->
-              <!--<OPTION VALUE="No Choice">No Choice</OPTION>-->
-              <!--<OPTION VALUE="Department Profile">Department Profile</OPTION>-->
-              <!--<OPTION VALUE="PI Report">PI Report</OPTION>-->
-              <!--<OPTION VALUE="Resources">Resources</OPTION>-->
-              <!--<OPTION VALUE="Survey">Survey</OPTION>-->
-              <!--<OPTION VALUE="Training">Training</OPTION>-->
-            <!--</select>-->
+          </div>
+        </div>
+        <div class="flex-item" id="pi-category-container" *ngIf="Type__bof__bRequest.value == 'Performance Improvement'">
+          <label class="control-label" for="PI__bCategory">PI Category</label>
+          <div class="form-group">
+            <select formControlName="PI__bCategory" #PI__bCategory id="pi-category" class="form-control">
+              <option *ngFor="let option of pi_category" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.name }}</option>
+            </select>
 
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="default-hidden flex-item" id="request-type-unknown">-->
-          <!--<label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please-->
-            <!--Describe</label>-->
-          <!--<div class="form-group">-->
-            <!--<input type="text" class="form-control" id="unknown-description"-->
-                   <!--formControlName="If__bUnknown__bPlease__bDescribe__c">-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
+          </div>
+        </div>
+        <div class="flex-item" id="request-type-unknown"  *ngIf="Type__bof__bRequest.value == 'Unknown'">
+          <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please
+            Describe</label>
+          <div class="form-group">
+            <input type="text" class="form-control" id="unknown-description"
+                   formControlName="If__bUnknown__bPlease__bDescribe__c">
+          </div>
+        </div>
+      </div>
       <!--<div class="flex-item">-->
         <!--<label class="control-label" for="Proposed__bAudience">Proposed Audience</label>-->
         <!--<div class="form-group">-->
           <!--<select formControlName="Proposed__bAudience" id="proposed-audience" class="form-control">-->
-            <!--<OPTION VALUE="No Choice">No Choice</OPTION>-->
-            <!--<OPTION VALUE="Internal CNM ">Internal CNM (Employees only)</OPTION>-->
-            <!--<OPTION VALUE="External to CNM">External to CNM</OPTION>-->
-            <!--<OPTION VALUE="Performance Improvement">Both</OPTION>-->
+            <!--<option value="No Choice">No Choice</option>-->
+            <!--<option value="Internal CNM ">Internal CNM (Employees only)</option>-->
+            <!--<option value="External to CNM">External to CNM</option>-->
+            <!--<option value="Performance Improvement">Both</option>-->
           <!--</select>-->
 
         <!--</div>-->
@@ -211,8 +204,8 @@
                 <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
               <!--</option>-->
               <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
-              <!--<option value="Implement__bCompetency__uBased__bEducation__bOptions">Implement-->
-                <!--Competency-Based Education Options-->
+              <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
+                <!--Competency-Based Education options-->
               <!--</option>-->
               <!--<option value="Incorporate__bSustainability__bInitiatives__binto__bCourse__bOfferings">-->
                 <!--Incorporate Sustainability Initiatives into Course Offerings-->
@@ -262,8 +255,8 @@
                 <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
               <!--</option>-->
               <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
-              <!--<option value="Implement__bCompetency__uBased__bEducation__bOptions">Implement-->
-                <!--Competency-Based Education Options-->
+              <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
+                <!--Competency-Based Education options-->
               <!--</option>-->
             <!--</select>-->
           <!--</div>-->
@@ -289,7 +282,7 @@
               <!--<option value="Enhance__bIntellectual__bProperty__bInitiatives">Enhance Intellectual-->
                 <!--Property Initiatives-->
               <!--</option>-->
-              <!--<option value="Implement__bValues__uBased__bEmployee__bInitiatives">Implement Values-Based-->
+              <!--<option value="Implement__bvalues__uBased__bEmployee__bInitiatives">Implement values-Based-->
                 <!--Employee Initiatives-->
               <!--</option>-->
               <!--<option value="Streamline__band__bDocument__ball__bProcesses__band__bProcedures">Streamline-->
