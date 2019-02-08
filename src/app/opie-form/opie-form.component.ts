@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import * as td from 'tempusdominus-bootstrap-4';
 
 @Component({
   selector: 'app-opie-form',
@@ -7,34 +8,54 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./opie-form.component.scss']
 })
 export class OpieFormComponent implements OnInit {
-
-// <option value="no-answer">No choice</option>
-// <option value="one-time">One time</option>
-// <option value="recurring">Recurring</option>
+  opieForm: FormGroup;
   recurring = [
     {'id': 'no-answer', 'name': 'No choice'},
     {'id': 'one-time', 'name': 'One time'},
+    {'id': 'recurring', 'name': 'Recurring'}
   ];
 
-  opieForm = new FormGroup({
-    TITLE: new FormControl(''),
-    First__bName: new FormControl(''),
-    Last__bName: new FormControl(''),
-    Email__bAddress: new FormControl(''),
+  recurring_schedule = [
+    {'id': 'No Choice', 'name': 'No choice'},
+    {'id': 'Term', 'name': 'Term'},
+    {'id': 'Annually', 'name': 'Annually'},
+    {'id': 'Other', 'name': 'Other'},
+  ];
 
-    One__uTime__bor__bRecurring__Q: new FormControl(this.recurring[0].id),
-    Recurring__bSchedule: new FormControl(),
-    Please__bExplain__bOther: new FormControl()
-    // Please__bExplain__bOther: new FormControl(''),
-  });
 
-  constructor() { }
+
+//   opieForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
+//   console.log(val);
+// });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    console.warn(this.recurring[0].id);
+
+
+    this.opieForm = this.fb.group({
+      TITLE: ['', Validators.required],
+      First__bName: ['', Validators.required],
+      Last__bName: ['', Validators.required],
+      Email__bAddress: ['', Validators.required],
+
+      One__uTime__bor__bRecurring__Q: [this.recurring[0].id , Validators.required],
+      Recurring__bSchedule: [this.recurring_schedule[0].id],
+      Please__bExplain__bOther: [''],
+      // Please__bExplain__bOther: [''],
+    });
+
+    this.onChanges();
+
   }
 
-  onSubmit() {
+  onChanges(): void {
+    this.opieForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
+      console.log(val);
+    });
+  }
+
+  onSubmit = () => {
     console.warn(this.opieForm.value);
     // this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
     //   .subscribe();

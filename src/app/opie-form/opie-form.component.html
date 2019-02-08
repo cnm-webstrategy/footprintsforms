@@ -1,3 +1,6 @@
+<p>
+  Form Status: {{ opieForm.status }}
+</p>
 <form [formGroup]="opieForm" (ngSubmit)="onSubmit()">
   <img src="assets/img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
 
@@ -78,10 +81,7 @@
           <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
           <div class="form-group">
             <select formControlName="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control">
-              <OPTION VALUE="No Choice">No Choice</OPTION>
-              <OPTION VALUE="Term">Term</OPTION>
-              <OPTION VALUE="Annually">Annually</OPTION>
-              <OPTION VALUE="Other">Other</OPTION>
+              <option *ngFor="let option of recurring_schedule" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.name }}</option>
             </select>
 
           </div>
@@ -314,6 +314,6 @@
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="node_modules/moment/min/moment.min.js"></script>
-<script type="text/javascript"
-        src="node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- <script src="node_modules/moment/min/moment.min.js"></script>-->
+<!--<script type="text/javascript"-->
+        <!--src="node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>-->
