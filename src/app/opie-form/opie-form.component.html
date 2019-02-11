@@ -75,7 +75,7 @@
             <select formControlName="One__uTime__bor__bRecurring__Q" id="One__uTime__bor__bRecurring__Q"
                     #One__uTime__bor__bRecurring__Q
                     class="form-control">
-              <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.name }}</option>
+              <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.text }}</option>
             </select>
           </div>
         </div>
@@ -84,7 +84,7 @@
           <div class="form-group">
             <select formControlName="Recurring__bSchedule" #Recurring__bSchedule id="Recurring__bSchedule"
                     class="form-control">
-              <option *ngFor="let option of recurring_schedule" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.name }}</option>
+              <option *ngFor="let option of recurring_schedule" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.text }}</option>
             </select>
 
           </div>
@@ -105,7 +105,7 @@
           <label class="control-label" for="Type__bof__bRequest">Type of Request</label>
           <div class="form-group">
             <select formControlName="Type__bof__bRequest" #Type__bof__bRequest id="request-type" class="form-control">
-              <option *ngFor="let option of type_of_request" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.name }}</option>
+              <option *ngFor="let option of type_of_request" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
@@ -114,7 +114,7 @@
           <label class="control-label" for="PI__bCategory">PI Category</label>
           <div class="form-group">
             <select formControlName="PI__bCategory" #PI__bCategory id="pi-category" class="form-control">
-              <option *ngFor="let option of pi_category" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.name }}</option>
+              <option *ngFor="let option of pi_category" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
@@ -128,40 +128,37 @@
           </div>
         </div>
       </div>
-      <!--<div class="flex-item">-->
-        <!--<label class="control-label" for="Proposed__bAudience">Proposed Audience</label>-->
-        <!--<div class="form-group">-->
-          <!--<select formControlName="Proposed__bAudience" id="proposed-audience" class="form-control">-->
-            <!--<option value="No Choice">No Choice</option>-->
-            <!--<option value="Internal CNM ">Internal CNM (Employees only)</option>-->
-            <!--<option value="External to CNM">External to CNM</option>-->
-            <!--<option value="Performance Improvement">Both</option>-->
-          <!--</select>-->
+      <div class="flex-item">
+        <label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
+        <div class="form-group">
+          <select formControlName="Proposed__bAudience" #Proposed__bAudience id="proposed-audience" class="form-control">
+            <option *ngFor="let option of proposed_audience" [selected]="option.id == 'No Choice'">{{ option.text }}</option>
+          </select>
 
-        <!--</div>-->
-      <!--</div>-->
+        </div>
+      </div>
 
-      <!--&lt;!&ndash;strategic goal&ndash;&gt;-->
-      <!--<div class="row strategic-goal">-->
-        <!--<div class="col-6">-->
-          <!--<label class="control-label"-->
-                 <!--for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to-->
-            <!--which this relates</label>-->
-          <!--<div class="form-group">-->
-            <!--<select-->
-              <!--formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"-->
-              <!--id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32"-->
-              <!--class="form-control">-->
-              <!--<option value="" selected="true">No Choice</option>-->
-              <!--<option value="Student__bSuccess">Student Success</option>-->
-              <!--<option value="Community__bSuccess">Community Success</option>-->
-              <!--<option value="Organization__bExcellence__band__bInnovation">Organization Excellence and-->
-                <!--Innovation-->
-              <!--</option>-->
-              <!--<option value="None__bof__bthese">None of these</option>-->
-            <!--</select>-->
-          <!--</div>-->
-        <!--</div>-->
+      <!-- strategic goal  -->
+      <div class="flex-item strategic-goal">
+        <div class="col-6">
+          <label class="control-label"
+                 for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to
+            which this relates</label>
+          <div class="form-group">
+            <select
+              formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"
+              id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32"
+              class="form-control">
+              <option value="" selected="true">No Choice</option>
+              <option value="Student__bSuccess">Student Success</option>
+              <option value="Community__bSuccess">Community Success</option>
+              <option value="Organization__bExcellence__band__bInnovation">Organization Excellence and
+                Innovation
+              </option>
+              <option value="None__bof__bthese">None of these</option>
+            </select>
+          </div>
+        </div>
         <!--<div class="col-6 default-hidden" id="student-success-strategic-initiative">-->
           <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
             <!--initiative to which this relates</label>-->
@@ -296,7 +293,7 @@
               <!--</option>-->
             <!--</select>-->
           <!--</div>-->
-        <!--</div>-->
+        </div>
       </div>
     </div>
   </div>

@@ -15,15 +15,31 @@ button {
 @media screen and (min-width: 768px) {
   #date-needed input {
     width: 1%; }
+  .card-body {
+    &.flex-container {
+      .flex-item {
+        &.request-type,
+        &.strategic-goal,
+        &.recurring {
+          flex-direction: row;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      #contact_row {
+        &.flex-item {
+          flex-direction: row;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+    }
+  }
   .card-body.flex-container .flex-item.request-type, .card-body.flex-container .flex-item.recurring {
-    -ms-flex-direction: row;
-    flex-direction: row;
-    max-width: 100%;
-    width: 100%; }
+
   .card-body.flex-container #contact_row.flex-item {
     -ms-flex-direction: row;
-    flex-direction: row;
-    max-width: 100%;
-    width: 100%; }
+     }
   #TITLE {
     width: 600px; } }

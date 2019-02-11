@@ -13,42 +13,41 @@ export class OpieFormComponent implements OnInit {
   opieForm: FormGroup;
   showExplainOther = false;
 
+  // values for various dropdowns
   recurring = [
-    {'id': 'no-answer', 'name': 'No choice'},
-    {'id': 'one-time', 'name': 'One time'},
-    {'id': 'recurring', 'name': 'Recurring'}
+    {id: 'no-answer', 'name': 'No choice'},
+    {id: 'one-time', 'name': 'One time'},
+    {id: 'recurring', 'name': 'Recurring'}
   ];
-
   recurring_schedule = [
-    {'id': 'No Choice', 'name': 'No choice'},
-    {'id': 'Term', 'name': 'Term'},
-    {'id': 'Annually', 'name': 'Annually'},
-    {'id': 'Other', 'name': 'Other'},
+    {id: 'No Choice', 'name': 'No choice'},
+    {id: 'Term', 'name': 'Term'},
+    {id: 'Annually', 'name': 'Annually'},
+    {id: 'Other', 'name': 'Other'},
   ];
-
   type_of_request = [
-    {'id': 'No Choice', name: 'No Choice'},
-    {'id': 'Accreditation Reporting', name: 'Accreditation Reporting'},
-    {'id': 'Institutional Research', name: 'Institutional Research'},
-    {'id': 'Learning Assessment', name: 'Learning Assessment'},
-    {'id': 'Performance Improvement', name: 'Performance Improvement'},
-    {'id': 'Unknown', name: 'Unknown'},
-  ]
-
+    {id: 'No Choice', text: 'No Choice'},
+    {id: 'Accreditation Reporting', text: 'Accreditation Reporting'},
+    {id: 'Institutional Research', text: 'Institutional Research'},
+    {id: 'Learning Assessment', text: 'Learning Assessment'},
+    {id: 'Performance Improvement', text: 'Performance Improvement'},
+    {id: 'Unknown', text: 'Unknown'},
+  ];
   pi_category = [
-    {'id': 'No Choice', name: 'No Choice'},
-    {'id': 'Department Profile', name: 'Department Profile'},
-    {'id': 'PI Report', name: 'PI Report'},
-    {'id': 'Resources', name: 'Resources'},
-    {'id': 'Survey', name: 'Survey'},
-    {'id': 'Training', name: 'Training'},
+    {id: 'No Choice', text: 'No Choice'},
+    {id: 'Department Profile', text: 'Department Profile'},
+    {id: 'PI Report', text: 'PI Report'},
+    {id: 'Resources', text: 'Resources'},
+    {id: 'Survey', text: 'Survey'},
+    {id: 'Training', text: 'Training'},
+  ];
+  proposed_audience = [
+    {id: 'No Choice', text: 'No Choice'}
   ]
-
-
-
-//   opieForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
-//   console.log(val);
-// });
+//     <option value="No Choice">No Choice</option>
+// <option value="Internal CNM ">Internal CNM (Employees only)</option>
+// <option value="External to CNM">External to CNM</option>
+// <option value="Performance Improvement">Both</option>
 
   constructor(private fb: FormBuilder) { }
 
@@ -68,11 +67,17 @@ export class OpieFormComponent implements OnInit {
       Type__bof__bRequest: [this.type_of_request[0].id],
       PI__bCategory: [''],
       If__bUnknown__bPlease__bDescribe__c: [''],
+      Proposed__bAudience: [''],
+      Strategic__bgoal__bto__bwhich__bthis__brelates: ['']
     });
 
     this.onChanges();
+
+    // calculate a date two weeks in the future as default, as per the customer
     const dateInTwoWeeks = moment().add(2, 'weeks');
+    // convert moment date to NgbDateStruct, because that's what angular bootstrap uses
     this.dateNeededDate = { year: dateInTwoWeeks.year(), month: dateInTwoWeeks.month() + 1, day: dateInTwoWeeks.date()};
+    // set `dateNeeded` field to date two weeks in the future
     this.opieForm.get('dateNeeded').setValue(this.dateNeededDate);
 
   }
