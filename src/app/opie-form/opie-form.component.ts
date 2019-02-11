@@ -9,21 +9,34 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./opie-form.component.scss']
 })
 export class OpieFormComponent implements OnInit {
+  node: Node;
+  config = { attributes: true, childList: true, subtree: true };
+  observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        console.log('A child node has been added or removed.');
+      } else if (mutation.type === 'attributes') {
+        console.log('The ' + mutation.attributeName + ' attribute was modified.');
+      }
+    });
+  });
+
+
   dateNeededDate: NgbDateStruct ;
   opieForm: FormGroup;
   showExplainOther = false;
 
   // values for various dropdowns
   recurring = [
-    {id: 'no-answer', 'name': 'No choice'},
-    {id: 'one-time', 'name': 'One time'},
-    {id: 'recurring', 'name': 'Recurring'}
+    {id: 'no-answer', text: 'No choice'},
+    {id: 'one-time', text: 'One time'},
+    {id: 'recurring', text: 'Recurring'}
   ];
   recurring_schedule = [
-    {id: 'No Choice', 'name': 'No choice'},
-    {id: 'Term', 'name': 'Term'},
-    {id: 'Annually', 'name': 'Annually'},
-    {id: 'Other', 'name': 'Other'},
+    {id: 'No Choice', text: 'No choice'},
+    {id: 'Term', text: 'Term'},
+    {id: 'Annually', text: 'Annually'},
+    {id: 'Other', text: 'Other'},
   ];
   type_of_request = [
     {id: 'No Choice', text: 'No Choice'},
@@ -52,7 +65,8 @@ export class OpieFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-
+    this.node = document.getElementById('recurring');
+    this.observer.observe(this.node, this.config);
 
     this.opieForm = this.fb.group({
       TITLE: ['', Validators.required],

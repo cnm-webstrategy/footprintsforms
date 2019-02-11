@@ -13,22 +13,32 @@ body {
   font-style: italic;
 }
 .container {
-
-}
-
-.card {
   border-color: $dark-blue;
-  .card-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid $dark-blue; //rgba(0,0,0,.125);
+  border-radius: .25rem;
+  .container-heading {
+    margin: 0 -15px;
     padding: 10px 15px;
     color: #f6be00;
     background-color: $dark-blue;
     border-color: $dark-blue;
 
-    .card-title {
+    .container-title {
       font-size: 24px;
       letter-spacing: .05em;
     }
   }
+}
+
+.card {
+
 }
 
 .input-group {
@@ -136,7 +146,7 @@ label {
 
 @media screen and (min-width:768px){
   //form {
-  .card-body {
+  .container-body {
     #contact_row {
       flex-direction: row;
 
