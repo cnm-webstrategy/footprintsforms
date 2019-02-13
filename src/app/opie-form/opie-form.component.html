@@ -17,24 +17,24 @@
     <div class="container-body" id="first-card">
       <!-- this is the outer flexbox for this card -->
       <div class="row"> <!-- first flexbox item -->
-        <div class="col-md-md form-group">
+        <div class="col-md form-group">
           <label class="control-label" for="TITLE">Subject</label>
           <input type="text" class="form-control" id="TITLE" formControlName="TITLE" placeholder="required" required>
         </div>
       </div>
       <div class="row">
         <!-- second flexbox item, also a flexbox container -->
-        <div class="form-group col-md-md">
+        <div class="form-group col-md">
           <label class="control-label" for="Last__bName">Last Name</label>
           <input type="text" class="form-control" id="Last__bName" formControlName="Last__bName"
                  placeholder="required" required>
         </div>
-        <div class="form-group col-md-md">
+        <div class="form-group col-md">
           <label class="control-label" for="First__bName">First Name</label>
           <input type="text" class="form-control" id="First__bName" formControlName="First__bName"
                  placeholder="required" required>
         </div>
-        <div class="form-group col-md-md">
+        <div class="form-group col-md">
           <label class="control-label" for="Email__bAddress">Email</label>
           <input type="email" class="form-control" id="Email__bAddress" formControlName="Email__bAddress"
                  placeholder="required" value="" required>
@@ -84,20 +84,22 @@
             </select>
           </div>
         </div>
-        <div class="col-sm-6" id="recurring-schedule" *ngIf="One__uTime__bor__bRecurring__Q.value == 'recurring' ">
+
+        <div class="col-sm-6 alert alert-success animated fadeOut hide" id="recurring-schedule"
+             [class.show]="One__uTime__bor__bRecurring__Q.value == 'recurring'">
           <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
           <div class="form-group">
-            <select formControlName="Recurring__bSchedule" #Recurring__bSchedule id="Recurring__bSchedule"
-                    class="form-control">
-              <option *ngFor="let option of recurring_schedule" [value]="option.id"
+            <select formControlName="Recurring__bSchedule" id="Recurring__bSchedule" class="form-control"
+                    #Recurring__bSchedule>
+              <option *ngFor="let option of recurringSchedule" [value]="option.id"
                       [selected]="option.id == 'No Choice'">{{ option.text }}</option>
             </select>
 
           </div>
 
         </div>
-
-        <div class="col-12  alert alert-success" id="explain-other" *ngIf="One__uTime__bor__bRecurring__Q.value == 'recurring'  && showExplainOther">
+        <div class="col-12  alert alert-success animated fadeOut hide" id="explain-other"
+             [class.show]="Recurring__bSchedule.value === 'Other' && One__uTime__bor__bRecurring__Q.value == 'recurring' ">
           <label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
           <div class="form-group">
             <input formControlName="Please__bExplain__bOther" #Please__bExplain__bOther class="form-control" SIZE="20"
@@ -113,23 +115,25 @@
           <div class="form-group">
             <select formControlName="Type__bof__bRequest" #Type__bof__bRequest id="request-type"
                     class="form-control">
-              <option *ngFor="let option of type_of_request" [selected]="option.id == 'No Choice'"
+              <option *ngFor="let option of typeOfRequest" [selected]="option.id == 'No Choice'"
                       [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
         </div>
-        <div class="col-sm-6" id="pi-category-container" *ngIf="Type__bof__bRequest.value == 'Performance Improvement'">
+        <div class="col-sm-6 alert alert-success animated fadeOut hide" id="pi-category-container"
+             [class.show]="Type__bof__bRequest.value == 'Performance Improvement'">
           <label class="control-label" for="PI__bCategory">PI Category</label>
           <div class="form-group">
             <select formControlName="PI__bCategory" #PI__bCategory id="pi-category" class="form-control">
-              <option *ngFor="let option of pi_category" [selected]="option.id == 'No Choice'"
+              <option *ngFor="let option of piCategory" [selected]="option.id == 'No Choice'"
                       [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
         </div>
-        <div class="col-12" id="request-type-unknown" *ngIf="Type__bof__bRequest.value == 'Unknown'">
+        <div class="col-12 alert alert-success animated fadeOut hide" id="request-type-unknown"
+             [class.show]="Type__bof__bRequest.value == 'Unknown'">
           <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please
             Describe</label>
           <div class="form-group">
@@ -145,7 +149,7 @@
           <div class="form-group">
             <select formControlName="Proposed__bAudience" #Proposed__bAudience id="proposed-audience"
                     class="form-control">
-              <option *ngFor="let option of proposed_audience"
+              <option *ngFor="let option of proposedAudience" [value]="option.id"
                       [selected]="option.id == 'No Choice'">{{ option.text }}</option>
             </select>
 
@@ -160,158 +164,110 @@
                  for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to
             which this relates</label>
           <div class="form-group">
-            <select
-              formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"
-              id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32"
-              class="form-control">
-              <option value="" selected="true">No Choice</option>
-              <option value="Student__bSuccess">Student Success</option>
-              <option value="Community__bSuccess">Community Success</option>
-              <option value="Organization__bExcellence__band__bInnovation">Organization Excellence and
-                Innovation
-              </option>
-              <option value="None__bof__bthese">None of these</option>
+            <select formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"
+                    #Strategic__bgoal__bto__bwhich__bthis__brelates
+                    id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32" class="form-control">
+              <option *ngFor="let option of strategicGoal" [value]="option.id">{{ option.text }}</option>
             </select>
           </div>
         </div>
-        <!--<div class="col-md-6 default-hidden" id="student-success-strategic-initiative">-->
-        <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
-        <!--initiative to which this relates</label>-->
-        <!--<div class="form-group">-->
-        <!--<select-->
-        <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
-        <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
-        <!--class="form-control">-->
-        <!--<option value="" selected="true">No Choice</option>-->
-        <!--<option value="All__bFirst__uTime__M__bFull__uTime__M__bDegree__uSeeking__bStudents__bHave__ban__bAcademic__bPlan">-->
-        <!--All First-Time, Full-Time, Degree-Seeking Students Have an Academic Plan-->
-        <!--</option>-->
-        <!--<option value="Create__ba__bStudent__uCentered__bCourse__bSchedule">Create a-->
-        <!--Student-Centered Course Schedule-->
-        <!--</option>-->
-        <!--<option value="Create__bComprehensive__bOnline__bcol-mdlege">Create Comprehensive Online-->
-        <!--col-mdlege-->
-        <!--</option>-->
-        <!--<option value="Develop__bEarly__bChildhood__bConnect__bCenter__bof__bExcellence">Develop-->
-        <!--Early Childhood Connect Center of Excellence-->
-        <!--</option>-->
-        <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
-        <!--Initiative-->
-        <!--</option>-->
-        <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
-        <!--Experience Program-->
-        <!--</option>-->
-        <!--<option value="Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool">Expand col-mdlege &amp;-->
-        <!--Career-->
-        <!--High School-->
-        <!--</option>-->
-        <!--<option value="Expand__bCredit__bfor__bPrior__bLearning">Expand Credit for Prior-->
-        <!--Learning-->
-        <!--</option>-->
-        <!--<option value="Expand__bDual__bCredit">Expand Dual Credit</option>-->
-        <!--<option value="Expand__bFast__uTrack__bDegree__bOfferings">Expand Fast-Track Degree-->
-        <!--Offerings-->
-        <!--</option>-->
-        <!--<option value="Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies">-->
-        <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
-        <!--</option>-->
-        <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
-        <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
-        <!--Competency-Based Education options-->
-        <!--</option>-->
-        <!--<option value="Incorporate__bSustainability__bInitiatives__binto__bCourse__bOfferings">-->
-        <!--Incorporate Sustainability Initiatives into Course Offerings-->
-        <!--</option>-->
-        <!--<option value="Increase__bGraduation__bRates__bof__bFirst__uTime__M__bFull__uTime__M__bDegree__uSeeking__bStudents">-->
-        <!--Increase Graduation Rates of First-Time, Full-Time, Degree-Seeking Students-->
-        <!--</option>-->
-        <!--<option value="Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology">-->
-        <!--Transition from col-mdlege-Owned Technology to Student-Owned Technology-->
-        <!--</option>-->
-        <!--</select>-->
+        <div class="col-md-6 alert alert-success animated fadeOut hide" id="student-success-strategic-initiative"
+             [class.show]="Strategic__bgoal__bto__bwhich__bthis__brelates.value == 'Student__bSuccess' || Strategic__bgoal__bto__bwhich__bthis__brelates.value =='Community__bSuccess' || Strategic__bgoal__bto__bwhich__bthis__brelates.value =='Organization__bExcellence__band__bInnovation'">
+          <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic
+            initiative to which this relates</label>
+          <div class="form-group">
+            <select
+              formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"
+              #Strategic__binitiative__bto__bwhich__bthis__brelates
+              id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
+              class="form-control">
+              <option *ngFor="let option of strategicInitiative[Strategic__bgoal__bto__bwhich__bthis__brelates.value]" [value]="option.id">{{ option.text }}</option>
+            </select>
+          </div>
+        </div>
+        <!--<div class="col-md-6 alert alert-success animated fadeOut hide" id="community-success-strategic-initiative">-->
+          <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
+            <!--initiative to which this relates</label>-->
+          <!--<div class="form-group">-->
+            <!--<select-->
+              <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
+              <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
+              <!--class="form-control">-->
+              <!--<option value="" selected="true">No Choice</option>-->
+              <!--<option value="Create__bComprehensive__bOnline__bcol-mdlege">Create Comprehensive Online-->
+                <!--col-mdlege-->
+              <!--</option>-->
+              <!--<option value="Develop__band__bImplement__bComprehensive__bMakerspace">Develop and-->
+                <!--Implement-->
+                <!--Comprehensive Makerspace-->
+              <!--</option>-->
+              <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
+                <!--Initiative-->
+              <!--</option>-->
+              <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
+                <!--Experience Program-->
+              <!--</option>-->
+              <!--<option value="Expand__bBusiness__bSupport__bthrough__bBusiness__bAccelerator__band__bSBDCs">-->
+                <!--Expand Business Support through Business Accelerator and SBDCs-->
+              <!--</option>-->
+              <!--<option value="Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool">Expand col-mdlege &amp;-->
+                <!--Career-->
+                <!--High School-->
+              <!--</option>-->
+              <!--<option value="Expand__bFast__uTrack__bDegree__bOfferings">Expand Fast-Track Degree-->
+                <!--Offerings-->
+              <!--</option>-->
+              <!--<option value="Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies">-->
+                <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
+              <!--</option>-->
+              <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
+              <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
+                <!--Competency-Based Education options-->
+              <!--</option>-->
+            <!--</select>-->
+          <!--</div>-->
         <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-6 default-hidden" id="community-success-strategic-initiative">-->
-        <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
-        <!--initiative to which this relates</label>-->
-        <!--<div class="form-group">-->
-        <!--<select-->
-        <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
-        <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
-        <!--class="form-control">-->
-        <!--<option value="" selected="true">No Choice</option>-->
-        <!--<option value="Create__bComprehensive__bOnline__bcol-mdlege">Create Comprehensive Online-->
-        <!--col-mdlege-->
-        <!--</option>-->
-        <!--<option value="Develop__band__bImplement__bComprehensive__bMakerspace">Develop and-->
-        <!--Implement-->
-        <!--Comprehensive Makerspace-->
-        <!--</option>-->
-        <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
-        <!--Initiative-->
-        <!--</option>-->
-        <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
-        <!--Experience Program-->
-        <!--</option>-->
-        <!--<option value="Expand__bBusiness__bSupport__bthrough__bBusiness__bAccelerator__band__bSBDCs">-->
-        <!--Expand Business Support through Business Accelerator and SBDCs-->
-        <!--</option>-->
-        <!--<option value="Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool">Expand col-mdlege &amp;-->
-        <!--Career-->
-        <!--High School-->
-        <!--</option>-->
-        <!--<option value="Expand__bFast__uTrack__bDegree__bOfferings">Expand Fast-Track Degree-->
-        <!--Offerings-->
-        <!--</option>-->
-        <!--<option value="Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies">-->
-        <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
-        <!--</option>-->
-        <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
-        <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
-        <!--Competency-Based Education options-->
-        <!--</option>-->
-        <!--</select>-->
-        <!--</div>-->
-        <!--</div>-->
+
+
         <!--<div class="col-md-6 default-hidden" id="organization-strategic-initiative">-->
-        <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
-        <!--initiative to which this relates</label>-->
-        <!--<div class="form-group">-->
-        <!--<select-->
-        <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
-        <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
-        <!--class="form-control">-->
-        <!--<option value="" selected="true">No Choice</option>-->
-        <!--<option value="Articulate__band__bImplement__bSpace__bEfficiency__bInitiatives">Articulate-->
-        <!--and Implement Space Efficiency Initiatives-->
-        <!--</option>-->
-        <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
-        <!--Initiative-->
-        <!--</option>-->
-        <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
-        <!--Experience Program-->
-        <!--</option>-->
-        <!--<option value="Enhance__bIntellectual__bProperty__bInitiatives">Enhance Intellectual-->
-        <!--Property Initiatives-->
-        <!--</option>-->
-        <!--<option value="Implement__bvalues__uBased__bEmployee__bInitiatives">Implement values-Based-->
-        <!--Employee Initiatives-->
-        <!--</option>-->
-        <!--<option value="Streamline__band__bDocument__ball__bProcesses__band__bProcedures">Streamline-->
-        <!--and Document all Processes and Procedures-->
-        <!--</option>-->
-        <!--<option value="Transform__bCustomer__bService__bExperience">Transform Customer Service-->
-        <!--Experience-->
-        <!--</option>-->
-        <!--<option value="Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology">-->
-        <!--Transition from col-mdlege-Owned Technology to Student-Owned Technology-->
-        <!--</option>-->
-        <!--</select>-->
+          <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
+            <!--initiative to which this relates</label>-->
+          <!--<div class="form-group">-->
+            <!--<select-->
+              <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
+              <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
+              <!--class="form-control">-->
+              <!--<option value="" selected="true">No Choice</option>-->
+              <!--<option value="Articulate__band__bImplement__bSpace__bEfficiency__bInitiatives">Articulate-->
+                <!--and Implement Space Efficiency Initiatives-->
+              <!--</option>-->
+              <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
+                <!--Initiative-->
+              <!--</option>-->
+              <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
+                <!--Experience Program-->
+              <!--</option>-->
+              <!--<option value="Enhance__bIntellectual__bProperty__bInitiatives">Enhance Intellectual-->
+                <!--Property Initiatives-->
+              <!--</option>-->
+              <!--<option value="Implement__bvalues__uBased__bEmployee__bInitiatives">Implement values-Based-->
+                <!--Employee Initiatives-->
+              <!--</option>-->
+              <!--<option value="Streamline__band__bDocument__ball__bProcesses__band__bProcedures">Streamline-->
+                <!--and Document all Processes and Procedures-->
+              <!--</option>-->
+              <!--<option value="Transform__bCustomer__bService__bExperience">Transform Customer Service-->
+                <!--Experience-->
+              <!--</option>-->
+              <!--<option value="Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology">-->
+                <!--Transition from col-mdlege-Owned Technology to Student-Owned Technology-->
+              <!--</option>-->
+            <!--</select>-->
+          <!--</div>-->
         <!--</div>-->
       </div>
     </div>
   </div>
-
   <button class="btn btn-primary" [disabled]="!opieForm.valid" type="submit">Submit form</button>
 </form>
 
