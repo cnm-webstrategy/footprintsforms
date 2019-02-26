@@ -1,0 +1,223 @@
+<!--<form id="HTML_FORM" formControlName="HTML_FORM" method="POST" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl" class="needs-validation" novalidate="">-->
+<form id="HTML_FORM" [formGroup]="studentComplaintForm" (ngSubmit)="onSubmit()">
+
+  <div class="container">
+    <div class="container-heading">
+      <h3 class="container-title">Student Complaint Form</h3>
+    </div>
+    <div class="container-body">
+      <p>CNM will not allow any form of retaliation against individuals who file a complaint with the CNM
+        administration or who cooperate in the investigation of such reports. To the extent possible, the
+        confidentiality of the reports will be maintained.</p>
+      <p><i>Please note: This form may also be used to communicate compliments or affirmations of outstanding
+        service and/or attitude from members of the CNM community.</i></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="container-heading">
+      <h3 class="container-title">Contact Information</h3>
+    </div>
+    <div class="container-body">
+      <div class="row">
+        <div class="form-group col-md">
+          <label class="control-label" for="First__bName">First Name</label>
+          <input class="form-control" type="text" formControlName="First__bName" id="First__bName" value="" required=""
+                 title="" placeholder="Required"
+                 style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+          <div class="invalid-feedback">
+            Please enter a first name.
+          </div>
+        </div>
+        <div class="form-group col-md">
+          <label class="control-label" for="First__bName">Last Name</label>
+          <input class="form-control" type="text" formControlName="Last__bName" id="Last__bName" value="" required=""
+                 placeholder="Required">
+          <div class="invalid-feedback">
+            Please enter a last name.
+          </div>
+        </div>
+        <div class="form-group col-md">
+          <label class="control-label" for="Email__bAddress">Email Address</label>
+          <input class="form-control" type="email" formControlName="Email__bAddress" id="Email__bAddress" value=""
+                 required="" placeholder="Required">
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+      </div> <!-- closes 1st row -->
+      <div class="row">
+        <div class="form-group col-md">
+          <label class="control-label" for="User__bName">User Name</label>
+          <input class="form-control" placeholder=" Required. If none type email address" type="text"
+                 formControlName="User__bName" id="User__bName" value="" required=""
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+          <div class="invalid-feedback">
+            Please enter a first name.
+          </div>
+        </div>
+        <div class="form-group col-md">
+          <label for="CNM__bPhone">Phone</label>
+          <input class="form-control" type="text" formControlName="CNM__bPhone" id="CNM__bPhone" value="">
+        </div>
+        <div class="form-group col-md">
+          <label for="CNM__bID__bNumber">CNM ID Number</label>
+          <input class="form-control" type="text" formControlName="CNM__bID__bNumber" id="CNM__bID__bNumber" value="">
+        </div>
+      </div> <!-- closes 2nd row -->
+      <div class="row">
+        <div class="form-group col-md">
+          <label for="Student__bAddress">Student Address</label>
+          <input class="form-control" type="text" formControlName="Student__bAddress" id="Student__bAddress" value="">
+        </div>
+        <div class="form-group col-md">
+          <label for="City">City</label>
+          <input class="form-control" type="text" formControlName="City" id="City" value="">
+        </div>
+        <div class="form-group col-md">
+          <label for="State">State</label>
+          <input class="form-control" type="text" formControlName="State" id="State" value="">
+        </div>
+      </div> <!-- closes 3rd row -->
+      <div class="row">
+        <div class="form-group col-md">
+          <label for="Zip__bCode">Zip Code</label>
+          <input class="form-control" type="text" formControlName="Zip__bCode" id="Zip__bCode" value="">
+        </div>
+      </div> <!-- closes 4th row -->
+    </div> <!-- card body -->
+  </div> <!-- contact info card -->
+  <div class="container">
+    <div class="container-heading">
+      <h3 class="container-title">Issue Information</h3>
+
+    </div>
+    <div class="container-body">
+      <div class="form-group subject">
+        <label for="TITLE">Subject</label>
+        <input class="form-control" type="TEXT" formControlName="TITLE" id="TITLE" value="" maxlength="250">
+      </div>
+    </div>
+    <div class="container-body">
+      <div class="row">
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Feedback">Feedback</label>
+          <select class="form-control" formControlName="Feedback" id="Feedback" required="">
+            <option value="Select Choice">Select Choice</option>
+            <option value="Complaint">Complaint</option>
+
+            <option value="Compliment">Compliment</option>
+
+            <option value="General Feedback">General Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Feedback__bCategory">Feedback Category</label>
+          <select class="form-control" formControlName="Feedback__bCategory" id="Feedback__bCategory" multiple=""
+                  required="">
+            <option value="Service">Service</option>
+
+            <option value="Building">Building</option>
+
+            <option value="Individual">Individual</option>
+
+            <option value="Coursework">Coursework</option>
+
+            <option value="Other">Other</option>
+
+          </select>
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Student__bStatus">Student Status</label>
+          <select class="form-control" formControlName="Student__bStatus" id="Student__bStatus" required="">
+            <option value="No Choice">No Choice</option>
+            <option value="Current Student">Current Student</option>
+            <option value="Former Student">Former Student</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6  " data-date-format="dd MM yyyy - HH:ii P">
+          <label for="dateOccurred">Date Event Occurred</label>
+          <input type="datetime" class="form-control datetimepicker" id="dateOccurred" formControlName="dateOccurred"
+                 placeholder="click to pick date">
+          <div class="form-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+        <!-- </div> -->
+      <!-- <div class="flex-item">
+          <label for="time-occurred">Time Event Occurred</label>
+              <div class="form-group date">
+
+                  <input type="text" class="form-control" id="time-occurred" formControlName="time-occurred" placeholder="click to pick time"  data-format="MM/dd/yyyy">
+                  <div class="form-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                  </div>
+              </div>
+      </div> -->
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Course__bName">Course Name</label>
+          <input class="form-control" placeholder="If realated to a course." type="text" formControlName="Course__bName"
+                 id="Course__bName" value="">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Name__bof__bIndividual">Name of Individual</label>
+          <input class="form-control" placeholder="If related to an individual" type="text"
+                 formControlName="Name__bof__bIndividual" id="Name__bof__bIndividual" value="">
+        </div>
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="Confidentiality">Confidentiality</label>
+          <select class="form-control" formControlName="Confidentiality" id="Confidentiality">
+            <option value="No Choice">No Choice</option>
+            <option value="You may use my name">You may use my name</option>
+            <option value="You may use my name but only after the end of term">You may use my name but
+              only after the end of term
+            </option>
+            <option value="Do not use my name">Do not use my name</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6 col-md-3">
+          <label for="Referred__bby">Referred by</label>
+          <input class="form-control" type="text" formControlName="Referred__bby" id="Referred__bby" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="LONGDESCRIPTION">Description of Event</label>
+          <textarea class="form-control" placeholder="Please descripe the issue or event here." id="LONGDESCRIPTION"
+                    formControlName="LONGDESCRIPTION" rows="5" cols="60" wrap="HARD"></textarea>
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="Individual__bOutcome__bor__bDiscussion">Individual Outcome or Discussion</label>
+          <textarea class="form-control"
+                placeholder="If you spoke with an individual please include a quick description of the outcome."
+                id="Individual__bOutcome__bor__bDiscussion"
+                formControlName="Individual__bOutcome__bor__bDiscussion"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- recreate the original date form fields -->
+  <input class="form-control" type="hidden" formControlName="Month_Date__bEvent__bOccured"
+         id="Month_Date__bEvent__bOccured" value="">
+  <input class="form-control" type="hidden" placeholder=" DD" formControlName="Day_Date__bEvent__bOccured"
+         id="Day_Date__bEvent__bOccured" value="">
+  <input class="form-control" type="hidden" placeholder=" YYYY" formControlName="Year_Date__bEvent__bOccured"
+         id="Year_Date__bEvent__bOccured" value="">
+
+  <input class="form-control" type="HIDDEN" formControlName="TO" id="TO" value="studentcomp@cnm.edu">
+  <input class="form-control" type="HIDDEN" formControlName="FROM" id="FROM" value="Web@cnm.edu">
+  <input class="form-control" type="hidden" formControlName="PROJECTNUM" value="21">
+  <input class="form-control" type="hidden" formControlName="PROJECTNAME" value="Dean of Students">
+  <input class="form-control" formControlName="DATE_TYPE" type="hidden" value="0">
+  <small class="form-text text-muted">You will receive an email confirmation if your Request is successfully
+    registered. Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to
+    click the submit button only once. A separate Issue will be entered each time the button is clicked.
+  </small>
+
+  <button class="btn btn-primary" type="submit">Submit Issue</button>
+  <button class="btn btn-primary" [disabled]="!studentComplaintForm.valid" type="submit">Submit form</button>
+</form>

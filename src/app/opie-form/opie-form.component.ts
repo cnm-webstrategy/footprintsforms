@@ -201,6 +201,7 @@ export class OpieFormComponent implements OnInit {
       Proposed__bAudience: [ this.proposedAudience[ 0 ].id ],
       Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id ],
       Strategic__binitiative__bto__bwhich__bthis__brelates: [ '' ],
+      longdescription: [ '' ],
     });
 
     this.onChanges();

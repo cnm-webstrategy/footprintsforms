@@ -1,8 +1,9 @@
-<p>
-  Form Status: {{ opieForm.status }}
-</p>
+<div
+  class="container">
+<p class="row">Form Status: {{ opieForm.status }}</p>
+</div>
 <form [formGroup]="opieForm" (ngSubmit)="onSubmit()">
-  <img src="assets/img/cnm_logo.png" class="cnm-logo" alt="CNM Logo">
+
 
   <!--<label for="TITLE">-->
   <!--Name:-->
@@ -185,90 +186,26 @@
             </select>
           </div>
         </div>
-        <!--<div class="col-md-6 alert alert-success animated fadeOut hide" id="community-success-strategic-initiative">-->
-          <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
-            <!--initiative to which this relates</label>-->
-          <!--<div class="form-group">-->
-            <!--<select-->
-              <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
-              <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
-              <!--class="form-control">-->
-              <!--<option value="" selected="true">No Choice</option>-->
-              <!--<option value="Create__bComprehensive__bOnline__bcol-mdlege">Create Comprehensive Online-->
-                <!--col-mdlege-->
-              <!--</option>-->
-              <!--<option value="Develop__band__bImplement__bComprehensive__bMakerspace">Develop and-->
-                <!--Implement-->
-                <!--Comprehensive Makerspace-->
-              <!--</option>-->
-              <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
-                <!--Initiative-->
-              <!--</option>-->
-              <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
-                <!--Experience Program-->
-              <!--</option>-->
-              <!--<option value="Expand__bBusiness__bSupport__bthrough__bBusiness__bAccelerator__band__bSBDCs">-->
-                <!--Expand Business Support through Business Accelerator and SBDCs-->
-              <!--</option>-->
-              <!--<option value="Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool">Expand col-mdlege &amp;-->
-                <!--Career-->
-                <!--High School-->
-              <!--</option>-->
-              <!--<option value="Expand__bFast__uTrack__bDegree__bOfferings">Expand Fast-Track Degree-->
-                <!--Offerings-->
-              <!--</option>-->
-              <!--<option value="Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies">-->
-                <!--Expand Non-Credit Offerings Through Bootcamps, Academies-->
-              <!--</option>-->
-              <!--<option value="Grow__bIntersession">Grow Intersession</option>-->
-              <!--<option value="Implement__bCompetency__uBased__bEducation__boptions">Implement-->
-                <!--Competency-Based Education options-->
-              <!--</option>-->
-            <!--</select>-->
-          <!--</div>-->
-        <!--</div>-->
 
-
-        <!--<div class="col-md-6 default-hidden" id="organization-strategic-initiative">-->
-          <!--<label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic-->
-            <!--initiative to which this relates</label>-->
-          <!--<div class="form-group">-->
-            <!--<select-->
-              <!--formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"-->
-              <!--id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"-->
-              <!--class="form-control">-->
-              <!--<option value="" selected="true">No Choice</option>-->
-              <!--<option value="Articulate__band__bImplement__bSpace__bEfficiency__bInitiatives">Articulate-->
-                <!--and Implement Space Efficiency Initiatives-->
-              <!--</option>-->
-              <!--<option value="Develop__bGlobal__bLearning__bInitiative">Develop Global Learning-->
-                <!--Initiative-->
-              <!--</option>-->
-              <!--<option value="Develop__bStudent__bWork__bExperience__bProgram">Develop Student Work-->
-                <!--Experience Program-->
-              <!--</option>-->
-              <!--<option value="Enhance__bIntellectual__bProperty__bInitiatives">Enhance Intellectual-->
-                <!--Property Initiatives-->
-              <!--</option>-->
-              <!--<option value="Implement__bvalues__uBased__bEmployee__bInitiatives">Implement values-Based-->
-                <!--Employee Initiatives-->
-              <!--</option>-->
-              <!--<option value="Streamline__band__bDocument__ball__bProcesses__band__bProcedures">Streamline-->
-                <!--and Document all Processes and Procedures-->
-              <!--</option>-->
-              <!--<option value="Transform__bCustomer__bService__bExperience">Transform Customer Service-->
-                <!--Experience-->
-              <!--</option>-->
-              <!--<option value="Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology">-->
-                <!--Transition from col-mdlege-Owned Technology to Student-Owned Technology-->
-              <!--</option>-->
-            <!--</select>-->
-          <!--</div>-->
-        <!--</div>-->
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" [disabled]="!opieForm.valid" type="submit">Submit form</button>
+  <div class="container ">
+    <div class="container-heading">
+      <h3 class="container-title">Description and Intended Application</h3>
+    </div>
+    <div class="container-body">
+      <div class="form-group">
+        <textarea formControlName="longdescription" placeholder="Knowing how you plan to use the information helps us better serve you." class="form-control" rows="5" cols="60" wrap="hard"></textarea>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <button class="btn btn-primary" [disabled]="!opieForm.valid" type="submit">Submit form</button>
+    </div>
+  </div>
 </form>
 
 

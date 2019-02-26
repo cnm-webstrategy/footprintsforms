@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpieFormComponent } from './opie-form/opie-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StudentComplaintFormComponent } from './student-complaint-form/student-complaint-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OpieFormComponent
+    OpieFormComponent,
+    StudentComplaintFormComponent
   ],
   imports: [
     BrowserModule,

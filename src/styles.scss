@@ -12,7 +12,7 @@ body {
 .emphasis {
   font-style: italic;
 }
-.container {
+.container:not(.page-header) {
   border-color: $dark-blue;
   position: relative;
   display: flex;
@@ -34,6 +34,9 @@ body {
       font-size: 24px;
       letter-spacing: .05em;
     }
+  }
+  .container-body {
+    padding-top: 15px;
   }
 }
 
