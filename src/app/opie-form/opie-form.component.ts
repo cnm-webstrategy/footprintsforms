@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import
+{ Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
@@ -201,7 +202,10 @@ export class OpieFormComponent implements OnInit {
       Proposed__bAudience: [ this.proposedAudience[ 0 ].id ],
       Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id ],
       Strategic__binitiative__bto__bwhich__bthis__brelates: [ '' ],
-      longdescription: [ '' ],
+      LONGDESCRIPTION: [ '' ],
+      Month_Date__bNeeded: [ '' ],
+      Day_Date__bNeeded: [ '' ],
+      Year_Date__bNeeded: [ '' ],
       TO: [ 'studentcomp@cnm.edu' ],
       FROM: [ 'Web@cnm.edu' ],
       PROJECTNUM: [ '21' ],
@@ -233,6 +237,9 @@ export class OpieFormComponent implements OnInit {
       // this.opieForm.controls[ 'Strategic__binitiative__bto__bwhich__bthis__brelates' ].setValue(this.strategicInitiative[ val ][ 0 ], {onlySelf: true});
       // console.log(val);
       // console.log(this.strategicInitiative[ val ]);
+    });
+    this.opieForm.get('dateNeeded').valueChanges.subscribe(val => {
+
     });
 
   }
