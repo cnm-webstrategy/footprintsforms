@@ -1,6 +1,16 @@
-<!--<form id="HTML_FORM" formControlName="HTML_FORM" method="POST" action="https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl" class="needs-validation" novalidate="">-->
-<form id="HTML_FORM" [formGroup]="studentComplaintForm" (ngSubmit)="onSubmit()">
+<div
+  class="container">
+  <p class="row">Form Status: {{ studentComplaintForm.status }}</p>
+</div>
+<form [formGroup]="studentComplaintForm" (ngSubmit)="onSubmit()">
 
+
+  <!--<label for="TITLE">-->
+  <!--Name:-->
+  <!--<input type="text" formControlName="TITLE" formControlName="TITLE">-->
+  <!--</label>-->
+
+  <!-- Contact Info card -->
   <div class="container">
     <div class="container-heading">
       <h3 class="container-title">Student Complaint Form</h3>
@@ -138,14 +148,25 @@
           </select>
         </div>
 
-        <div class="form-group col-md-4 col-sm-6  " data-date-format="dd MM yyyy - HH:ii P">
-          <label for="dateOccurred">Date Event Occurred</label>
-          <input type="datetime" class="form-control datetimepicker" id="dateOccurred" formControlName="dateOccurred"
-                 placeholder="click to pick date">
-          <div class="form-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
+          <div class="form-group col-md-4 col-sm-6 ">
+              
+                <label for="dateOccurred">Date Event Occurred</label>
+                  <div class="input-group date" id="dateOccurred" data-target-input="nearest">
+                    <input formControlName="dateOccurred" class="form-control" placeholder="yyyy-mm-dd"
+                    name="dp" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                    </div>
+                  </div>
+                <!-- 
+                <input type="datetime" class="form-control datetimepicker" id="dateOccurred" formControlName="dateOccurred"
+                      placeholder="click to pick date">
+                <div class="form-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+                -->
+
           </div>
-        </div>
         <!-- </div> -->
       <!-- <div class="flex-item">
           <label for="time-occurred">Time Event Occurred</label>
@@ -213,11 +234,15 @@
   <input class="form-control" type="hidden" formControlName="PROJECTNUM" value="21">
   <input class="form-control" type="hidden" formControlName="PROJECTNAME" value="Dean of Students">
   <input class="form-control" formControlName="DATE_TYPE" type="hidden" value="0">
-  <small class="form-text text-muted">You will receive an email confirmation if your Request is successfully
-    registered. Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to
-    click the submit button only once. A separate Issue will be entered each time the button is clicked.
-  </small>
+  
+  <div class="container">
+    <div class="row">
+      <small class="form-text text-muted">You will receive an email confirmation if your Request is successfully
+        registered. Please contact ITSServiceDesk@cnm.edu if you experience problems using this form. Be sure to
+        click the submit button only once. A separate Issue will be entered each time the button is clicked.
+      </small>
 
-  <button class="btn btn-primary" type="submit">Submit Issue</button>
-  <button class="btn btn-primary" [disabled]="!studentComplaintForm.valid" type="submit">Submit form</button>
+      <button class="btn btn-primary" [disabled]="!studentComplaintForm.valid" type="submit">Submit form</button>
+    </div>
+  </div>
 </form>
