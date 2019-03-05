@@ -202,6 +202,11 @@ export class OpieFormComponent implements OnInit {
       Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id ],
       Strategic__binitiative__bto__bwhich__bthis__brelates: [ '' ],
       longdescription: [ '' ],
+      TO: [ 'studentcomp@cnm.edu' ],
+      FROM: [ 'Web@cnm.edu' ],
+      PROJECTNUM: [ '21' ],
+      PROJECTNAME: [ 'Dean of Students' ],
+      DATE_TYPE: [ '0' ],
     });
 
     this.onChanges();
