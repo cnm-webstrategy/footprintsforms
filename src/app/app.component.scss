@@ -1,0 +1,25 @@
+@media screen and (min-width:768px) {
+  .input-group {
+    max-width: 228px;
+    padding-bottom: 10px;
+
+    .form-control {
+      width: 100%;
+      //width: 228px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    //&.flex-item {
+    //  &.subject {
+    //    width: 100%;
+    //    max-width: 100%;
+    //  }
+    //}
+
+  }
+
+  .date-input input {
+    width: 1%;
+  }
+}
