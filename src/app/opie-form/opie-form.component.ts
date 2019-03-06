@@ -227,16 +227,13 @@ export class OpieFormComponent implements OnInit {
 
   onChanges(): void {
     this.opieForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
-      // console.log(val);
+
     });
     this.opieForm.get('Recurring__bSchedule').valueChanges.subscribe(val => {
-      // this.showExplainOther = val === 'Other';
-      // console.log(val);
+
     });
     this.opieForm.get('Strategic__bgoal__bto__bwhich__bthis__brelates').valueChanges.subscribe(val => {
-      // this.opieForm.controls[ 'Strategic__binitiative__bto__bwhich__bthis__brelates' ].setValue(this.strategicInitiative[ val ][ 0 ], {onlySelf: true});
-      // console.log(val);
-      // console.log(this.strategicInitiative[ val ]);
+
     });
     this.opieForm.get('dateNeeded').valueChanges.subscribe(val => {
       console.log(val)
@@ -251,6 +248,6 @@ export class OpieFormComponent implements OnInit {
     console.warn(this.opieForm.value);
     // this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
     //   .subscribe();
-  };
+  }
 
 }

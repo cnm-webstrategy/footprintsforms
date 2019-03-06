@@ -8,12 +8,14 @@ import { OpieFormComponent } from './opie-form/opie-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentComplaintFormComponent } from './student-complaint-form/student-complaint-form.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { DefaultComponent } from './default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpieFormComponent,
-    StudentComplaintFormComponent
+    StudentComplaintFormComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
