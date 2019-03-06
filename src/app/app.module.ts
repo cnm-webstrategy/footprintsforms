@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpieFormComponent } from './opie-form/opie-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentComplaintFormComponent } from './student-complaint-form/student-complaint-form.component';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { StudentComplaintFormComponent } from './student-complaint-form/student-
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgBootstrapFormValidationModule.forRoot(),
+    NgBootstrapFormValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

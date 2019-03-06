@@ -239,7 +239,10 @@ export class OpieFormComponent implements OnInit {
       // console.log(this.strategicInitiative[ val ]);
     });
     this.opieForm.get('dateNeeded').valueChanges.subscribe(val => {
-
+      console.log(val)
+      this.opieForm.get('Month_Date__bNeeded').setValue(val.month);
+      this.opieForm.get('Day_Date__bNeeded').setValue(val.day);
+      this.opieForm.get('Year_Date__bNeeded').setValue(val.year);
     });
 
   }
