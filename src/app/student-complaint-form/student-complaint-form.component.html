@@ -1,7 +1,11 @@
+<!-- debugging 
 <div
   class="container">
   <p class="row">Form Status: {{ studentComplaintForm.status }}</p>
+  <p class="row">{{ studentComplaintForm.value | json }}</p>
 </div>
+-->
+
 <form [formGroup]="studentComplaintForm" (ngSubmit)="onSubmit()">
 
 
@@ -31,39 +35,28 @@
       <div class="row">
         <div class="form-group col-md">
           <label class="control-label" for="First__bName">First Name</label>
-          <input class="form-control" type="text" formControlName="First__bName" id="First__bName" value="" required=""
+          <input class="form-control" type="text" formControlName="First__bName" id="First__bName" value="" required
                  title="" placeholder="Required"
                  style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-          <div class="invalid-feedback">
-            Please enter a first name.
-          </div>
         </div>
         <div class="form-group col-md">
           <label class="control-label" for="First__bName">Last Name</label>
-          <input class="form-control" type="text" formControlName="Last__bName" id="Last__bName" value="" required=""
+          <input class="form-control" type="text" formControlName="Last__bName" id="Last__bName" value="" required
                  placeholder="Required">
-          <div class="invalid-feedback">
-            Please enter a last name.
-          </div>
         </div>
         <div class="form-group col-md">
           <label class="control-label" for="Email__bAddress">Email Address</label>
-          <input class="form-control" type="email" formControlName="Email__bAddress" id="Email__bAddress" value=""
-                 required="" placeholder="Required">
-          <div class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
+          <input class="form-control" type="email" formControlName="Email__bAddress" id="Email__bAddress" value="" required
+                 placeholder="Required"
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
         </div>
       </div> <!-- closes 1st row -->
       <div class="row">
         <div class="form-group col-md">
           <label class="control-label" for="User__bName">User Name</label>
-          <input class="form-control" placeholder=" Required. If none type email address" type="text"
-                 formControlName="User__bName" id="User__bName" value="" required=""
+          <input class="form-control" type="email" formControlName="User__bName" id="User__bName" value="" required
+                 placeholder=" Required (username@cnm.edu)"
                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-          <div class="invalid-feedback">
-            Please enter a first name.
-          </div>
         </div>
         <div class="form-group col-md">
           <label for="CNM__bPhone">Phone</label>
@@ -111,36 +104,30 @@
       <div class="row">
         <div class="form-group col-md-4 col-sm-6 ">
           <label for="Feedback">Feedback</label>
-          <select class="form-control" formControlName="Feedback" id="Feedback" required="">
-            <option value="Select Choice">Select Choice</option>
+          <select class="form-control" formControlName="Feedback" id="Feedback" required>
+            <option value="" disabled selected style="color: #495057;">Required</option>
             <option value="Complaint">Complaint</option>
-
             <option value="Compliment">Compliment</option>
-
             <option value="General Feedback">General Feedback</option>
           </select>
         </div>
 
         <div class="form-group col-md-4 col-sm-6 ">
           <label for="Feedback__bCategory">Feedback Category</label>
-          <select class="form-control" formControlName="Feedback__bCategory" id="Feedback__bCategory" multiple=""
-                  required="">
+          <select class="form-control" formControlName="Feedback__bCategory" id="Feedback__bCategory" required>
+            <option value="" disabled selected>Required</option>
             <option value="Service">Service</option>
-
             <option value="Building">Building</option>
-
             <option value="Individual">Individual</option>
-
             <option value="Coursework">Coursework</option>
-
             <option value="Other">Other</option>
-
           </select>
         </div>
 
         <div class="form-group col-md-4 col-sm-6 ">
           <label for="Student__bStatus">Student Status</label>
-          <select class="form-control" formControlName="Student__bStatus" id="Student__bStatus" required="">
+          <select class="form-control" formControlName="Student__bStatus" id="Student__bStatus" required>
+            <option value="" disabled selected>Required</option>
             <option value="No Choice">No Choice</option>
             <option value="Current Student">Current Student</option>
             <option value="Former Student">Former Student</option>
@@ -148,36 +135,19 @@
           </select>
         </div>
 
-          <div class="form-group col-md-4 col-sm-6 ">
-              
-                <label for="dateOccurred">Date Event Occurred</label>
-                  <div class="input-group date" id="dateOccurred" data-target-input="nearest">
-                    <input formControlName="dateOccurred" class="form-control" placeholder="yyyy-mm-dd"
-                    name="dp" ngbDatepicker #d="ngbDatepicker">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-                    </div>
-                  </div>
-                <!-- 
-                <input type="datetime" class="form-control datetimepicker" id="dateOccurred" formControlName="dateOccurred"
-                      placeholder="click to pick date">
-                <div class="form-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                </div>
-                -->
-
+        <div class="form-group col-md-4 col-sm-6 ">
+          <label for="dateOccurred">Date Event Occurred</label>
+          <div class="input-group date" id="dateOccurred" data-target-input="nearest">
+            <input formControlName="dateOccurred" class="form-control"
+                   placeholder="Required (yyyy-mm-dd)"
+                   name="dp" ngbDatepicker #d="ngbDatepicker" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
           </div>
-        <!-- </div> -->
-      <!-- <div class="flex-item">
-          <label for="time-occurred">Time Event Occurred</label>
-              <div class="form-group date">
-
-                  <input type="text" class="form-control" id="time-occurred" formControlName="time-occurred" placeholder="click to pick time"  data-format="MM/dd/yyyy">
-                  <div class="form-group-addon">
-                      <span class="glyphicon glyphicon-time"></span>
-                  </div>
-              </div>
-      </div> -->
+              
+        </div>
+        
         <div class="form-group col-md-4 col-sm-6 ">
           <label for="Course__bName">Course Name</label>
           <input class="form-control" placeholder="If realated to a course." type="text" formControlName="Course__bName"
@@ -221,20 +191,6 @@
     </div>
   </div>
 
-  <!-- recreate the original date form fields -->
-  <input class="form-control" type="hidden" formControlName="Month_Date__bEvent__bOccured"
-         id="Month_Date__bEvent__bOccured" value="">
-  <input class="form-control" type="hidden" placeholder=" DD" formControlName="Day_Date__bEvent__bOccured"
-         id="Day_Date__bEvent__bOccured" value="">
-  <input class="form-control" type="hidden" placeholder=" YYYY" formControlName="Year_Date__bEvent__bOccured"
-         id="Year_Date__bEvent__bOccured" value="">
-
-  <input class="form-control" type="HIDDEN" formControlName="TO" id="TO" value="studentcomp@cnm.edu">
-  <input class="form-control" type="HIDDEN" formControlName="FROM" id="FROM" value="Web@cnm.edu">
-  <input class="form-control" type="hidden" formControlName="PROJECTNUM" value="21">
-  <input class="form-control" type="hidden" formControlName="PROJECTNAME" value="Dean of Students">
-  <input class="form-control" formControlName="DATE_TYPE" type="hidden" value="0">
-  
   <div class="container">
     <div class="row">
       <small class="form-text text-muted">You will receive an email confirmation if your Request is successfully
