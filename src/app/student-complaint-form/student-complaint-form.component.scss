@@ -1,0 +1,8 @@
+select {
+  option[disabled] {
+    display: none;
+  }
+}
+select:invalid {
+  color: #6b747d;
+}
