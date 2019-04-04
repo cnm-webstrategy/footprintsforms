@@ -18,31 +18,29 @@
     <div class="container-body" id="first-card">
       <!-- this is the outer flexbox for this card -->
       <div class="row"> <!-- first flexbox item -->
-        <div class="col-md form-group">
-          <label class="control-label" for="TITLE">
-<em *ngIf="TITLE.invalid && TITLE.dirty">Required</em>
+        <div class="col-md form-group" [ngClass]="{'error': TITLE.invalid && TITLE.dirty }">
+          <em *ngIf="TITLE.invalid && TITLE.dirty">Required</em>
+          <label class="control-label" for="TITLE">Subject</label>
 
-<em *ngIf="TITLE.invalid && TITLE.dirty">Required</em>Subject</label>
-          <input type="text" class="form-control" id="TITLE" formControlName="TITLE" #TITLE placeholder="required" required>
+          <input type="text" class="form-control" id="TITLE" formControlName="TITLE" #TITLE placeholder="required" >
         </div>
       </div>
       <div class="row">
         <!-- second flexbox item, also a flexbox container -->
         <div class="form-group  col-md" [ngClass]="{'error': Last__bName.invalid && Last__bName.dirty }">
-          <label class="control-label" for="Last__bName">
-<em *ngIf="Last__bName?.invalid && Last__bName.dirty">Required</em>
-<em *ngIf="Last__bName.invalid && Last__bName.dirty">Required</em>Last Name</label>
+          <label class="control-label" for="Last__bName">Last Name</label>
+          <em *ngIf="Last__bName?.invalid && Last__bName.dirty">Required</em>
           <input type="text" class="form-control" id="Last__bName" formControlName="Last__bName" #Last__bName
                  placeholder="required" required>
         </div>
         <div class="form-group  col-md" [ngClass]="{'error': First__bName.invalid && First__bName.dirty }">
-          <label class="control-label" for="First__bName">
-<em *ngIf="First__bName.invalid && First__bName.dirty">Required</em>First Name</label>
+          <label class="control-label" for="First__bName">First Name</label>
+          <em *ngIf="First__bName.invalid && First__bName.dirty">Required</em>
           <input type="text" class="form-control" id="First__bName" formControlName="First__bName" #First__bName placeholder="required" required>
         </div>
         <div class="form-group  col-md" [ngClass]="{'error': Email__bAddress.invalid && Email__bAddress.dirty }">
-          <label class="control-label" for="Email__bAddress">
-<em *ngIf="Email__bAddress?.invalid && Email__bAddress?.dirty">Required</em>Email</label>
+          <label class="control-label" for="Email__bAddress">Email</label>
+          <em *ngIf="Email__bAddress?.invalid && Email__bAddress?.dirty">Required</em>
           <input type="email" class="form-control" id="Email__bAddress" formControlName="Email__bAddress" #Email__bAddress placeholder="required" value="" required>
           <span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>
           <div class="invalid-feedback">
@@ -62,14 +60,13 @@
     <div class="container-body">
       <div class="row">
         <div class="col-md">
-          <label class="control-label" for="date-needed">
-<em *ngIf="dateNeeded.invalid && dateNeeded.dirty">Required</em>Date Needed</label>
+          <label class="control-label" for="date-needed">Date Needed</label>
+          <em *ngIf="dateNeeded.invalid && dateNeeded.dirty">Required</em>
           <p class="help-block">Please give us two weeks notice for requests</p>
 
           <div class="form-group " [ngClass]="{'error': dateNeeded.invalid && dateNeeded.dirty }">
             <div class="input-group date date-input" id="date-needed" data-target-input="nearest">
-              <input formControlName="dateNeeded" #dateNeeded class="form-control" placeholder="yyyy-mm-dd"
-    name="dp" ngbDatepicker #d="ngbDatepicker" >
+              <input formControlName="dateNeeded" #dateNeeded class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" >
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
               </div>
@@ -81,27 +78,22 @@
 
       <div class="row" id="recurring">
         <div class="col-sm-6">
-          <label class="control-label" for="One__uTime__bor__bRecurring__Q">
-<em *ngIf="One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty">Required</em>One time or recurring?</label>
+          <label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
+          <em *ngIf="One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty }">
-            <select formControlName="One__uTime__bor__bRecurring__Q" #One__uTime__bor__bRecurring__Q id="One__uTime__bor__bRecurring__Q"
-   #One__uTime__bor__bRecurring__Q
-   class="form-control">
-              <option *ngFor="let option of recurring" [value]="option.id"
-     [selected]="option.id == 'no-answer'">{{ option.text }}</option>
+            <select formControlName="One__uTime__bor__bRecurring__Q" #One__uTime__bor__bRecurring__Q id="One__uTime__bor__bRecurring__Q" class="form-control">
+              <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.text }}</option>
             </select>
           </div>
         </div>
 
         <div class="col-sm-6 alert alert-success animated fadeOut hide" id="recurring-schedule"
              [class.show]="One__uTime__bor__bRecurring__Q.value == 'recurring'">
-          <label class="control-label" for="Recurring__bSchedule">
-<em *ngIf="Recurring__bSchedule.invalid && Recurring__bSchedule.dirty">Required</em>Recurring Schedule</label>
+          <label class="control-label" for="Recurring__bSchedule">Recurring Schedule</label>
+          <em *ngIf="Recurring__bSchedule.invalid && Recurring__bSchedule.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Recurring__bSchedule.invalid && Recurring__bSchedule.dirty }">
-            <select formControlName="Recurring__bSchedule" #Recurring__bSchedule id="Recurring__bSchedule" class="form-control"
-   #Recurring__bSchedule>
-              <option *ngFor="let option of recurringSchedule" [value]="option.id"
-     [selected]="option.id == 'No Choice'">{{ option.text }}</option>
+            <select formControlName="Recurring__bSchedule" #Recurring__bSchedule id="Recurring__bSchedule" class="form-control">
+              <option *ngFor="let option of recurringSchedule" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.text }}</option>
             </select>
 
           </div>
@@ -109,11 +101,10 @@
         </div>
         <div class="col-12  alert alert-success animated fadeOut hide" id="explain-other"
              [class.show]="Recurring__bSchedule.value === 'Other' && One__uTime__bor__bRecurring__Q.value == 'recurring' ">
-          <label class="control-label" for="Please__bExplain__bOther">
-<em *ngIf="Please__bExplain__bOther.invalid && Please__bExplain__bOther.dirty">Required</em>Please explain Other</label>
+          <label class="control-label" for="Please__bExplain__bOther">Please explain Other</label>
+          <em *ngIf="Please__bExplain__bOther.invalid && Please__bExplain__bOther.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Please__bExplain__bOther.invalid && Please__bExplain__bOther.dirty }">
-            <input formControlName="Please__bExplain__bOther" #Please__bExplain__bOther #Please__bExplain__bOther class="form-control" SIZE="20"
-  value="">
+            <input formControlName="Please__bExplain__bOther" #Please__bExplain__bOther class="form-control" SIZE="20" value="">
           </div>
         </div>
       </div>
@@ -121,52 +112,44 @@
       <!--Type of Request-->
       <div class="row request-type">
         <div class="col-sm-6">
-          <label class="control-label" for="Type__bof__bRequest">
-<em *ngIf="Type__bof__bRequest.invalid && Type__bof__bRequest.dirty">Required</em>Type of Request</label>
+          <label class="control-label" for="Type__bof__bRequest">Type of Request</label>
+          <em *ngIf="Type__bof__bRequest.invalid && Type__bof__bRequest.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Type__bof__bRequest.invalid && Type__bof__bRequest.dirty }">
-            <select formControlName="Type__bof__bRequest" #Type__bof__bRequest id="request-type"
-   class="form-control">
-              <option *ngFor="let option of typeOfRequest" [selected]="option.id == 'No Choice'"
-     [value]="option.id">{{ option.text }}</option>
+            <select formControlName="Type__bof__bRequest" #Type__bof__bRequest id="request-type" class="form-control">
+              <option *ngFor="let option of typeOfRequest" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
         </div>
-        <div class="col-sm-6 alert alert-success animated fadeOut hide" id="pi-category-container"
-             [class.show]="Type__bof__bRequest.value == 'Performance Improvement'">
-          <label class="control-label" for="PI__bCategory">
-<em *ngIf="PI__bCategory.invalid && PI__bCategory.dirty">Required</em>PI Category</label>
+        <div class="col-sm-6 alert alert-success animated fadeOut hide" id="pi-category-container" [class.show]="Type__bof__bRequest.value == 'Performance Improvement'">
+          <label class="control-label" for="PI__bCategory">PI Category</label>
+          <em *ngIf="PI__bCategory.invalid && PI__bCategory.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': PI__bCategory.invalid && PI__bCategory.dirty }">
             <select formControlName="PI__bCategory" #PI__bCategory id="pi-category" class="form-control">
-              <option *ngFor="let option of piCategory" [selected]="option.id == 'No Choice'"
-     [value]="option.id">{{ option.text }}</option>
+              <option *ngFor="let option of piCategory" [selected]="option.id == 'No Choice'" [value]="option.id">{{ option.text }}</option>
             </select>
 
           </div>
         </div>
         <div class="col-12 alert alert-success animated fadeOut hide" id="request-type-unknown"
              [class.show]="Type__bof__bRequest.value == 'Unknown'">
-          <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">
-<em *ngIf="If__bUnknown__bPlease__bDescribe__c.invalid && If__bUnknown__bPlease__bDescribe__c.dirty">Required</em>If Unknown Please
-            Describe</label>
+          <label class="control-label" for="If__bUnknown__bPlease__bDescribe__c">If Unknown Please Describe</label>
+          <em *ngIf="If__bUnknown__bPlease__bDescribe__c.invalid && If__bUnknown__bPlease__bDescribe__c.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': If__bUnknown__bPlease__bDescribe__c.invalid && If__bUnknown__bPlease__bDescribe__c.dirty }">
-            <input type="text" class="form-control" id="unknown-description"
-  formControlName="If__bUnknown__bPlease__bDescribe__c" #If__bUnknown__bPlease__bDescribe__c>
+            <input type="text" class="form-control" id="unknown-description" formControlName="If__bUnknown__bPlease__bDescribe__c" #If__bUnknown__bPlease__bDescribe__c>
           </div>
         </div>
       </div>
 
       <!-- Proposed Audience-->
       <div class="row">
-        <div class="col-md"><label class="control-label" for="Proposed__bAudience">
-<em *ngIf="Proposed__bAudience.invalid && Proposed__bAudience.dirty">Required</em>Proposed Audience</label>
+        <div class="col-md">
+          <label class="control-label" for="Proposed__bAudience">Proposed Audience</label>
+          <em *ngIf="Proposed__bAudience.invalid && Proposed__bAudience.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Proposed__bAudience.invalid && Proposed__bAudience.dirty }">
-            <select formControlName="Proposed__bAudience" #Proposed__bAudience id="proposed-audience"
-   class="form-control">
-              <option *ngFor="let option of proposedAudience" [value]="option.id"
-     [selected]="option.id == 'No Choice'">{{ option.text }}</option>
+            <select formControlName="Proposed__bAudience" #Proposed__bAudience id="proposed-audience" class="form-control">
+              <option *ngFor="let option of proposedAudience" [value]="option.id" [selected]="option.id == 'No Choice'">{{ option.text }}</option>
             </select>
-
           </div>
         </div>
       </div>
@@ -174,25 +157,20 @@
       <!-- strategic goal  -->
       <div class="row strategic-goal">
         <div class="col-md-6">
-          <label class="control-label"
-                 for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to
-            which this relates</label>
+          <label class="control-label" for="Strategic__bgoal__bto__bwhich__bthis__brelates">Strategic goal to which this relates</label>
+          <em *ngIf="Strategic__bgoal__bto__bwhich__bthis__brelates.invalid && Strategic__bgoal__bto__bwhich__bthis__brelates.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Strategic__bgoal__bto__bwhich__bthis__brelates.invalid && Strategic__bgoal__bto__bwhich__bthis__brelates.dirty }">
-            <select formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"
-   #Strategic__bgoal__bto__bwhich__bthis__brelates
-   id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32" class="form-control">
+            <select formControlName="Strategic__bgoal__bto__bwhich__bthis__brelates"  #Strategic__bgoal__bto__bwhich__bthis__brelates id="Strategic__bgoal__bto__bwhich__bthis__brelates" tabindex="32" class="form-control">
               <option *ngFor="let option of strategicGoal" [value]="option.id">{{ option.text }}</option>
             </select>
           </div>
         </div>
         <div class="col-md-6 alert alert-success animated fadeOut hide" id="student-success-strategic-initiative"
              [class.show]="Strategic__bgoal__bto__bwhich__bthis__brelates.value == 'Student__bSuccess' || Strategic__bgoal__bto__bwhich__bthis__brelates.value =='Community__bSuccess' || Strategic__bgoal__bto__bwhich__bthis__brelates.value =='Organization__bExcellence__band__bInnovation'">
-          <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">
-<em *ngIf="Strategic__binitiative__bto__bwhich__bthis__brelates.invalid && Strategic__binitiative__bto__bwhich__bthis__brelates.dirty">Required</em>Strategic
-            initiative to which this relates</label>
+          <label class="control-label" for="Strategic__binitiative__bto__bwhich__bthis__brelates">Strategic initiative to which this relates</label>
+          <em *ngIf="Strategic__binitiative__bto__bwhich__bthis__brelates.invalid && Strategic__binitiative__bto__bwhich__bthis__brelates.dirty">Required</em>
           <div class="form-group " [ngClass]="{'error': Strategic__binitiative__bto__bwhich__bthis__brelates.invalid && Strategic__binitiative__bto__bwhich__bthis__brelates.dirty }">
-            <select
-              formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"
+            <select formControlName="Strategic__binitiative__bto__bwhich__bthis__brelates"
               #Strategic__binitiative__bto__bwhich__bthis__brelates
               id="Strategic__binitiative__bto__bwhich__bthis__brelates" tabindex="33"
               class="form-control">
@@ -210,6 +188,8 @@
     </div>
     <div class="container-body">
       <div class="form-group " [ngClass]="{'error': LONGDESCRIPTION.invalid && LONGDESCRIPTION.dirty }">
+        <em *ngIf="LONGDESCRIPTION.invalid && LONGDESCRIPTION.dirty">Required</em>
+
         <textarea formControlName="LONGDESCRIPTION" #LONGDESCRIPTION placeholder="Knowing how you plan to use the information helps us better serve you." class="form-control" rows="5" cols="60" wrap="hard"></textarea>
       </div>
 

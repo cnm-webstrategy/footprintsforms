@@ -18,7 +18,7 @@ export class OpieFormComponent implements OnInit {
 
   // values for various dropdowns
   recurring = [
-    {id: 'no-answer', text: 'No choice'},
+    {id: 'no-answer', text: 'Required'},
     {id: 'one-time', text: 'One time'},
     {id: 'recurring', text: 'Recurring'}
   ];
@@ -29,7 +29,7 @@ export class OpieFormComponent implements OnInit {
     {id: 'Other', text: 'Other'},
   ];
   typeOfRequest = [
-    {id: 'No Choice', text: 'No Choice'},
+    {id: 'No Choice', text: 'Required'},
     {id: 'Accreditation Reporting', text: 'Accreditation Reporting'},
     {id: 'Institutional Research', text: 'Institutional Research'},
     {id: 'Learning Assessment', text: 'Learning Assessment'},
@@ -45,7 +45,7 @@ export class OpieFormComponent implements OnInit {
     {id: 'Training', text: 'Training'},
   ];
   proposedAudience = [
-    {id: 'No Choice', text: 'No Choice'},
+    {id: 'No Choice', text: 'Required'},
     {id: 'Internal', text: 'Internal CNM (Employees only)'},
     {id: 'External to CNM', text: 'External to CNM'},
     {id: 'Performance Improvement', text: 'Both'},
