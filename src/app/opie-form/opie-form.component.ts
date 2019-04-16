@@ -1,8 +1,9 @@
-import
-{ Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { restrictedWords } from '../shared/restricted-words.validator';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-opie-form',
@@ -15,21 +16,25 @@ export class OpieFormComponent implements OnInit {
   node;
   dateNeededDate: NgbDateStruct;
   opieForm: FormGroup;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/x-www-form-urlencoded'
+    })};
 
   // values for various dropdowns
   recurring = [
-    {id: 'no-answer', text: 'Required'},
+    {id: 'Required', text: 'Required'},
     {id: 'one-time', text: 'One time'},
     {id: 'recurring', text: 'Recurring'}
   ];
   recurringSchedule = [
-    {id: 'No Choice', text: 'No choice'},
+    {id: 'Required', text: 'Required'},
     {id: 'Term', text: 'Term'},
     {id: 'Annually', text: 'Annually'},
     {id: 'Other', text: 'Other'},
   ];
   typeOfRequest = [
-    {id: 'No Choice', text: 'Required'},
+    {id: 'Required', text: 'Required'},
     {id: 'Accreditation Reporting', text: 'Accreditation Reporting'},
     {id: 'Institutional Research', text: 'Institutional Research'},
     {id: 'Learning Assessment', text: 'Learning Assessment'},
@@ -45,7 +50,7 @@ export class OpieFormComponent implements OnInit {
     {id: 'Training', text: 'Training'},
   ];
   proposedAudience = [
-    {id: 'No Choice', text: 'Required'},
+    {id: 'Required', text: 'Required'},
     {id: 'Internal', text: 'Internal CNM (Employees only)'},
     {id: 'External to CNM', text: 'External to CNM'},
     {id: 'Performance Improvement', text: 'Both'},
@@ -172,7 +177,7 @@ export class OpieFormComponent implements OnInit {
   };
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -193,7 +198,7 @@ export class OpieFormComponent implements OnInit {
       Email__bAddress: [ '', [ Validators.required, Validators.email ] ],
 
       dateNeeded: [ '', Validators.required ],
-      One__uTime__bor__bRecurring__Q: [ this.recurring[ 0 ].id, Validators.required ],
+      One__uTime__bor__bRecurring__Q: [ this.recurring[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
       Recurring__bSchedule: [ this.recurringSchedule[ 0 ].id ],
       Please__bExplain__bOther: [ '' ],
       Type__bof__bRequest: [ this.typeOfRequest[ 0 ].id ],
@@ -236,7 +241,6 @@ export class OpieFormComponent implements OnInit {
 
     });
     this.opieForm.get('dateNeeded').valueChanges.subscribe(val => {
-      console.log(val)
       this.opieForm.get('Month_Date__bNeeded').setValue(val.month);
       this.opieForm.get('Day_Date__bNeeded').setValue(val.day);
       this.opieForm.get('Year_Date__bNeeded').setValue(val.year);
@@ -244,10 +248,58 @@ export class OpieFormComponent implements OnInit {
 
   }
 
+  addParamsToBody = (obj) => {
+    let body = new HttpParams();
+    Object.keys(obj).forEach((k) => {
+      console.log(k , obj[k]);
+      body.set( k , obj[k] )
+    });
+    return body;
+  }
+
   onSubmit = () => {
-    console.warn(this.opieForm.value);
-    // this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
-    //   .subscribe();
+    // console.warn(this.opieForm.value);
+
+
+    // const body = new HttpParams()
+    //   .set('TITLE' , 'TESTING');
+
+    const body: HttpParams = new HttpParams()
+      .set('TITLE', this.opieForm.value.TITLE)
+      .set('First__bName', this.opieForm.value.First__bName)
+      .set('Last__bName', this.opieForm.value.Last__bName)
+      .set('Email__bAddress', this.opieForm.value.Email__bAddress)
+      .set('One__uTime__bor__bRecurring__Q', this.opieForm.value.One__uTime__bor__bRecurring__Q)
+      .set('Recurring__bSchedule', this.opieForm.value.Recurring__bSchedule)
+      .set('Please__bExplain__bOther', this.opieForm.value.Please__bExplain__bOther)
+      .set('Type__bof__bRequest', this.opieForm.value.Type__bof__bRequest)
+      .set('PI__bCategory', this.opieForm.value.PI__bCategory)
+      .set('If__bUnknown__bPlease__bDescribe__c', this.opieForm.value.If__bUnknown__bPlease__bDescribe__c)
+      .set('Proposed__bAudience', this.opieForm.value.Proposed__bAudience)
+      .set('Strategic__bgoal__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__bgoal__bto__bwhich__bthis__brelates)
+      .set('Strategic__binitiative__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__binitiative__bto__bwhich__bthis__brelates)
+      .set('LONGDESCRIPTION', this.opieForm.value.LONGDESCRIPTION)
+      .set('Month_Date__bNeeded', this.opieForm.value.Month_Date__bNeeded)
+      .set('Day_Date__bNeeded', this.opieForm.value.Day_Date__bNeeded)
+      .set('Year_Date__bNeeded', this.opieForm.value.Year_Date__bNeeded)
+      .set('TO', 'OPIERequests@cnm.edu')
+      .set('FROM', 'Web@cnm.edu')
+      .set('PROJECTNUM', '23')
+      .set('PROJECTNAME', 'OPIE')
+      .set('DATE_TYPE', '0')
+
+
+    console.warn(body.toString());
+
+    return this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl/',
+      body,
+      {
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+          .set('Accept', 'text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8'),
+        responseType: 'text'
+      })
+      .subscribe(res => console.log(res), error => console.error(error));
   }
 
 }

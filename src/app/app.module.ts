@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentComplaintFormComponent } from './student-complaint-form/student-complaint-form.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { DefaultComponent } from './default.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DefaultComponent } from './default.component';
     FormsModule,
     NgbModule,
     NgBootstrapFormValidationModule.forRoot(),
-    NgBootstrapFormValidationModule
+    NgBootstrapFormValidationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

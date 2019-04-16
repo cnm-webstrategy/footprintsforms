@@ -1,7 +1,7 @@
-<div
-  class="container">
-<p class="row">Form Status: {{ opieForm.status }}</p>
-</div>
+<!--<div-->
+  <!--class="container">-->
+<!--<p class="row">Form Status: {{ opieForm.status }}</p>-->
+<!--</div>-->
 <form [formGroup]="opieForm" (ngSubmit)="onSubmit()">
 
 
@@ -80,6 +80,7 @@
         <div class="col-sm-6">
           <label class="control-label" for="One__uTime__bor__bRecurring__Q">One time or recurring?</label>
           <em *ngIf="One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty">Required</em>
+          <em *ngIf="One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q?.errors.restrictedWords">Restricted words found: {{One__uTime__bor__bRecurring__Q.errors.restrictedWords}}</em>
           <div class="form-group " [ngClass]="{'error': One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty }">
             <select formControlName="One__uTime__bor__bRecurring__Q" #One__uTime__bor__bRecurring__Q id="One__uTime__bor__bRecurring__Q" class="form-control">
               <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.text }}</option>
@@ -197,9 +198,19 @@
   </div>
   <div class="container">
     <div class="row">
-      <button class="btn btn-primary" [disabled]="!opieForm.valid" type="submit">Submit form</button>
+      <!--<button class="btn btn-primary" [disabled]="!opieForm.valid" type="submit">Submit form</button>-->
+      <button class="btn btn-primary" type="submit">Submit form</button>
     </div>
   </div>
+
+  <input type="hidden" name="Month_Date__bNeeded">
+  <input type="hidden" name="Day_Date__bNeeded">
+  <input type="hidden" name="Year_Date__bNeeded">
+  <input type="HIDDEN" name="TO" value="OPIERequests@cnm.edu">
+  <input type="HIDDEN" name="FROM" value="Web@cnm.edu">
+  <input type="hidden" name="PROJECTNUM" value="23">
+  <input type="hidden" name="PROJECTNAME" value="OPIE">
+  <input name="DATE_TYPE" type="hidden" value="0">
 </form>
 
 
