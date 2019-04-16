@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	
+	//option A
+	$("#HTML_FORM").submit(function(e){
+		e.preventDefault();
+		
+		console.log($(this).closest('form').serialize())
+	});
 
     $('#date-needed').datetimepicker({
         daysOfWeekDisabled:[0,6],
@@ -6,21 +13,25 @@ $(document).ready(function() {
         defaultDate: moment().add(2,'weeks'),
         format: 'L'
     });
+    
+    var setMonthDayYear = function(date) {
+	    // break datepicker down into individual date parts and
+	    // put into hidden fields :(
+	    var mDate = moment(date, "MM/DD/YYYY");
+	    var month = mDate.month()+1;
+	    var day = mDate.date();
+	    var year = mDate.year();
+	
+	    $('input[name="Month_Date__bNeeded"]').val(month);
+	    $('input[name="Day_Date__bNeeded"]').val(day);
+	    $('input[name="Year_Date__bNeeded"]').val(year);
+    }
 
 	// $('#date-needed').trigger("change.datetimepicker");
 	$('#date-needed').on("change.datetimepicker", function (e) {
-		
-		// break datepicker down into individual date parts and
-		// put into hidden fields :(
-		var dateMilli = Date.parse($('#date-needed').val());
-		var d = new Date(dateMilli);
-		var month = e.date.format('M'); //d.getMonth() + 1;
-		var day = e.date.format('D'); //d.getDate();
-		var year = e.date.format('YYYY');
-		
-		$('input[name="Month_Date__bNeeded"]').val(month);
-		$('input[name="Day_Date__bNeeded"]').val(day);
-		$('input[name="Year_Date__bNeeded"]').val(year);
+
+		setMonthDayYear($('.datetimepicker-input').val());
+
 	});
 
 	$('#One__uTime__bor__bRecurring__Q').on('change', function(event) {
@@ -81,7 +92,12 @@ $(document).ready(function() {
 
 	// make subject line 100% width
 	$('#subject').parents('.input-group').width('100%');
-
+	
+	var defaultDate = moment($('#date-needed').val());
+	// console.log(defaultDate.month($('#date-needed').val()).format("MM/DD/YYYY"))
+	var val = $('.datetimepicker-input').val();
+	
+	setMonthDayYear($('.datetimepicker-input').val())
 });
 
 
