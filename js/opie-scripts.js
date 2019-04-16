@@ -2,7 +2,7 @@ $(document).ready(function() {
 	
 	//option A
 	$("#HTML_FORM").submit(function(e){
-		e.preventDefault();
+		// e.preventDefault();
 		
 		console.log($(this).closest('form').serialize())
 	});
