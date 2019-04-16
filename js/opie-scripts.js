@@ -93,10 +93,8 @@ $(document).ready(function() {
 	// make subject line 100% width
 	$('#subject').parents('.input-group').width('100%');
 	
-	var defaultDate = moment($('#date-needed').val());
-	// console.log(defaultDate.month($('#date-needed').val()).format("MM/DD/YYYY"))
-	var val = $('.datetimepicker-input').val();
-	
+	// the datetime picker input needs to be parsed into MM/DD/YYYY so that the hidden inputs for the respective
+	// date parts can be populated on $(document).ready
 	setMonthDayYear($('.datetimepicker-input').val())
 });
 
