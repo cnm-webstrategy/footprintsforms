@@ -2,7 +2,7 @@
   <!--class="container">-->
 <!--<p class="row">Form Status: {{ opieForm.status }}</p>-->
 <!--</div>-->
-<form [formGroup]="opieForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="opieForm" #f=ngForm (ngSubmit)="onSubmit(f)">
 
 
   <!--<label for="TITLE">-->

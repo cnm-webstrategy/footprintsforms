@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { restrictedWords } from '../shared/restricted-words.validator';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opie-form',
@@ -28,7 +29,6 @@ export class OpieFormComponent implements OnInit {
     {id: 'recurring', text: 'Recurring'}
   ];
   recurringSchedule = [
-    {id: 'Required', text: 'Required'},
     {id: 'Term', text: 'Term'},
     {id: 'Annually', text: 'Annually'},
     {id: 'Other', text: 'Other'},
@@ -37,7 +37,7 @@ export class OpieFormComponent implements OnInit {
     {id: 'Required', text: 'Required'},
     {id: 'Accreditation Reporting', text: 'Accreditation Reporting'},
     {id: 'Institutional Research', text: 'Institutional Research'},
-    {id: 'Learning Assessment', text: 'Learning Assessment'},
+    {id: 'Learning Assessment', text: 'Learning ssAssessment'},
     {id: 'Performance Improvement', text: 'Performance Improvement'},
     {id: 'Unknown', text: 'Unknown'},
   ];
@@ -177,7 +177,9 @@ export class OpieFormComponent implements OnInit {
   };
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder,
+              private http: HttpClient,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -199,12 +201,12 @@ export class OpieFormComponent implements OnInit {
 
       dateNeeded: [ '', Validators.required ],
       One__uTime__bor__bRecurring__Q: [ this.recurring[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
-      Recurring__bSchedule: [ this.recurringSchedule[ 0 ].id ],
+      Recurring__bSchedule: [ this.recurringSchedule[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
       Please__bExplain__bOther: [ '' ],
-      Type__bof__bRequest: [ this.typeOfRequest[ 0 ].id ],
+      Type__bof__bRequest: [ this.typeOfRequest[ 0 ].id, [Validators.required, restrictedWords(['Required'])] ],
       PI__bCategory: [ this.piCategory[ 0 ].id ],
       If__bUnknown__bPlease__bDescribe__c: [ '' ],
-      Proposed__bAudience: [ this.proposedAudience[ 0 ].id ],
+      Proposed__bAudience: [ this.proposedAudience[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
       Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id ],
       Strategic__binitiative__bto__bwhich__bthis__brelates: [ '' ],
       LONGDESCRIPTION: [ '' ],
@@ -213,8 +215,8 @@ export class OpieFormComponent implements OnInit {
       Year_Date__bNeeded: [ '' ],
       TO: [ 'studentcomp@cnm.edu' ],
       FROM: [ 'Web@cnm.edu' ],
-      PROJECTNUM: [ '21' ],
-      PROJECTNAME: [ 'Dean of Students' ],
+      PROJECTNUM: [ '23' ],
+      PROJECTNAME: [ 'OPIE' ],
       DATE_TYPE: [ '0' ],
     });
 
@@ -231,14 +233,8 @@ export class OpieFormComponent implements OnInit {
   }
 
   onChanges(): void {
-    this.opieForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
-
-    });
-    this.opieForm.get('Recurring__bSchedule').valueChanges.subscribe(val => {
-
-    });
-    this.opieForm.get('Strategic__bgoal__bto__bwhich__bthis__brelates').valueChanges.subscribe(val => {
-
+    this.opieForm.get('Email__bAddress').valueChanges.subscribe(val => {
+      this.opieForm.get('FROM').setValue(val);
     });
     this.opieForm.get('dateNeeded').valueChanges.subscribe(val => {
       this.opieForm.get('Month_Date__bNeeded').setValue(val.month);
@@ -249,21 +245,19 @@ export class OpieFormComponent implements OnInit {
   }
 
   addParamsToBody = (obj) => {
-    let body = new HttpParams();
-    Object.keys(obj).forEach((k) => {
-      console.log(k , obj[k]);
-      body.set( k , obj[k] )
-    });
+    let body = new HttpParams({ fromObject: obj});
+    // Object.keys(obj).forEach((k) => {
+    //   console.log("hi",k , obj[k]);
+    //   body.append( k , obj[k] )
+    // });
     return body;
   }
 
-  onSubmit = () => {
-    // console.warn(this.opieForm.value);
+  onSubmit = (f: NgForm) => {
 
+    const body2 = this.addParamsToBody(this.opieForm.value);
 
-    // const body = new HttpParams()
-    //   .set('TITLE' , 'TESTING');
-
+console.log(body2.toString())
     const body: HttpParams = new HttpParams()
       .set('TITLE', this.opieForm.value.TITLE)
       .set('First__bName', this.opieForm.value.First__bName)
@@ -283,13 +277,10 @@ export class OpieFormComponent implements OnInit {
       .set('Day_Date__bNeeded', this.opieForm.value.Day_Date__bNeeded)
       .set('Year_Date__bNeeded', this.opieForm.value.Year_Date__bNeeded)
       .set('TO', 'OPIERequests@cnm.edu')
-      .set('FROM', 'Web@cnm.edu')
+      .set('FROM', this.opieForm.value.Email__bAddress)
       .set('PROJECTNUM', '23')
       .set('PROJECTNAME', 'OPIE')
       .set('DATE_TYPE', '0')
-
-
-    console.warn(body.toString());
 
     return this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl/',
       body,
@@ -299,7 +290,9 @@ export class OpieFormComponent implements OnInit {
           .set('Accept', 'text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8'),
         responseType: 'text'
       })
-      .subscribe(res => console.log(res), error => console.error(error));
+      .subscribe(res => {
+        this.router.navigate(['/response-page',{ queryParams: { markup: res }}] );
+      }, error => console.error(error));
   }
 
 }

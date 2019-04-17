@@ -10,13 +10,15 @@ import { StudentComplaintFormComponent } from './student-complaint-form/student-
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { DefaultComponent } from './default.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResponsePageComponent } from './response-page/response-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpieFormComponent,
     StudentComplaintFormComponent,
-    DefaultComponent
+    DefaultComponent,
+    ResponsePageComponent
   ],
   imports: [
     BrowserModule,
