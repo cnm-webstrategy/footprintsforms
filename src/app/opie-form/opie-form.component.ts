@@ -69,109 +69,92 @@ export class OpieFormComponent implements OnInit {
         text: 'No Choice'
       },
       {
-        id: 'All__bFirst__uTime__M__bFull__uTime__M__bDegree__uSeeking__bStudents__bHave__ban__bAcademic__bPlan',
-        text: 'All First-Time, Full-Time, Degree-Seeking Students Have an Academic Plan'
+        id: 'All First-Time, Full-Time, Degree-Seeking Students Have an Academic Plan', text: 'All First-Time, Full-Time, Degree-Seeking Students Have an Academic Plan'
       },
-      {id: 'Create__ba__bStudent__uCentered__bCourse__bSchedule', text: 'Create a Student-Centered Course Schedule'},
-      {id: 'Create__bComprehensive__bOnline__bcol-mdlege', text: 'Create Comprehensive Online College'},
+      {id: 'Create a Student-Centered Course Schedule', text: 'Create a Student-Centered Course Schedule'},
+      {id: 'Create Comprehensive Online College', text: 'Create Comprehensive Online College'},
       {
-        id: 'Develop__bEarly__bChildhood__bConnect__bCenter__bof__bExcellence',
-        text: 'Develop Early Childhood Connect Center of Excellence'
+        id: 'Develop Early Childhood Connect Center of Excellence', text: 'Develop Early Childhood Connect Center of Excellence'
       },
-      {id: 'Develop__bGlobal__bLearning__bInitiative', text: 'Develop Global Learning Initiative'},
-      {id: 'Develop__bStudent__bWork__bExperience__bProgram', text: 'Develop Student Work Experience Program'},
-      {id: 'Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool', text: 'Expand College Career High School'},
-      {id: 'Expand__bCredit__bfor__bPrior__bLearning', text: 'Expand Credit for Prior Learning'},
-      {id: 'Expand__bDual__bCredit', text: 'Expand Dual Credit'},
-      {id: 'Expand__bFast__uTrack__bDegree__bOfferings', text: 'Expand Fast-Track Degree Offerings'},
+      {id: 'Develop Global Learning Initiative', text: 'Develop Global Learning Initiative'},
+      {id: 'Develop Student Work Experience Program', text: 'Develop Student Work Experience Program'},
+      {id: 'Expand College Career High School', text: 'Expand College Career High School'},
+      {id: 'Expand Credit for Prior Learning', text: 'Expand Credit for Prior Learning'},
+      {id: 'Expand Dual Credit', text: 'Expand Dual Credit'},
+      {id: 'Expand Fast-Track Degree Offerings', text: 'Expand Fast-Track Degree Offerings'},
       {
-        id: 'Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies',
-        text: 'Expand Non-Credit Offerings Through Bootcamps, Academies'
+        id: 'Expand Non-Credit Offerings Through Bootcamps, Academies', text: 'Expand Non-Credit Offerings Through Bootcamps, Academies'
       },
-      {id: 'Grow__bIntersession', text: 'Grow Intersession'},
-      {id: 'Implement__bCompetency__uBased__bEducation__boptions', text: 'Implement Competency-Based Education options'},
+      {id: 'Grow Intersession', text: 'Grow Intersession'},
+      {id: 'Implement Competency-Based Education options', text: 'Implement Competency-Based Education options'},
       {
-        id: 'Incorporate__bSustainability__bInitiatives__binto__bCourse__bOfferings',
-        text: 'Incorporate Sustainability Initiatives into Course Offerings'
+        id: 'Incorporate Sustainability Initiatives into Course Offerings', text: 'Incorporate Sustainability Initiatives into Course Offerings'
       },
       {
-        id: 'Increase__bGraduation__bRates__bof__bFirst__uTime__M__bFull__uTime__M__bDegree__uSeeking__bStudents',
-        text: 'Increase Graduation Rates of First-Time, Full-Time, Degree-Seeking Students'
+        id: 'Increase Graduation Rates of First-Time, Full-Time, Degree-Seeking Students', text: 'Increase Graduation Rates of First-Time, Full-Time, Degree-Seeking Students'
       },
       {
-        id: 'Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology',
-        text: 'Transition from col-mdlege-Owned Technology to Student-Owned Technology'
+        id: 'Transition from col-mdlege-Owned Technology to Student-Owned Technology', text: 'Transition from col-mdlege-Owned Technology to Student-Owned Technology'
       },
     ],
     Community__bSuccess: [
-      {id: '', text: 'No Choice'},
+      {id: 'No Choice', text: 'No Choice'},
       {
-        id: 'Create__bComprehensive__bOnline__bcol-mdlege', text: 'Create Comprehensive Online College'
+        id: 'Create Comprehensive Online College', text: 'Create Comprehensive Online College'
       },
       {
-        id: 'Develop__band__bImplement__bComprehensive__bMakerspace', text: 'Develop and Implement Comprehensive Makerspace'
+        id: 'Develop and Implement Comprehensive Makerspace', text: 'Develop and Implement Comprehensive Makerspace'
       },
       {
-        id: 'Develop__bGlobal__bLearning__bInitiative', text: 'Develop Global Learning Initiative'
+        id: 'Develop Global Learning Initiative', text: 'Develop Global Learning Initiative'
       },
       {
-        id: 'Develop__bStudent__bWork__bExperience__bProgram', text: 'Develop Student Work Experience Program'
+        id: 'Develop Student Work Experience Program', text: 'Develop Student Work Experience Program'
       },
       {
-        id: 'Expand__bBusiness__bSupport__bthrough__bBusiness__bAccelerator__band__bSBDCs',
-        text: 'Expand Business Support through Business Accelerator and SBDCs'
+        id: 'Expand Business Support through Business Accelerator and SBDCs', text: 'Expand Business Support through Business Accelerator and SBDCs'
       },
       {
-        id: 'Expand__bcol-mdlege__b__7__bCareer__bHigh__bSchool', text: 'Expand College & Career High School'
+        id: 'Expand College & Career High School', text: 'Expand College & Career High School'
       },
       {
-        id: 'Expand__bFast__uTrack__bDegree__bOfferings', text: 'Expand Fast-Track Degree Offerings'
+        id: 'Expand Fast-Track Degree Offerings', text: 'Expand Fast-Track Degree Offerings'
       },
       {
-        id: 'Expand__bNon__uCredit__bOfferings__bThrough__bBootcamps__M__bAcademies',
-        text: 'Expand Non - Credit Offerings Through Bootcamps, Academies'
+        id: 'Expand Non - Credit Offerings Through Bootcamps, Academies', text: 'Expand Non - Credit Offerings Through Bootcamps, Academies'
       },
-      {id: 'Grow__bIntersession', text: 'Grow Intersession'},
+      {id: 'Grow Intersession', text: 'Grow Intersession'},
       {
-        id: 'Implement__bCompetency__uBased__bEducation__boptions', text: 'Implement Competency-Based Education options'
+        id: 'Implement Competency-Based Education options', text: 'Implement Competency-Based Education options'
       },
     ],
     Organization__bExcellence__band__bInnovation: [
       {
-        id: '" selected="true',
-        text: 'No Choice'
+        id: 'No Choice', text: 'No Choice'
       },
       {
-        id: 'Articulate__band__bImplement__bSpace__bEfficiency__bInitiatives',
-        text: 'Articulate and Implement Space Efficiency Initiatives '
+        id: 'Articulate and Implement Space Efficiency Initiatives ', text: 'Articulate and Implement Space Efficiency Initiatives '
       },
       {
-        id: 'Develop__bGlobal__bLearning__bInitiative',
-        text: 'Develop Global Learning Initiative '
+        id: 'Develop Global Learning Initiative ', text: 'Develop Global Learning Initiative '
       },
       {
-        id: 'Develop__bStudent__bWork__bExperience__bProgram',
-        text: 'Develop Student Work Experience Program '
+        id: 'Develop Student Work Experience Program ', text: 'Develop Student Work Experience Program '
       },
       {
-        id: 'Enhance__bIntellectual__bProperty__bInitiatives',
-        text: 'Enhance Intellectual Property Initiatives '
+        id: 'Enhance Intellectual Property Initiatives ', text: 'Enhance Intellectual Property Initiatives '
       },
       {
-        id: 'Implement__bvalues__uBased__bEmployee__bInitiatives',
-        text: 'Implement values-Based Employee Initiatives '
+        id: 'Implement values-Based Employee Initiatives ', text: 'Implement values-Based Employee Initiatives '
       },
       {
-        id: 'Streamline__band__bDocument__ball__bProcesses__band__bProcedures',
-        text: 'Streamline and Document all Processes and Procedures '
+        id: 'Streamline and Document all Processes and Procedures ', text: 'Streamline and Document all Processes and Procedures '
       },
       {
-        id: 'Transform__bCustomer__bService__bExperience',
-        text: 'Transform Customer Service Experience '
+        id: 'Transform Customer Service Experience ', text: 'Transform Customer Service Experience '
       },
       {
-        id: 'Transition__bfrom__bcol-mdlege__uOwned__bTechnology__bto__bStudent__uOwned__bTechnology',
-        text: 'Transition from col - mdlege - Owned Technology to Student - Owned Technology '
+        id: 'Transition from col - mdlege - Owned Technology to Student - Owned Technology ', text: 'Transition from col - mdlege - Owned Technology to Student - Owned Technology '
       },
     ]
   };
@@ -197,7 +180,7 @@ export class OpieFormComponent implements OnInit {
       TITLE: [ '', Validators.required ],
       First__bName: [ '', Validators.required ],
       Last__bName: [ '', Validators.required ],
-      Email__bAddress: [ '', [ Validators.required, Validators.email ] ],
+      Email__bAddress: [ '', [ Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$') ] ],
 
       dateNeeded: [ '', Validators.required ],
       One__uTime__bor__bRecurring__Q: [ this.recurring[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
@@ -207,14 +190,14 @@ export class OpieFormComponent implements OnInit {
       PI__bCategory: [ this.piCategory[ 0 ].id ],
       If__bUnknown__bPlease__bDescribe__c: [ '' ],
       Proposed__bAudience: [ this.proposedAudience[ 0 ].id, [Validators.required, restrictedWords(['Required'])]],
-      Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id ],
+      Strategic__bgoal__bto__bwhich__bthis__brelates: [ this.strategicGoal[ 0 ].id, [Validators.required, restrictedWords(['Required'])] ],
       Strategic__binitiative__bto__bwhich__bthis__brelates: [ '' ],
       LONGDESCRIPTION: [ '' ],
       Month_Date__bNeeded: [ '' ],
       Day_Date__bNeeded: [ '' ],
       Year_Date__bNeeded: [ '' ],
-      TO: [ 'studentcomp@cnm.edu' ],
-      FROM: [ 'Web@cnm.edu' ],
+      TO: [ 'OPIERequests@cnm.edu' ],
+      FROM: [ 'webservices@cnm.edu' ],
       PROJECTNUM: [ '23' ],
       PROJECTNAME: [ 'OPIE' ],
       DATE_TYPE: [ '0' ],
@@ -280,10 +263,15 @@ console.log(body2.toString())
       .set('FROM', this.opieForm.value.Email__bAddress)
       .set('PROJECTNUM', '23')
       .set('PROJECTNAME', 'OPIE')
-      .set('DATE_TYPE', '0')
+      .set('DATE_TYPE', '0');
+
+    const markup = '<!DOCTYPE html><html>	<title></title></head><body>THIS IS THE BODY <em> here</em> </body></html>'
+    // const thisBody = markup.match('<body>(.*)<\/body>')
+    // console.log(thisBody[1])
+    // let bodyText = /<body>(.*?)<\/body>/g.exec(thisBody[1])
 
     return this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl/',
-      body,
+      body2,
       {
         headers: new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
@@ -291,7 +279,21 @@ console.log(body2.toString())
         responseType: 'text'
       })
       .subscribe(res => {
-        this.router.navigate(['/response-page',{ queryParams: { markup: res }}] );
+
+        // footprints returns a mess of an HTML fragment: over 600 lines of css it doesn't use,
+        // and it DOESN'T EVEN CLOSE THE <BODY> TAG. This regex searches that pile of crap for
+        // the actual message being returned, which is ONE FREAKING SENTENCE. That's from
+        // 753 lines of code. This assumes the message will always be in a div with class `dialogMainContent`
+        const strRemovedLinebreaks = res.replace(/(\r\n|\n|\r)/gm, '');
+        const pattern = /[\s|\S]*<td class="dialogMainContent">([\s|\S]*)<\/td>[\s|\S]*/g;
+        const filteredMessage = strRemovedLinebreaks.replace(pattern, '$1')
+
+        // const bodyText = /<body>(.*?)<\/body>/g.exec(bodyMarkup);
+
+          this.router.navigate(
+          ['/response-page'],
+          { queryParams: { markup: filteredMessage }}
+          );
       }, error => console.error(error));
   }
 
