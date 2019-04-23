@@ -243,11 +243,12 @@ export class OpieFormComponent implements OnInit {
     // const body2 = this.addParamsToBody(this.opieForm.value);
 
     if (this.opieForm.valid) {
+
       // prevent multiple submissions
       this.submitDisabled = true;
 
       // `dateNeeded` is only used at runtime, the server is not aware of this field
-      this.opieForm.removeControl('dateNeeded')
+      this.opieForm.removeControl('dateNeeded');
 
       this.submitService.submitForm(this.opieForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl');
     }
