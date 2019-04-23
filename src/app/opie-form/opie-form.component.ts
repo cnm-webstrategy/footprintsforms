@@ -17,6 +17,7 @@ import { Title } from '@angular/platform-browser';
 export class OpieFormComponent implements OnInit {
 
   node;
+  submitDisabled = false;
   dateNeededDate: NgbDateStruct;
   opieForm: FormGroup;
   httpOptions = {
@@ -240,7 +241,16 @@ export class OpieFormComponent implements OnInit {
   onSubmit = () => {
 
     // const body2 = this.addParamsToBody(this.opieForm.value);
-    this.submitService.submitForm(this.opieForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl');
+
+    if (this.opieForm.valid) {
+      // prevent multiple submissions
+      this.submitDisabled = true;
+
+      // `dateNeeded` is only used at runtime, the server is not aware of this field
+      this.opieForm.removeControl('dateNeeded')
+
+      this.submitService.submitForm(this.opieForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl');
+    }
 //
 // console.log(body2.toString())
 //     const body: HttpParams = new HttpParams()
