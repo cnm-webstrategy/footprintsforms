@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { SubmitService } from '../shared/submit.service';
 
 @Component({
   selector: 'app-student-complaint-form',
@@ -9,11 +10,12 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 })
 export class StudentComplaintFormComponent implements OnInit {
 
-  node;
   dateOccurred: NgbDateStruct;
+  submitDisabled = false;
   studentComplaintForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private submitService: SubmitService ) { }
 
   ngOnInit() {
     this.studentComplaintForm = this.fb.group({
@@ -51,18 +53,10 @@ export class StudentComplaintFormComponent implements OnInit {
   }
 
   onChanges(): void {
-    // this.studentComplaintForm.get('One__uTime__bor__bRecurring__Q').valueChanges.subscribe(val => {
-      // console.log(val);
-    // });
-    // this.studentComplaintForm.get('Recurring__bSchedule').valueChanges.subscribe(val => {
-      // this.showExplainOther = val === 'Other';
-      // console.log(val);
-    // });
-    // this.studentComplaintForm.get('Strategic__bgoal__bto__bwhich__bthis__brelates').valueChanges.subscribe(val => {
-      // this.studentComplaintForm.controls[ 'Strategic__binitiative__bto__bwhich__bthis__brelates' ].setValue(this.strategicInitiative[ val ][ 0 ], {onlySelf: true});
-      // console.log(val);
-      // console.log(this.strategicInitiative[ val ]);
-    // });
+    this.studentComplaintForm.get('Email__bAddress').valueChanges.subscribe(val => {
+      this.studentComplaintForm.get('FROM').setValue(val);
+    });
+
     this.studentComplaintForm.get('dateOccurred').valueChanges.subscribe(val => {
       // console.log(val)
       this.studentComplaintForm.get('Month_Date__bEvent__bOccurred').setValue(val.month);
@@ -73,9 +67,14 @@ export class StudentComplaintFormComponent implements OnInit {
   }
 
   onSubmit = () => {
-    console.warn(this.studentComplaintForm.value);
-    // this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
-    //   .subscribe();
+    // prevent multiple submissions
+    this.submitDisabled = true;
+
+    // `dateOccurred` is only used at runtime, the server is not aware of this field
+    this.studentComplaintForm.removeControl('dateOccurred');
+
+    this.submitService.submitForm(this.studentComplaintForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
+
   };
 
 }

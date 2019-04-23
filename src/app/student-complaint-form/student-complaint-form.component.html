@@ -198,7 +198,7 @@
         click the submit button only once. A separate Issue will be entered each time the button is clicked.
       </small>
 
-      <button class="btn btn-primary" [disabled]="!studentComplaintForm.valid" type="submit">Submit form</button>
+      <button class="btn btn-primary" [disabled]="!studentComplaintForm.valid || submitDisabled" type="submit">Submit form</button>
     </div>
   </div>
 </form>
