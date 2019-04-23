@@ -5,6 +5,8 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { restrictedWords } from '../shared/restricted-words.validator';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { SubmitService } from '../shared/submit.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-opie-form',
@@ -162,10 +164,13 @@ export class OpieFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private http: HttpClient,
-              private router: Router) {
+              private router: Router,
+              private submitService: SubmitService,
+              private titleService: Title ) {
   }
 
   ngOnInit() {
+    this.titleService.setTitle('OPIE Data Request')
     this.node = document.getElementById('recurring');
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => console.log(mutation));
@@ -227,74 +232,66 @@ export class OpieFormComponent implements OnInit {
 
   }
 
-  addParamsToBody = (obj) => {
-    let body = new HttpParams({ fromObject: obj});
-    // Object.keys(obj).forEach((k) => {
-    //   console.log("hi",k , obj[k]);
-    //   body.append( k , obj[k] )
-    // });
-    return body;
-  }
+  // addParamsToBody = (obj) => {
+  //   const body = new HttpParams({ fromObject: obj});
+  //   return body;
+  // }
 
-  onSubmit = (f: NgForm) => {
+  onSubmit = () => {
 
-    const body2 = this.addParamsToBody(this.opieForm.value);
+    // const body2 = this.addParamsToBody(this.opieForm.value);
+    this.submitService.submitForm(this.opieForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl');
+//
+// console.log(body2.toString())
+//     const body: HttpParams = new HttpParams()
+//       .set('TITLE', this.opieForm.value.TITLE)
+//       .set('First__bName', this.opieForm.value.First__bName)
+//       .set('Last__bName', this.opieForm.value.Last__bName)
+//       .set('Email__bAddress', this.opieForm.value.Email__bAddress)
+//       .set('One__uTime__bor__bRecurring__Q', this.opieForm.value.One__uTime__bor__bRecurring__Q)
+//       .set('Recurring__bSchedule', this.opieForm.value.Recurring__bSchedule)
+//       .set('Please__bExplain__bOther', this.opieForm.value.Please__bExplain__bOther)
+//       .set('Type__bof__bRequest', this.opieForm.value.Type__bof__bRequest)
+//       .set('PI__bCategory', this.opieForm.value.PI__bCategory)
+//       .set('If__bUnknown__bPlease__bDescribe__c', this.opieForm.value.If__bUnknown__bPlease__bDescribe__c)
+//       .set('Proposed__bAudience', this.opieForm.value.Proposed__bAudience)
+//       .set('Strategic__bgoal__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__bgoal__bto__bwhich__bthis__brelates)
+//       .set('Strategic__binitiative__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__binitiative__bto__bwhich__bthis__brelates)
+//       .set('LONGDESCRIPTION', this.opieForm.value.LONGDESCRIPTION)
+//       .set('Month_Date__bNeeded', this.opieForm.value.Month_Date__bNeeded)
+//       .set('Day_Date__bNeeded', this.opieForm.value.Day_Date__bNeeded)
+//       .set('Year_Date__bNeeded', this.opieForm.value.Year_Date__bNeeded)
+//       .set('TO', 'OPIERequests@cnm.edu')
+//       .set('FROM', this.opieForm.value.Email__bAddress)
+//       .set('PROJECTNUM', '23')
+//       .set('PROJECTNAME', 'OPIE')
+//       .set('DATE_TYPE', '0');
 
-console.log(body2.toString())
-    const body: HttpParams = new HttpParams()
-      .set('TITLE', this.opieForm.value.TITLE)
-      .set('First__bName', this.opieForm.value.First__bName)
-      .set('Last__bName', this.opieForm.value.Last__bName)
-      .set('Email__bAddress', this.opieForm.value.Email__bAddress)
-      .set('One__uTime__bor__bRecurring__Q', this.opieForm.value.One__uTime__bor__bRecurring__Q)
-      .set('Recurring__bSchedule', this.opieForm.value.Recurring__bSchedule)
-      .set('Please__bExplain__bOther', this.opieForm.value.Please__bExplain__bOther)
-      .set('Type__bof__bRequest', this.opieForm.value.Type__bof__bRequest)
-      .set('PI__bCategory', this.opieForm.value.PI__bCategory)
-      .set('If__bUnknown__bPlease__bDescribe__c', this.opieForm.value.If__bUnknown__bPlease__bDescribe__c)
-      .set('Proposed__bAudience', this.opieForm.value.Proposed__bAudience)
-      .set('Strategic__bgoal__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__bgoal__bto__bwhich__bthis__brelates)
-      .set('Strategic__binitiative__bto__bwhich__bthis__brelates', this.opieForm.value.Strategic__binitiative__bto__bwhich__bthis__brelates)
-      .set('LONGDESCRIPTION', this.opieForm.value.LONGDESCRIPTION)
-      .set('Month_Date__bNeeded', this.opieForm.value.Month_Date__bNeeded)
-      .set('Day_Date__bNeeded', this.opieForm.value.Day_Date__bNeeded)
-      .set('Year_Date__bNeeded', this.opieForm.value.Year_Date__bNeeded)
-      .set('TO', 'OPIERequests@cnm.edu')
-      .set('FROM', this.opieForm.value.Email__bAddress)
-      .set('PROJECTNUM', '23')
-      .set('PROJECTNAME', 'OPIE')
-      .set('DATE_TYPE', '0');
-
-    const markup = '<!DOCTYPE html><html>	<title></title></head><body>THIS IS THE BODY <em> here</em> </body></html>'
-    // const thisBody = markup.match('<body>(.*)<\/body>')
-    // console.log(thisBody[1])
-    // let bodyText = /<body>(.*?)<\/body>/g.exec(thisBody[1])
-
-    return this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl/',
-      body2,
-      {
-        headers: new HttpHeaders()
-          .set('Content-Type', 'application/x-www-form-urlencoded')
-          .set('Accept', 'text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8'),
-        responseType: 'text'
-      })
-      .subscribe(res => {
-
-        // footprints returns a mess of an HTML fragment: over 600 lines of css it doesn't use,
-        // and it DOESN'T EVEN CLOSE THE <BODY> TAG. This regex searches that pile of crap for
-        // the actual message being returned, which is ONE FREAKING SENTENCE. That's from
-        // 753 lines of code. This assumes the message will always be in a div with class `dialogMainContent`
-        const strRemovedLinebreaks = res.replace(/(\r\n|\n|\r)/gm, '');
-        const pattern = /[\s|\S]*<td class="dialogMainContent">([\s|\S]*)<\/td>[\s|\S]*/g;
-        const filteredMessage = strRemovedLinebreaks.replace(pattern, '$1')
-
-        // const bodyText = /<body>(.*?)<\/body>/g.exec(bodyMarkup);
-
-          this.router.navigate(
-          ['/response-page'],
-          { queryParams: { markup: filteredMessage }}
-          );
-      }, error => console.error(error));
+    // return this.http.post('https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl/',
+    //   body2,
+    //   {
+    //     headers: new HttpHeaders()
+    //       .set('Content-Type', 'application/x-www-form-urlencoded')
+    //       .set('Accept', 'text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8'),
+    //     responseType: 'text'
+    //   })
+    //   .subscribe(res => {
+    //
+    //     // footprints returns a mess of an HTML fragment: over 600 lines of css it doesn't use,
+    //     // and it DOESN'T EVEN CLOSE THE <BODY> TAG. This regex searches that pile of crap for
+    //     // the actual message being returned, which is ONE FREAKING SENTENCE. That's from
+    //     // 753 lines of code. This assumes the message will always be in a div with class `dialogMainContent`
+    //     const strRemovedLinebreaks = res.replace(/(\r\n|\n|\r)/gm, '');
+    //     const pattern = /[\s|\S]*<td class="dialogMainContent">([\s|\S]*)<\/td>[\s|\S]*/g;
+    //     const filteredMessage = strRemovedLinebreaks.replace(pattern, '$1')
+    //
+    //     // const bodyText = /<body>(.*?)<\/body>/g.exec(bodyMarkup);
+    //
+    //       this.router.navigate(
+    //       ['/response-page'],
+    //       { queryParams: { markup: filteredMessage }}
+    //       );
+    //   }, error => console.error(error));
   }
 
 }
