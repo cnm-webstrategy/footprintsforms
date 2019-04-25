@@ -11,6 +11,7 @@ import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { DefaultComponent } from './default.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResponsePageComponent } from './response-page/response-page.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,12 @@ import { ResponsePageComponent } from './response-page/response-page.component';
     NgBootstrapFormValidationModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/' + (window.location.pathname.split('/')[1] || '')
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
