@@ -67,14 +67,17 @@ export class StudentComplaintFormComponent implements OnInit {
   }
 
   onSubmit = () => {
-    // prevent multiple submissions
-    this.submitDisabled = true;
 
-    // `dateOccurred` is only used at runtime, the server is not aware of this field
-    this.studentComplaintForm.removeControl('dateOccurred');
+    if (this.studentComplaintForm.valid) {
+      // prevent multiple submissions
+      this.submitDisabled = true;
 
-    this.submitService.submitForm(this.studentComplaintForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
+      // `dateOccurred` is only used at runtime, the server is not aware of this field
+      this.studentComplaintForm.removeControl('dateOccurred');
 
-  };
+      this.submitService.submitForm(this.studentComplaintForm, 'https://sos.cnm.edu/MRcgi/MRProcessIncomingForms.pl')
+    }
+
+  }
 
 }

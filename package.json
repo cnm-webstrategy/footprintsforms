@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-send": "ng build --prod --base-href /footprintsforms/ && rsync -r -a -v -e ssh --delete ~/Sites/footprintsforms/dist/footprintsforms/  webuser@www01:/u01/data/docroots/forms/footprints-forms2",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
