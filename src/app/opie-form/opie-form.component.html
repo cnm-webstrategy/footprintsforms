@@ -83,7 +83,7 @@
           <em *ngIf="One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q?.errors.restrictedWords">Restricted words found: {{One__uTime__bor__bRecurring__Q.errors.restrictedWords}}</em>
           <div class="form-group " [ngClass]="{'error': One__uTime__bor__bRecurring__Q.invalid && One__uTime__bor__bRecurring__Q.dirty }">
             <select formControlName="One__uTime__bor__bRecurring__Q" #One__uTime__bor__bRecurring__Q id="One__uTime__bor__bRecurring__Q" class="form-control">
-              <option *ngFor="let option of dropdowns.recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.text }}</option>
+              <option *ngFor="let option of recurring" [value]="option.id" [selected]="option.id == 'no-answer'">{{ option.text }}</option>
             </select>
           </div>
         </div>
