@@ -25,6 +25,19 @@ export class OpieFormComponent implements OnInit {
       'Content-Type':  'application/x-www-form-urlencoded'
     })};
 
+  dropdowns = {
+    recurring: [
+      {id: 'Required', text: 'Required'},
+      {id: 'one-time', text: 'One time'},
+      {id: 'recurring', text: 'Recurring'}
+    ],
+    recurringSchedule: [
+      {id: 'Term', text: 'Term'},
+      {id: 'Annually', text: 'Annually'},
+      {id: 'Other', text: 'Other'}
+    ]
+  };
+
   // values for various dropdowns
   recurring = [
     {id: 'Required', text: 'Required'},
