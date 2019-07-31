@@ -69,7 +69,7 @@ export class OpieFormComponent implements OnInit {
     {id: 'Required', text: 'Required'},
     {id: 'Internal', text: 'Internal CNM (Employees only)'},
     {id: 'External to CNM', text: 'External to CNM'},
-    {id: 'Performance Improvement', text: 'Both'},
+    {id: 'Both', text: 'Both'},
   ];
   strategicGoal = [
     {id: 'No Choice', text: 'No Choice'},

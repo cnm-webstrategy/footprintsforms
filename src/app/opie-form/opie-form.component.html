@@ -2,7 +2,7 @@
   <!--class="container">-->
 <!--<p class="row">Form Status: {{ opieForm.status }}</p>-->
 <!--</div>-->
-<form [formGroup]="opieForm" #f=ngForm (ngSubmit)="onSubmit()">
+<form novalidate [formGroup]="opieForm" #f=ngForm (ngSubmit)="onSubmit()">
 
 
   <!--<label for="TITLE">-->
@@ -43,9 +43,9 @@
           <em *ngIf="Email__bAddress?.invalid && Email__bAddress?.dirty">Required</em>
           <input type="email" class="form-control" id="Email__bAddress" formControlName="Email__bAddress" #Email__bAddress placeholder="required" value="" required>
           <span class='glyphicon glyphicon-remove form-control-feedback' aria-hidden='true'></span>
-          <div class="invalid-feedback">
-            Please enter a valid email.
-          </div>
+          <!--<div class="invalid-feedback">-->
+            <!--Please enter a valid email.-->
+          <!--</div>-->
         </div>
       </div>
     </div>
